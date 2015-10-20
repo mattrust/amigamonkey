@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Final </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Final</h1>
+<p>
+Declares that a class may not be extended or that a method may not be overridden.
+<p>
+<h2>Syntax</h2>
+<p>
+Class <b>Identifier</b> [ < <b>Parameters</b> > ] [ Extends <b>Class</b> ] [ Implements <b>Interfaces</b> ] [ <code>Final</code> ]<br>
+	' Declarations...<br>
+End [ Class ]
+<p>
+Method <b>Identifier</b>: <b>ReturnType</b> ( <b>Parameters</b> ) [ Property ] [ Abstract ] [ <code>Final</code> ]<br>
+	<b>Statements...</b><br>
+End [ Method ]
+<p>
+<h2>Description</h2>
+<p>
+The Final modifier can be used in two contexts:
+<p>
+<ul><li>Classes - the Final keyword at the end of a Class statement declares that the class may not be extended by other classes;</li>
+<li>Methods - the Final keyword at the end of a Method statement declares that a method may not be overridden (in an extended version of a <b>non</b>-Final class).</li>
+<p>
+</ul>The examples below should help to clarify these cases.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Class.html">Class</a> | <a href="Programming_Keywords_Method.html">Method</a><br>
+<a href="Programming_Language reference.html#classes">Language reference</a>
+<p>
+<h2>Example</h2>
+<p>
+<b>In this case, we try to extend the Dog class to create a Doberman class; however, this is forbidden due to the Final keyword in the Class statement.</b>
+<p>
+<b><code>This example will intentionally generate an error</code>.</b>
+<p>
+<div class=pretty>
+<code class=r>' Runnable example</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Dog</code><code class=d>&nbsp;</code><code class=k>Final</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Bark</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Woof!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Doberman</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>Dog</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Think I'll make my own Dog!</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>d</code><code class=d>:</code><code class=i>Doberman</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Doberman</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+<p>
+<b>In the example below, Dog</b> can <b>be extended (no Final modifier); however, we have stated that the Bark method may not be overridden, again, using the Final modifier.</b>
+<p>
+<b><code>This example will intentionally generate an error</code>.</b>
+<p>
+<div class=pretty>
+<code class=r>' Runnable example</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Dog</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Bark</code><code class=d>&nbsp;()&nbsp;</code><code class=k>Final</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Woof!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Doberman</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>Dog</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Bark</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"RRGGGHHHRRRGHGHWWRRRRR!!!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>d</code><code class=d>:</code><code class=i>Doberman</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Doberman</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>d.Bark</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+<p>
+Note that in both cases, no error will be flagged unless (in the first example) you try to create a Doberman, or (in the second example) call the erroneously overridden method.
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

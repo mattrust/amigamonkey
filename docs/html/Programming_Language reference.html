@@ -1,0 +1,1707 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Language reference </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Monkey language reference</h1>
+<p>
+This manual describes the syntax and general concepts behind the core Monkey language.
+<p>
+<h2>Contents</h2>
+<p>
+<a href="#about">About this reference</a><br>
+<a href="#programs">Programs and declarations</a><br>
+<a href="#strict">Strict mode</a><br>
+<a href="#comments">Comments</a><br>
+<a href="#identifiers">Identifiers</a><br>
+<a href="#types">Types</a><br>
+<a href="#variables">Variables</a><br>
+<a href="#constants">Constants</a><br>
+<a href="#expressions">Expressions</a><br>
+<a href="#statements">Statements</a><br>
+<a href="#functions">Functions</a><br>
+<a href="#methods">Methods</a><br>
+<a href="#classes">Classes</a><br>
+<a href="#generics">Generics</a><br>
+<a href="#interfaces">Interfaces</a><br>
+<a href="#exceptions">Exceptions</a><br>
+<a href="#modules">Modules</a><br>
+<a href="#visibility">Public and private</a><br>
+<a href="#extern">External declarations</a><br>
+<a href="#memory">Memory management</a><br>
+<a href="#preprocessor">Preprocessor</a>
+<p>
+<a name="about">
+<h2>About this reference</h2>
+</a>
+<p>
+A monospaced font is used for program code examples, for example:
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World!"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Language syntax explanations are generally formatted as follows:
+<p>
+<ul><li>Anything that appears in <b>bold</b> indicates literal text. For example: <b>Function</b> means the actual text 'Function'.</li>
+<p>
+<li>Anything that appears in <i>italics</i> indicates other syntax. For example: <i>Identifier</i> means any text that is a valid identifier.</li>
+<p>
+<li>Anything that appears in square brackets [ ] is optional. For example: [ <b>Step</b> ] means the literal text <b>Step</b> is optional.</li>
+<p>
+<li>The pipe character | is use for alternatives. For example: <b>To</b> | <b>Until</b> means you can use <b>To</b> or <b>Until</b> - but not both.</li>
+<p>
+<li>A three dots ellipsis is used to indicate repetition.</li>
+<p>
+</ul>These rules are not strictly followed. Where it makes sense to do so, syntax may be shown in a simplified form with explanatory notes.
+<p>
+<a name="programs">
+<h2>Programs and declarations</h2>
+</a>
+<p>
+A Monkey program consists of one or more modules, each of which is a separate file, consisting of a series of declarations. 
+<p>
+A declaration associates a 'meaning' with an identifier. For example, this declaration...
+<p>
+<div class=pretty>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Int</code><br>
+</div>
+<p>
+...indicates that the identifier 'x' is a global variable of type 'Int' (an integer).
+<p>
+Monkey supports the following kinds of declarations:
+<p>
+<ul><li>Modules</li>
+<li>Constants</li>
+<li>Local, Global and Field variables</li>
+<li>Classes</li>
+<li>Functions </li>
+<li>Methods</li>
+<p>
+</ul>A module is itself a kind of declaration and is represented by a single source file. The name of the module is taken from the name of the source file. For example, if your file is named "particles.monkey" then the module will be called "particles".
+<p>
+Modules may 'import' other modules, which may in turn import other modules and so on.
+<p>
+Every Monkey program has a 'main module' that must contain a public function called Main that takes no parameters and returns an integer. For example:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"That's&nbsp;all&nbsp;folks!"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+This is the entry point of the program and is where program execution begins. 
+<p>
+If you are using the mojo framework of modules, you must create a new class (which extends the base mojo.app class) and create a new instance of it in the Main function.  See the mojo.app Module Reference for more information.  An example of this is:
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.app</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.graphics</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World!"</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<a name="strict">
+<h2>Strict mode</h2>
+</a>
+<p>
+By default, Monkey allows you to take certain shortcuts when programming.
+<p>
+However, Monkey also offers a special Strict mode for programmers who prefer a stricter language definition.
+<p>
+The differences between strict and non-strict mode are:
+<p>
+<ul><li>In non-strict mode, variable type, function return type and function parameter types can be optionally omitted. In this case they will default to Int. In strict mode, you must always specify the type of all variables, functions return values and function parameters.</li>
+<p>
+<li>In non-strict mode, Return statements can be omitted at the end of a function. In this case, a Return statement will be automatically generated that will return an appropriate default value for the function type. That is, False for bool, 0 for int and float, "" for string, [] for arrays and Null for objects. In strict mode, a function that does not return Void must end with a Return statement.</li>
+<p>
+<li>In non-strict mode, the brackets around function call parameters are optional if the function is being used as a statement, or if the function can be called with no parameters. In strict mode, all function call parameters must be enclosed in brackets.</li>
+<p>
+</ul>To use strict mode, a Strict directive must be placed at the very top of your module. For example:
+<p>
+<div class=pretty>
+<code class=k>Strict</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>:</code><code class=k>Int</code><code class=d>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'in Strict mode, the :Int type definition is compulsory</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>(&nbsp;</code><code class=l>"Strict&nbsp;mode&nbsp;is...strict!"</code><code class=d>&nbsp;)&nbsp;&nbsp;</code><code class=r>'in Strict mode, all function calls require brackets.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>0</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'in strict mode, we MUST return a value.</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+The examples in this document will be presented in non-strict form.
+<p>
+<a name="comments">
+<h2>Comments</h2>
+</a>
+<p>
+You can add line comments to your programs using the ' (apostrophe) character. Everything following the ' character until the end of the line will be ignored.
+<p>
+You can add block comments to your programs using #rem and #end. These must appear at the start of a new line, although they may optionally have whitespace characters in front. Everything between #rem and #end will be ignored. Block comments can also be nested.
+<p>
+Here is an example of using comments:
+<p>
+<div class=pretty>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'This is a line comment!</code><br>
+<br>
+<code class=r>#Rem                                'start of a block comment</code><br>
+<code class=r>Print "The sound of silence!"       'inside a block comment</code><br>
+<code class=r>#End</code><br>
+</div>
+<p>
+<a name="identifiers">
+<h2>Identifiers</h2>
+</a>
+<p>
+Identifiers must start with an alphabetic character, or a single underscore followed by an alphabetic character. The rest of the identifier may contain any combination of alphanumeric characters and/or underscores.
+<p>
+Identifiers are case sensitive (except for language keywords - see below). For example, player, Player, PLAYER and PLayER are all different identifiers. This allows you to reuse the same name for different purposes. For example, Actor may refer to a class while actor refers to an object of that class.
+<p>
+Here are some examples of valid Monkey identifiers:
+<p>
+<div class=pretty>
+<code class=i>score</code><br>
+<code class=i>player1</code><br>
+<code class=i>player_up</code><br>
+<code class=i>_internal</code><br>
+<code class=i>helloworld</code><br>
+<code class=i>HelloWorld</code><br>
+</div>
+<p>
+<h3>Language keywords and reserved identifiers</h3>
+<p>
+The following identifiers are language keywords and are reserved for use by the Monkey language:
+<p>
+<div class=pretty>
+<code class=k>Void</code><code class=d>&nbsp;</code><code class=k>Strict</code><code class=d>&nbsp;</code><code class=k>Public</code><code class=d>&nbsp;</code><code class=k>Private</code><code class=d>&nbsp;</code><code class=k>Property</code><code class=d>&nbsp;</code><code class=k>Bool</code><code class=d>&nbsp;</code><code class=k>Int</code><code class=d>&nbsp;</code><code class=k>Float</code><code class=d>&nbsp;</code><code class=k>String</code><code class=d>&nbsp;</code><code class=k>Array</code><br>
+<code class=k>Object</code><code class=d>&nbsp;</code><code class=k>Mod</code><code class=d>&nbsp;</code><code class=k>Continue</code><code class=d>&nbsp;</code><code class=k>Exit</code><code class=d>&nbsp;</code><code class=k>Import</code><code class=d>&nbsp;</code><code class=k>Extern</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=k>Self</code><code class=d>&nbsp;</code><code class=k>Super</code><code class=d>&nbsp;</code><code class=k>Try</code><code class=d>&nbsp;</code><code class=k>Catch</code><br>
+<code class=k>Eachin</code><code class=d>&nbsp;</code><code class=k>True</code><code class=d>&nbsp;</code><code class=k>False</code><code class=d>&nbsp;</code><code class=k>Not</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=k>Abstract</code><code class=d>&nbsp;</code><code class=k>Final</code><code class=d>&nbsp;</code><code class=k>Select</code><code class=d>&nbsp;</code><code class=k>Case</code><code class=d>&nbsp;</code><code class=k>Default</code><br>
+<code class=k>Const</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=k>Global</code><code class=d>&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=k>Function</code><code class=d>&nbsp;</code><code class=k>Class</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=k>Or</code><code class=d>&nbsp;</code><code class=k>Shl</code><code class=d>&nbsp;</code><code class=k>Shr</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Else</code><code class=d>&nbsp;</code><code class=k>ElseIf</code><code class=d>&nbsp;</code><code class=k>EndIf</code><code class=d>&nbsp;</code><code class=k>While</code><code class=d>&nbsp;</code><code class=k>Wend</code><code class=d>&nbsp;</code><code class=k>Repeat</code><code class=d>&nbsp;</code><code class=k>Until</code><code class=d>&nbsp;</code><code class=k>Forever</code><code class=d>&nbsp;</code><br>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=k>Step</code><code class=d>&nbsp;</code><code class=k>Next</code><code class=d>&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=k>Module</code><code class=d>&nbsp;</code><code class=k>Interface</code><code class=d>&nbsp;</code><code class=k>Implements</code><code class=d>&nbsp;</code><code class=k>Inline</code><code class=d>&nbsp;</code><code class=k>Throw</code><br>
+</div>
+<p>
+<a href="Programming_Keywords.html">Language keywords</a> are case insensitive - for example, you may use the keyword function, Function or indeed even fUNCTION (not recommended) to declare a function.
+<p>
+The keywords Module, Inline and Array are not currently used by the Monkey language but are reserved for future use.
+<p>
+<h3>Monkey naming conventions</h3>
+<p>
+The standard Monkey modules use a simple naming convention:
+<p>
+<ul><li>All-caps case (eg: 'ALLCAPS' ): Constants.</li>
+<p>
+<li>Pascal case (eg: 'PascalCase' ): Globals, functions, class, methods, properties.</li>
+<p>
+<li>Camel case (eg: 'camelCase' ): Fields, locals and function parameters.</li>
+<p>
+</ul>You are of course free to use your own convention, but for the sake of consistency it is recommended that this convention be used for the public interface of any modules you create intended for use by the Monkey community.
+<p>
+<a name="types">
+<h2>Types</h2>
+</a>
+<p>
+Monkey is a statically typed language, which means that all variables, function parameters, function return values and expressions have an associated type that is known at compile time.
+<p>
+The following types are supported:
+<p>
+Boolean<br>
+Integer<br>
+Floating point<br>
+String<br>
+Array<br>
+Object<br>
+<p>
+<h3>The Bool type</h3>
+<p>
+Values of type Bool are boolean values used to express the result of conditional expressions, such as the comparison operators, and to represent a true/false 'state' in general.  A boolean value can only be either True or False. 
+<p>
+The syntax used for declaring values and variables of boolean type is <b>Bool</b>.  For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>gamePaused</code><code class=d>:</code><code class=k>Bool</code><code class=d>&nbsp;=&nbsp;</code><code class=k>False</code><br>
+</div>
+<p>
+Boolean values are usually generated by the use of the comparison operators, for example:
+<p>
+<div class=pretty>
+<code class=k>If</code><code class=d>&nbsp;</code><code class=i>livesLeft</code><code class=d>&lt;&gt;</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>doSomething</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+However, in some circumstances Monkey will automatically convert a non-bool value to bool. This will occur when evaluating an expression for use with the If or While statements; the Until part of a Repeat loop; and when evaluating the arguments for the Not, Or and And operators. For example:
+<p>
+<div class=pretty>
+<code class=k>If</code><code class=d>&nbsp;</code><code class=i>livesLeft</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>doSomething</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+See the conversions section in the expressions chapter for more information.
+<p>
+Also, notice that the Bool identifiers can also be declared by using the <b>?</b> character. This two lines of source code are both valid and syntactically correct:
+<div class=pretty><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>myVariable</code><code class=d>:</code><code class=k>Bool</code><code class=d>&nbsp;=&nbsp;</code><code class=k>True</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>myVariable</code><code class=d>?&nbsp;=&nbsp;</code><code class=k>True</code><br></div>
+<p>
+<h3>The Int type</h3>
+<p>
+Values of type Int are signed integer values - that is, values with no fractional part. The range of integer values supported is target dependent, but is at least 32 bits. A 32 bit int can represent a range of values from: -2,147,483,648 to 2,147,483,647
+<p>
+The syntax used for declaring values and variables of integer type is <b>Int</b>. For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>5</code><br>
+</div>
+<p>
+Integer literals are sequences of digits without a fractional part. Hexadecimal literals are also supported with the $ prefix. For example, the following are all valid integer literals:
+<p>
+<div class=pretty>
+<code class=l>0</code><br>
+<code class=l>1234</code><br>
+<code class=l>$3D0DEAD</code><br>
+<code class=l>$CAFEBABE</code><br>
+</div>
+<p>
+Also, notice that integer identifiers can also be declared by using the <b>%</b> character. This two lines of source code are both valid and syntactically correct:
+<div class=pretty><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>myVariable</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1024</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>myVariable</code><code class=d>%&nbsp;=&nbsp;</code><code class=l>1024</code><br></div>
+<p>
+<h3>The Float type</h3>
+<p>
+Values of type Float are signed numeric values with both an integer and fractional part. The range of floating point values support is target dependent, but is at least 32 bits.
+<p>
+The syntax used for declaring values and variables of floating point type is <b>Float</b>.  For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>gravity</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;=&nbsp;</code><code class=l>9.81</code><br>
+</div>
+<p>
+Floating point literals are sequences of digits that include a fractional part, for example:
+<p>
+<div class=pretty>
+<code class=l>.0</code><br>
+<code class=l>0.0</code><br>
+<code class=l>.5</code><br>
+<code class=l>0.5</code><br>
+<code class=l>1.0</code><br>
+<code class=l>1.5</code><br>
+<code class=l>1.00001</code><br>
+<code class=l>3.14159265</code><br>
+</div>
+<p>
+Also, notice that floating point identifiers can also be declared by using the <b>#</b> character. This two lines of source code are both valid and syntactically correct:
+<div class=pretty><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>myVariable</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;=&nbsp;</code><code class=l>3.141516</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>myVariable</code><code class=d>#&nbsp;=&nbsp;</code><code class=l>3.141516</code><br></div>
+<p>
+<p>
+<h3>The String type</h3>
+<p>
+Values of type String are used to represent sequences of characters, such as text. The size of each character in a string value is target dependent, but is at least 8 bits.
+<p>
+The syntax used for declaring values and variables of string type is <b>String</b>. For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>name</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;=&nbsp;</code><code class=l>"John&nbsp;Smith"</code><br>
+</div>
+<p>
+Strings are immutable meaning that once they are created they cannot be modified. Operations that 'modify' a string will always return a new string.
+<p>
+String literals are sequences of characters enclosed in "" (quotation marks). String literals may also include escape sequences - special sequences of characters used to represent unprintable characters.
+<p>
+You can use the following escape sequences in string literals:
+<p>
+<table class="c">
+<tr><th>Escape sequence</th><th>Character code</th></tr>
+<tr><td><code>~q</code></td><td> 34 (quotate mark ")</td></tr>
+<tr><td><code>~n</code></td><td> 10 (newline)</td></tr>
+<tr><td><code>~r</code></td><td> 13 (return)</td></tr>
+<tr><td><code>~t</code></td><td> 9 (tab)</td></tr>
+<tr><td><code>~z</code></td><td> 0 (null></td></tr>
+<tr><td><code>~~</code></td><td> 126 (tilde ~)</td></tr>
+</table>
+<p>
+Here are some examples of string literals:
+<p>
+<div class=pretty>
+<code class=l>"Hello&nbsp;World"</code><br>
+<code class=l>"~qHello&nbsp;World~q"</code><br>
+<code class=l>"~tIndented~n"</code><br>
+</div>
+<p>
+Strings can also be indexed and sliced.
+<p>
+The syntax for indexing a string is: <i>StringExpression</i> <b>[</b> <i>IndexExpression</i> <b>]</b>
+<p>
+Indexing a string returns the character code of the character at IndexExpression. Index 0 is the first character in the string.
+<p>
+IndexExpression must be greater than or equal to 0 and less than the length of StringExpression otherwise an error occurs.
+<p>
+Here are some examples of indexing a string:
+<p>
+<div class=pretty>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"ABC"</code><code class=d>[</code><code class=l>0</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints 65 - the character code of 'A'</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"ABC"</code><code class=d>[</code><code class=l>1</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints 66 - the character code of 'B'</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hi~n"</code><code class=d>[</code><code class=l>2</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints 10 - the character code of '~n'</code><br>
+</div>
+<p>
+The syntax for slicing a string is: <i>StringExpression</i><b>[</b> <i>StartExpression</i><b>..</b><i>EndExpression</i> <b>]</b>
+<p>
+Slicing a string returns a new string consisting of the characters within StringExpression starting at index StartExpression and ending at index EndExpression.
+<p>
+Both StartExpression and EndExpression are optional. If StartExpression is omitted, it defaults to 0. If EndExpression is omitted, it defaults to the length of the string.
+<p>
+StartExpression and EndExpression can also be negative, in which case they refer to offsets from the end of the string.
+<p>
+Here are some examples of slicing a string:
+<p>
+<div class=pretty>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World"</code><code class=d>[</code><code class=l>4</code><code class=d>.</code><code class=l>.7</code><code class=d>]&nbsp;&nbsp;&nbsp;</code><code class=r>'prints "o W'</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World"</code><code class=d>[.</code><code class=l>.5</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints "Hello"</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World"</code><code class=d>[</code><code class=l>5</code><code class=d>..]&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints "World"</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World"</code><code class=d>[..]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints "Hello World"</code><br>
+</div>
+<p>
+Strings also support a number of 'pseudo' methods and functions:
+<p>
+<table class="c">
+<tr><th>Method/Function</th><th>Description</th></tr>
+<tr><td>Method Length() Property</td><td> Returns the number of characters in the string.</td></tr>
+<tr><td>Method Compare( str:String )</td><td> Returns a value <0 if the current string is less than str, a value>0 if the current string is greater than str or 0 if this string is equal to str.</td></tr>
+<tr><td>Method Find( subString:String )</td><td> Returns the index of the first occurance of subString within the current string.</td></tr>
+<tr><td>Method Find( subString:String, startIndex )</td><td> Returns the index of the first occurance of subString within the current string, starting at index startIndex.</td></tr>
+<tr><td>Method FindLast( subString:String )</td><td> Returns the index of the last occurance of subString within the current string.</td></tr>
+<tr><td>Method FindLast( subString:String, startIndex )</td><td> Returns the index of the last occurance of subString within the current string, starting at index startIndex.</td></tr>
+<tr><td>Method Contains( subString:String )</td><td> Returns true if the current string contains subString.</td></tr>
+<tr><td>Method StartsWith( subString:String )</td><td> Returns true if the current string starts with subString.</td></tr>
+<tr><td>Method EndsWith( subString:String )</td><td> Returns true if the current string ends with subString.</td></tr>
+<tr><td>Method ToLower:String()</td><td> Returns the current string converted to lowercase.</td></tr>
+<tr><td>Method ToUpper:String()</td><td> Returns the current string converted to uppercase.</td></tr>
+<tr><td>Method Trim:String()</td><td> Returns the current string with all leading and trailing whitespace characters removed.</td></tr>
+<tr><td>Method Split:String[]( separator:String )</td><td> Returns an array of strings that contains the substrings in the current string deliminated by separator.</td></tr>
+<tr><td>Method ToChars:Int[]()</td><td> Converts string to an array of character codes.</td></tr>
+<tr><td>Method Join:String( pieces:String[] )</td><td> Returns the elements of pieces concatened together with the current string inserted between each substring.</td></tr>
+<tr><td>Function FromChar:String( char )</td><td> Returns a string of length 1 consisting of a single character code.</td></tr>
+<tr><td>Function FromChars:String( chars:Int[] )</td><td> Creates a string from an array of character codes.</td></tr>
+</table>
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"&nbsp;&nbsp;Hello&nbsp;World&nbsp;&nbsp;~n"</code><code class=d>.</code><code class=i>Trim</code><code class=d>()&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints "Hello World"</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World"</code><code class=d>.</code><code class=i>ToUpper</code><code class=d>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints "HELLO WORLD"</code><br>
+</div>
+<p>
+Also, notice that string identifiers can also be declared by using the <b>$</b> character. This two lines of source code are both valid and syntactically correct:
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>message</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;=&nbsp;</code><code class=l>"Hello&nbsp;world"</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>message</code><code class=d>$&nbsp;=&nbsp;</code><code class=l>"Hello&nbsp;world"</code><br>
+</div>
+<p>
+<p>
+<h3>The Array type</h3>
+<p>
+An array is a linear sequence of values that can be addressed using an integer index.
+<p>
+Each array has an associated element type - that is, the type of the elements actually contained in the array. Due to the nature of Monkey, an array's element type is a purely static property. It is only known at compile time so arrays cannot be downcast at runtime.
+<p>
+The syntax used for declaring values and variables of array type is: <i>ElementType</i> <b>[]</b>
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>box</code><code class=d>:</code><code class=k>Int</code><code class=d>[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'an array of ints</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>ratio</code><code class=d>:</code><code class=k>Float</code><code class=d>[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'an array of floats</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>thing</code><code class=d>:</code><code class=k>Int</code><code class=d>[][]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'an array of arrays of ints</code><br>
+</div>
+<p>
+An array literal is a (possibly empty) comma separated sequence of expressions enclosed with [ and ]. The expressions used in an array literal must be of the same type. For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>box</code><code class=d>:</code><code class=k>Int</code><code class=d>[]=[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'an empty array literal</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>scores</code><code class=d>:</code><code class=k>Int</code><code class=d>[]=[</code><code class=l>10</code><code class=d>,</code><code class=l>20</code><code class=d>,</code><code class=l>30</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'a comma separated sequence</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>text</code><code class=d>:</code><code class=k>String</code><code class=d>[]=[</code><code class=l>"Hello"</code><code class=d>,</code><code class=l>"There"</code><code class=d>,</code><code class=l>"World"</code><code class=d>]&nbsp;&nbsp;&nbsp;</code><code class=r>'a comma separated sequence</code><br>
+</div>
+<p>
+The syntax for indexing an array is: <i>ArrayExpression</i> <b>[</b> <i>IndexExpression</i> <b>]</b>.  For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>score</code><code class=d>:</code><code class=k>Int</code><code class=d>[]=[</code><code class=l>10</code><code class=d>,</code><code class=l>20</code><code class=d>,</code><code class=l>30</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'a comma separated sequence</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>score</code><code class=d>[</code><code class=l>1</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints "20"</code><br>
+</div>
+<p>
+Indexing an array yields a 'pseudo variable' of the array's element type that can be both read from and written to.
+<p>
+IndexExpression must be an integer expression greater than or equal to 0 and less than the length of the array otherwise an error occurs.
+<p>
+Like strings, arrays can also be sliced. The syntax for slicing an array is: <i>ArrayExpression</i> <b>[</b> <i>StartExpression</i> <b>..</b> <i>EndExpression</i> <b>]</b>.
+<p>
+Slicing an array returns 'sub array' of ArrayExpression starting at index StartExpression and ending at index EndExpression.
+<p>
+Both StartExpression and EndExpression are optional. If StartExpression is omitted, it defaults to 0. If EndExpression is omitted, it defaults to the length of the array.
+<p>
+StartExpression and EndExpression can also be negative, in which case they refer to offsets from the end of the array.
+<p>
+Here is an example of slicing an array:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>text</code><code class=d>:</code><code class=k>String</code><code class=d>[]=[</code><code class=l>"Cruel"</code><code class=d>,</code><code class=l>"Hello"</code><code class=d>,</code><code class=l>"World"</code><code class=d>,</code><code class=l>"There"</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'a comma separated sequence</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>helloWorld</code><code class=d>:=</code><code class=i>text</code><code class=d>[</code><code class=l>1</code><code class=d>.</code><code class=l>.3</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'contains ["Hello","World"]</code><br>
+</div>
+<p>
+Arrays also support a number of pseudo methods:
+<p>
+<table class="c">
+<tr><th>Method</th><th>Description</th></tr>
+<tr><td>Method Length() Property</td><td> The number of elements in the array.</td></tr>
+<tr><td>Method Resize:Array( newLength )</td><td> Copies the first newLength elements of the current array into a new array of length newLength, and returns the new array.</td></tr>
+</table>
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>text</code><code class=d>:</code><code class=k>String</code><code class=d>[]=[</code><code class=l>"Hello"</code><code class=d>,</code><code class=l>"There"</code><code class=d>,</code><code class=l>"World"</code><code class=d>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'a comma separated sequence</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>text.Length</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints '3'</code><br>
+<br>
+<code class=i>text</code><code class=d>=</code><code class=i>text.Resize</code><code class=d>(&nbsp;</code><code class=l>2</code><code class=d>&nbsp;)</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>text.Length</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'prints '2'</code><br>
+</div>
+<p>
+<p>
+<h3>The Object type</h3>
+<p>
+An object is an instance of a class, and contains a set of constants, variables, methods and functions.
+<p>
+The syntax used for declaring values and variables of object type is: <i>ClassIdentifier</i>
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>mine</code><code class=d>:</code><code class=i>MyClass</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyClass</code><br>
+</div>
+<p>
+Please see the <a href="#classes">classes</a> section for more information on declaring classes and creating objects.
+<p>
+<a name="variables">
+<h2>Variables</h2>
+</a>
+<p>
+A variable is a storage location used to hold values that change while your program runs.
+<p>
+All variables have an identifier, a type, and an optional initializer - an expression used to set the variable to an initial value.
+<p>
+The type of a variable can either be declared literally, or can be deduced from the variable's initializer.
+<p>
+<h3>Local variables</h3>
+<p>
+Local variables are temporary variables that disappear when the local scope they are declared in is destroyed.
+<p>
+Local variables may be declared within any local scope.
+<p>
+Each of the following creates a local scope:
+<p>
+<ul><li>The statements inside a function or method.</li>
+<p>
+<li>The statements inside an If, Else If or If block.</li>
+<p>
+<li>The statements inside a Case or Default block.</li>
+<p>
+<li>The statements inside a While, Repeat or For loop.</li>
+<p>
+</ul>The syntax for declaring a local variable is:
+<p>
+<b>Local</b> <i>Identifier</i> <b>:</b> <i>Type</i> [ <b>=</b> <i>Expression</i> ]
+<p>
+Or...
+<p>
+<b>Local</b> <i>Identifier</i> <b>:=</b> <i>Expression</i>
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>age</code><code class=d>:</code><code class=k>Int</code><code class=d>=</code><code class=l>10</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>age</code><code class=d>:=</code><code class=l>10</code><br>
+</div>
+<p>
+<p>
+<h3>Global variables</h3>
+<p>
+Global variables are variables that persist during the execution of your program.
+<p>
+Global variables may be declared at module scope, or within a class declaration.
+<p>
+The syntax for declaring a global variable is:
+<p>
+<b>Global</b> <i>Identifier</i> <b>:</b> <i>Type</i> [ <b>=</b> <i>Expression</i> ]
+<p>
+Or...
+<p>
+<b>Global</b> <i>Identifier</i> <b>:=</b> <i>Expression</i>
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>isPlayerAlive</code><code class=d>:</code><code class=k>Bool</code><code class=d>&nbsp;=&nbsp;</code><code class=k>True</code><br>
+</div>
+<p>
+<h3>Field variables</h3>
+<p>
+Field variables are variables that persist as long as the object they belong to. 
+<p>
+Field variables can only be declared within a class declaration.
+<p>
+The syntax for declaring a field variable is:
+<p>
+<b>Field</b> <i>Identifier</i> <b>:</b> <i>Type</i> [ <b>=</b> Expression ]
+<p>
+Or...
+<p>
+<b>Field</b> <i>Identifier</i> <b>:=</b> <i>Expression</i>
+<p>
+<a name="constants">
+<h2>Constants</h2>
+</a>
+<p>
+A constant is a value that is evaluated at compile time, and that does not change throughout the execution of a program.
+<p>
+Constants may be declared at module scope, within class scope or within any local scope.
+<p>
+The syntax for declaring a constant is:
+<p>
+<b>Const</b> <i>Identifier</i> <b>:</b> <i>Type</i> <b>=</b> <i>Expression</i>
+<p>
+Or...
+<p>
+<b>Const</b> <i>Identifier</i> <b>:=</b> <i>Expression</i>
+<p>
+<a name="expressions">
+<h2>Expressions</h2>
+</a>
+<p>
+Expressions are the parts of a program that perform calculations, make logical comparisons and return values from methods or functions.
+<p>
+<h3>Operators</h3>
+<p>
+<table class="c">
+<tr><th>Operator Syntax</th><th>Description</th></tr>
+<tr><td><code>New</code> <i>ClassType</i></td><td>Create a new Object</td></tr>
+<p>
+<tr><td><code>Null</code></td><td>The null object</td></tr>
+<tr><td><code>True</code></td><td>Boolean true</td></tr>
+<tr><td><code>False</code></td><td>Boolean false</td></tr>
+<tr><td><code>Self</code></td><td>Self</td></tr>
+<tr><td><code>Super</code></td><td>Super</td></tr>
+<tr><td><i>Literal</i></td><td>Literal</td></tr>
+<tr><td><i>Identifier</i></td><td>Identifier</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>.</code> <i>Identifier</i></td><td>Scope member access</td></tr>
+<tr><td><code>(</code> <i>ExpressionSeq</i> <code>)</code></td><td>Invoke</td></tr>
+<tr><td><code>[</code> <i>Expression</i> <code>]</code></td><td>Index</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>+</code></td><td>Unary plus</td></tr>
+<tr><td><code>-</code></td><td>Unary minus</td></tr>
+<tr><td><code>~</code></td><td>Bitwise complement</td></tr>
+<tr><td><code>Not</code></td><td>Boolean inverse</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>*</code></td><td>Multiplication</td></tr>
+<tr><td><code>/</code></td><td>Division</td></tr>
+<tr><td><code>Mod</code></td><td>Modulus</td></tr>
+<tr><td><code>Shl</code></td><td>Bitwise shift left</td></tr>
+<tr><td><code>Shr</code></td><td>Bitwise shift left (signed)</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>+</code></td><td>Addition</td></tr>
+<tr><td><code>-</code></td><td>Subtraction</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>&</code></td><td>Bitwise 'and'</td></tr>
+<tr><td><code>~</code></td><td>Bitwise 'xor'</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>|</code></td><td>Bitwise 'or'</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>=</code></td><td>Equals</td></tr>
+<tr><td><code>&lt;</code></td><td>Less than</td></tr>
+<tr><td><code>&gt;</code></td><td>Greater than</td></tr>
+<tr><td><code>&lt;=</code></td><td>Less than or equals</td></tr>
+<tr><td><code>&gt;=</code></td><td>Greater than or equals</td></tr>
+<tr><td><code>&lt;&gt;</code></td><td>Not equals</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>And</code></td><td>Condititonal 'and'</td></tr>
+<p>
+<tr><td colspan=2>&nbsp;</td></tr>
+<p>
+<tr><td><code>Or</code></td><td>Conditional 'or'</td></tr>
+<p>
+</table>
+<p>
+Operators are grouped by priority.
+<p>
+<h3>Balancing argument types</h3>
+<p>
+When performing binary arithmetic (*, /, Mod, +, -) or comparison operations (=, <, >, <=, >=, <>), operator arguments are 'balanced' according to the following rules:
+<p>
+<ul><li>If either operand is not string, float or int, then error,</li>
+<p>
+<li>else if either operand is a string, then the balanced type is string,</li>
+<p>
+<li>else if either operand is a float, then the balanced type is float,</li>
+<p>
+<li>else the balanced type is int.</li>
+<p>
+</ul>In the case of arithmetic operations, arguments are first implicitly converted to the balanced type if necessary, and the result is also of the balanced type.
+<p>
+In the case of comparison operations, arguments are first implicitly converted to the balanced type if necessary, and the result is boolean.
+<p>
+The only valid arithmetic operation that can be performed on strings is addition, which performs string concatentation on the arguments.
+<p>
+<h3>Conditional operators</h3>
+<p>
+The arguments of conditional operations (And, Or) are first converted to boolean if necessary and the result is boolean.
+<p>
+In the case of Or, if the left-hand-side expression evaluates to true, the right-hand-side expression is not evaluated.  
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>If</code><code class=d>&nbsp;</code><code class=i>car</code><code class=d>&lt;&gt;</code><code class=k>Null</code><code class=d>&nbsp;</code><code class=k>Or</code><code class=d>&nbsp;</code><code class=i>GetSpeed</code><code class=d>()&gt;</code><code class=l>10</code><code class=d>&nbsp;</code><code class=i>Then...</code><br>
+</div>
+<p>
+In the above example, if car is not Null, then the right-hand-side of the Or is not evaluated - ie: the GetSpeed function is never called.
+<p>
+In the case of And, if the left-hand-side expression evaluates to false, the right-hand-side expression is not evaluated.  
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>If</code><code class=d>&nbsp;</code><code class=i>enemies.Count</code><code class=d>&nbsp;&gt;&nbsp;</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>HasEnemyInSight</code><code class=d>()&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;...</code><br>
+</div>
+<p>
+In the above example, if enemies.Count is <= 0, then the right-hand-side of the And is not evaluated - ie: the hasEnemyInSight function is never called.
+<p>
+<h3>Bitwise operators</h3>
+<p>
+When performing bitwise (Shl Shr & | ~) operations, arguments are first implicitly converted to integers if necessary before the operation is performed. The result is also an integer.
+<p>
+<h3>Implicit conversions</h3>
+<p>
+Implicit conversions are automatic conversions performed when assigning a value to a variable, passing parameters to a function, returning a value from a function or when balancing operator operands.
+<p>
+Monkey supports the following implicit conversions:
+<p>
+<table class="c">
+<tr><th>Source type</th><th>Target type</th><th>Notes</th></tr>
+<tr><td>Boolean</td><td>Integer</td><td>Return 1 if boolean value is true, 0 if false.</td></tr>
+<tr><td>Integer</td><td>Floating point</td><td></td></tr>
+<tr><td>Integer</td><td>String</td><td></td></tr>
+<tr><td>Floating point</td><td>Integer</td><td>Value is converted by discarding fractional part.</td></tr>
+<tr><td>Floating point</td><td>String</td><td>Conversion is target dependent.</td></tr>
+<tr><td>Derived class object</td><td>Base class object</td><td>Upcast operation.</td></tr>
+</table>
+<p>
+<h3>Explicit conversions</h3>
+<p>
+Explicit conversions are conversions from one type to another type which can be performed manually by the programmer .
+<p>
+The syntax for performing an explicit conversion is: <i>TargetType</i> <b>(</b> <i>Expression</i> <b>)</b>
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>energyFloat</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;=&nbsp;</code><code class=l>120.1000002001</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>energyInt</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=k>Int</code><code class=d>(</code><code class=i>energyFloat</code><code class=d>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Is 120 now</code><br>
+</div>
+<p>
+You can perform the following explicit conversions in Monkey:
+<p>
+<table class="c">
+<tr><th>Source type</th><th>Target type</th><th>Notes</th></tr>
+<tr><td>Integer</td><td>Boolean</td><td>Result is true if source<>0, else false.</td></tr>
+<tr><td>Floating point</td><td>Boolean</td><td>Result is true if source<>0.0, else false.</td></tr>
+<tr><td>Array</td><td>Boolean</td><td>Result is true if source.Length<>0, else false.</td></tr>
+<tr><td>Object</td><td>Boolean</td><td>Result is true if source<>Null, else false.</td></tr>
+<tr><td>String</td><td>Boolean</td><td>Result is true if source<>"", else false.</td></tr>
+<tr><td>String</td><td>Integer</td><td>Conversion is target dependant.</td></tr>
+<tr><td>String</td><td>Floating point</td><td>Conversion is target dependant.</td></tr>
+<tr><td>Base class object</td><td>Derived class object</td><td>Result is null if source is not a superclass of derived class.</td></tr>
+</table>
+<p>
+<p>
+In some circumstances, Monkey will automatically perform an explicit conversion of a non-bool value to bool for you. This will occur when evaluating an expression for use with the If and While statements; the Until part of a Repeat loop; and when evaluating the arguments for the Not, Or and And operators. This allows you to use 'shortcut' code such as: If x Then y without the need to compare x with 0, "", [] or null.
+<p>
+<h3>Boxing and unboxing conversions</h3>
+<p>
+A 'box' object is an object designed to contain a single primitive int, float or string value. The process of placing a value into a box object is known as 'boxing', while extracting a value from an object is known as 'unboxing'. To help with writing box objects, Monkey provides some simple features for boxing and unboxing values:
+<p>
+<ul><li>An int, float or string value will be automatically converted to a new box object if that object provides a suitable New( Int ), New( Float ) or New( String ) constructor.</li>
+<p>
+<li>An object will be automatically converted to an int, float or string value if that object provides a suitable To:Int(), ToFloat:Float() or ToString:String() method.</li>
+<p>
+</ul>For example, here is a simple box class designed to hold an integer value:
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>IntBox</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>Int</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>(&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Self.value</code><code class=d>=</code><code class=i>value</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>ToInt</code><code class=d>:</code><code class=k>Int</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=i>value</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>box</code><code class=d>:</code><code class=i>IntBox</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>box</code><code class=d>=</code><code class=l>10</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>t</code><code class=d>:</code><code class=k>Int</code><code class=d>=</code><code class=i>box</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>t</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<a name="statements">
+<h2>Statements</h2>
+</a>
+<p>
+Program statements may only appear within method or function declarations.
+<p>
+A ; character may optionally appear after any statement, and multiple statements may be placed on the same source code line if separated by the ; character.
+<p>
+<h3>If statement</h3>
+<p>
+The If statement allows you to conditionally execute a block of statements depending on the result of a series of boolean expressions.
+<p>
+The first boolean expression that evaluates to true will cause the associated block of statements to be executed. No further boolean expressions will be evaluated.
+<p>
+If no boolean expression evaluates to true, then the final else block will be executed if present.
+<p>
+The syntax for the If statement is:
+<p>
+<b>If</b> <i>Expression</i> [ <b>Then</b> ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>ElseIf</b> <i>Expression</i> [ <b>Then</b> ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>Else</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>EndIf</b>
+<p>
+There may be any number of ElseIf blocks, or none. The final Else block is optional.
+<p>
+<b>End</b> or <b>End If</b> may be used instead of <b>EndIf</b>, and <b>Else If</b> may be used instead of <b>ElseIf</b>.
+<p>
+In addtion, a simple one line version of If is also supported:
+<p>
+<b>If</b> <i>Expression</i> [ <b>Then</b> ] <i>Statement</i> [ <b>Else</b> <i>statement</i> ]
+<p>
+<h3>The Select statement</h3>
+<p>
+The Select statement allows you to execute a block of statements depending on a series of comparisons.
+<p>
+The first comparison to produce a match will cause the associated block of statements to be executed.
+<p>
+If no comparisons produce a match, then the final default block will be executed if present.
+<p>
+The syntax for the Select statement is:
+<p>
+<b>Select</b> <i>Expression</i><br>
+<b>Case</b> <i>Expression</i> [ <b>,</b> <i>Expression</i>... ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>Default</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>End</b> [ <b>Select</b> ]
+<p>
+There may be any number of Case blocks, or none. The final Default block is optional. If the default block is present, it must appear after all Case blocks.
+<p>
+<h3>While loop</h3>
+<p>
+The While loop allows you to execute a block of statements repeatedly while a boolean expression evaluates to true.
+<p>
+Note that a While loop may never actually execute any of it's statements if the expression evaluates to false when the loop is entered.
+<p>
+The syntax for the While loop is:
+<p>
+<b>While</b> <i>Expression</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>Wend</b>
+<p>
+<b>End</b> or <b>End While</b> may be used instead of <b>Wend</b>.
+<p>
+Exit and Continue may be used within a While loop to abruptly terminate or continue loop execution.
+<p>
+<h3>Repeat loop</h3>
+<p>
+Like the While loop, the Repeat loop also allows you to execute a block of statement repeatedly while a boolean expression evaluates to true.
+<p>
+However, unlike a While loop, a Repeat loop is guaranteed to execute at least once, as the boolean expression is not evaluated until the end of the loop.
+<p>
+The syntax for Repeat/Until loops is:
+<p>
+<b>Repeat</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>Until</b> <i>Expression</i>
+<p>
+Or...
+<p>
+<b>Repeat</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>Forever</b>
+<p>
+Exit and Continue may be used within a While loop to abruptly terminate or continue loop execution.
+<p>
+<h3>Numeric For loop</h3>
+<p>
+A numeric For loop will continue executing until the value of a numeric index variable reaches an exit value.
+<p>
+The index variable is automatically updated every loop iteration by adding a constant step value.
+<p>
+The syntax for a numeric For loop is:
+<p>
+<b>For</b> [ <b>Local</b> ] <i>IndexVariable</i> <b>=</b> <i>FirstValue</i> <b>To</b> | <b>Until</b> <i>LastValue</i> [ <b>Step</b> <i>StepValue</i> ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>Next</b>
+<p>
+<b>End</b> or <b>End For</b> may be used instead of <b>Next</b>.
+<p>
+If present, Local will create a new local index variable that only exists for the duration of the loop. In addition, IndexVariable must include the variable type, or := must be used instead of = to implicitly set the variable's type.
+<p>
+If Local is not present, IndexVariable must be a valid, existing variable.
+<p>
+The use of To or Until determines whether LastValue should be inclusive or exclusive.
+<p>
+If To is used, the loop will exit once the index variable is greater than LastValue (or less than if StepValue is negative).
+<p>
+If Until is used, the loop will exit once the index variable is greater than or equal to LastValue (or less than or equal to if StepValue is negative).
+<p>
+If omitted, StepValue defaults to 1.
+<p>
+Exit and Continue may be used within a numeric For loop to abruptly terminate or continue loop execution.
+<p>
+<h3>For EachIn loop</h3>
+<p>
+A For EachIn loop allows you to iterate through the elements of a collection.
+<p>
+A collection is either an array, a string, or a specially designed object.
+<p>
+The syntax for a For EachIn loop is:
+<p>
+<b>For</b> [ <b>Local</b> ] <i>IndexVariable</i> <b>=</b> <b>EachIn</b> <i>Collection</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>Next</b>
+<p>
+<b>End</b> or <b>End For</b> may be used instead of <b>Next</b>.
+<p>
+If present, <b>Local</b> will create a new local index variable that only exists for the duration of the loop. In addition, IndexVariable must include the variable type, or := must be used instead of = to implicitly set the variable's type.
+<p>
+If Local is not present, IndexVariable must be a valid, existing variable.
+<p>
+If Collection is an array, the loop will iterate through each element of the array, and the type of the index variable must match the element type of the array.
+<p>
+If Collection is a string, the loop will iterate through each each character code of the string, and the type of the index variable must be numeric.
+<p>
+If Collection is an object, it must provide the following method:
+<p>
+<div class=pretty>
+<code class=k>Method</code><code class=d>&nbsp;</code><code class=i>ObjectEnumerator</code><code class=d>:</code><code class=k>Object</code><code class=d>()</code><br>
+</div>
+<p>
+The object returned by this method must itself provide the following methods:
+<p>
+<div class=pretty>
+<code class=k>Method</code><code class=d>&nbsp;</code><code class=i>HasNext</code><code class=d>:</code><code class=k>Bool</code><code class=d>()</code><br>
+<code class=k>Method</code><code class=d>&nbsp;</code><code class=i>NextObject</code><code class=d>:</code><code class=k>Object</code><code class=d>()</code><br>
+</div>
+<p>
+This allows you to build 'collection' style objects, such as the List and Map classes included in the standard Monkey modules that can be iterated through using For EachIn loops.
+<p>
+<h3>Exit and Continue</h3>
+<p>
+<b>Exit</b> can be used within While, Repeat and For loops to abruptly exit the loop before the loop termination condition has been met.
+<p>
+<b>Continue</b> can be used within While, Repeat and For loops to force the loop to abruptly skip to the next loop iteration, skipping over any statements that may be remaining in the current loop iteration.
+<p>
+<h3>Assignment statements</h3>
+<p>
+An assignment statement modifies a variable's value, and has the syntax:
+<p>
+<i>VarExpression</i> <i>Operator</i> <i>Expression</i>
+<p>
+Where VarExpression is an expression that evaluates to a variable, and Operator is one of the following:
+<p>
+<b>=</b><br>
+**=*<br>
+<b>/=</b><br>
+<b>Shl=</b><br>
+<b>Shr=</b><br>
+<b>Mod=</b><br>
+<b>+=</b><br>
+<b>-=</b><br>
+<b>&=</b><br>
+<b>~=</b><br>
+<b>|=</b><br>
+<p>
+The <b>=</b> operator is used for plain assignment, while the remaining operators are used for update assignments.
+<p>
+<h3>Expression statements</h3>
+<p>
+You may also use certain expressions as program statements. These are:
+<p>
+<ul><li>Function or method call expressions.</li>
+<p>
+<li>New expressions.</li>
+<p>
+</ul><a name="functions">
+<h2>Functions</h2>
+</a>
+<p>
+A function is a self contained block of statements that can be called (or invoked) repeatedly from elsewhere in the program. Functions can also be passed parameters and return a result.
+<p>
+The syntax for declaring a function is:
+<p>
+<b>Function</b> <i>Identifier</i> <b>:</b> <i>ReturnType</i> <b>(</b> <i>Parameters</i> <b>)</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>End</b> [ <b>Function</b> ]
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Eat</code><code class=d>:</code><code class=k>Void</code><code class=d>(&nbsp;</code><code class=i>amount</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;...</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Parameters is a comma separated sequence of function parameters:
+<p>
+<i>Identifier</i> <b>:</b> <i>Type</i> [ <b>=</b> <i>InitExpression</i> ]
+<p>
+Or...
+<p>
+<i>Identifier</i> <b>:=</b> <i>InitExpression</i>
+<p>
+If you provide an InitExpression when declaring a function parameter, this means that the parameter has a default value and that the parameter can be optionally omitted when the function is called.
+<p>
+Once you have declared a function, it can be called with the syntax: 
+<p>
+<b>FunctionIdentifier</b> <b>(</b> <i>Arguments</i> <b>)</b> 
+<p>
+where Arguments is a comma separated sequence of expressions.
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Sum</code><code class=d>:</code><code class=k>Int</code><code class=d>(&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Int</code><code class=d>,</code><code class=i>y</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>+</code><code class=i>y</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>Sum</code><code class=d>(&nbsp;</code><code class=l>10</code><code class=d>,</code><code class=l>20</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Here is an example of using default parameters:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Sum</code><code class=d>(&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Int</code><code class=d>=</code><code class=l>0</code><code class=d>,</code><code class=i>y</code><code class=d>:</code><code class=k>Int</code><code class=d>=</code><code class=l>0</code><code class=d>,</code><code class=i>z</code><code class=d>:</code><code class=k>Int</code><code class=d>=</code><code class=l>0</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>+</code><code class=i>y</code><code class=d>+</code><code class=i>z</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>Sum</code><code class=d>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'same as calling Sum( 0,0,0 )</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>Sum</code><code class=d>(&nbsp;</code><code class=l>10</code><code class=d>,</code><code class=l>20</code><code class=d>&nbsp;)&nbsp;&nbsp;</code><code class=r>'same as calling Sum( 10,20,0 )</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>Sum</code><code class=d>(&nbsp;</code><code class=l>10</code><code class=d>,,</code><code class=l>30</code><code class=d>&nbsp;)&nbsp;</code><code class=r>'same as calling Sum( 10,0,30 )</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<h3>Function overloading</h3>
+<p>
+Functions can also be overloaded. This means that multiple declarations can share the same name, as long as they each have different parameters. Methods can be overloaded in exactly the same way as functions.
+<p>
+When a function is called, Monkey looks at the number and type of the parameters used in the call and looks for a matching overloaded version to use. For example:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=l>10</code><code class=d>&nbsp;)&nbsp;&nbsp;&nbsp;</code><code class=r>'calls first version as 10 is of type Int</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=l>10.0</code><code class=d>&nbsp;)&nbsp;</code><code class=r>'calls second version as 10.0 is of type Float</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=l>"10"</code><code class=d>&nbsp;)&nbsp;</code><code class=r>'calls third version as "10" is of type String</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+The number of parameters can also be used to differentiate between overloaded functions. For example:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Set</code><code class=d>(&nbsp;</code><code class=i>x</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Set</code><code class=d>(&nbsp;</code><code class=i>x</code><code class=d>,&nbsp;</code><code class=i>y</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Set</code><code class=d>(&nbsp;</code><code class=l>10</code><code class=d>&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'calls first version</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Set</code><code class=d>(&nbsp;</code><code class=l>10</code><code class=d>,</code><code class=l>20</code><code class=d>&nbsp;)&nbsp;</code><code class=r>'calls second version as it has two parameters</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+When determining which overloaded version to actually use, Monkey uses the following logic:
+<p>
+<ul><li>If an overloaded version is found that is an exact match for the number and type of function call parameters, that version is used. Note that if the function call involves the use of any default parameters, it is not considered an exact match.</li>
+<p>
+<li>Otherwise, if there is exactly one overloaded version that can be called by implicitly converting  the function call parameters, that version is used.</li>
+<p>
+<li>Otherwise, an error is generated. In this case, you will need to manually cast some or all of the function call parameters to create an exact match.</li>
+<p>
+</ul>For example:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=l>10</code><code class=d>&nbsp;)&nbsp;&nbsp;&nbsp;</code><code class=r>'OK, calls first version</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=l>"10"</code><code class=d>&nbsp;)&nbsp;</code><code class=r>'OK, calls second version</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=l>10.0</code><code class=d>&nbsp;)&nbsp;</code><code class=r>'error - unable to determine which version to call</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+The error is caused by the fact that the function call parameter  - '10.0' - is a floating point value and can therefore be implicitly converted to either an integer or a string, so Monkey cannot decide which overload to use.
+<p>
+To solve this problem, you would need to explicitly cast the parameter to either an integer or a string to give Monkey a 'hint' about which version you want used.  For example:
+<p>
+<div class=pretty>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Add</code><code class=d>(&nbsp;</code><code class=k>Int</code><code class=d>(</code><code class=l>10.0</code><code class=d>)&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Casts the float to an integer, calls first version</code><br>
+</div>
+<p>
+<a name="methods">
+<h2>Methods</h2>
+</a>
+<p>
+A Method is a function that is bound to a class. A method has implicit access to all members of its class, such as fields, globals and other methods and functions..
+<p>
+The syntax for declaring a method is similar to that for declaring a function:
+<p>
+<b>Method</b> <i>Identifier</i> <b>:</b> <i>ReturnType</i> <b>(</b> <i>Parameters</i> <b>)</b> [ <b>Property</b> ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Statements...</i><br>
+<b>End</b> [ <b>Method</b> ]
+<p>
+Within a method you can also use the special <b>Self</b> and <b>Super</b> variables:
+<p>
+<ul><li><b>Self</b> may be used within a method to access the object the method is associated with.</li>
+<p>
+<li><b>Super</b> may be used within a method to call 'super class' methods.</li>
+<p>
+</ul>The optional <b>Property</b> keyword can be used to declare a 'property method'.
+<p>
+A property method with 0 parameters can be invoked without any brackets. A property method with 1 parameter can be invoked be using it as the left-hand-side of an assignment statement, in which case the right-hand-side expression of the assignment is passed to the property method.
+<p>
+You can therefore create methods that behave like fields, but actually execute code when they are read or written. You can use method overloading to provide both read and write property methods, or provide just a read method, or even just a write method.
+<p>
+It is illegal to declare a property method with 2 or more parameters.
+<p>
+<a name="classes">
+<h2>Classes</h2>
+</a>
+<p>
+A class is a kind of 'blueprint' for creating objects at runtime.
+<p>
+The syntax for declaring a class is:
+<p>
+<b>Class</b> Identifier [ < Parameters > ] [ <b>Extends</b> Class ] [ <b>Implements</b> Interfaces ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Declarations...</i><br>
+<b>End</b> [ <b>Class</b> ]
+<p>
+Classes can contain field, method, constant, global and function declarations.
+<p>
+If no base class is specified using Extends, the class defaults to extending the built in Object class.
+<p>
+The Implements keyword is used to implement interfaces, and must be followed by a comma separated list of interface names. Please refer to the Interfaces section for more on interfaces. 
+<p>
+A class is also a valid scope, and any constants, globals and functions declared within a class can be accessed outside of the class using the scope member access operator '.'. For example:
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>C</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;</code><code class=k>Global</code><code class=d>&nbsp;</code><code class=i>T</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>C.T</code><code class=d>=</code><code class=l>10</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Once you have declared a class, you can create objects of that class at runtime using the New operator. For example:
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyClass</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>,</code><code class=i>y</code><code class=d>,</code><code class=i>z</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>myObject</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyClass</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>myObject.x</code><code class=d>=</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>myObject.y</code><code class=d>=</code><code class=l>20</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>myObject.z</code><code class=d>=</code><code class=l>30</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<h3>Constructors</h3>
+<p>
+Constructors are special methods that are called each time an object is created with New.
+<p>
+To declare a constructor, you simply declare a class method and name it New.
+<p>
+Constructors can take parameters and can be overloaded.
+<p>
+To invoke a super class constructor within a constructor, use the special <b>Super</b> variable.
+<p>
+<a name="generics">
+<h2>Generic classes</h2>
+</a>
+<p>
+Generic classes allow you to write code that is not specific to a single data type.
+<p>
+A generic class is declared in a similar way to a normal class, only with an additional set of 'type parameters' enclosed within <b><</b> and <b>></b>.
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Pointer</code><code class=d>&lt;</code><code class=i>T</code><code class=d>&gt;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Set</code><code class=d>(&nbsp;</code><code class=i>data</code><code class=d>:</code><code class=i>T</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>_data</code><code class=d>=</code><code class=i>data</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Get</code><code class=d>:</code><code class=i>T</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=i>_data</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Private</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>_data</code><code class=d>:</code><code class=i>T</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+<p>
+Type parameters can be any valid identifier. Here, T is such a type parameter.
+<p>
+Within the declaration of a generic class, type parameters may be used anywhere a type is normally expected, for example, when declaring variables and function return types, and when creating new objects or arrays.
+<p>
+When it comes to actually using a generic class, you must provide actual types to be used in place of type parameters. Types parameters can be of any valid type, including int, float, string and array.
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Actor</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>pointer</code><code class=d>:</code><code class=i>Pointer</code><code class=d>&lt;</code><code class=i>Actor</code><code class=d>&gt;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>pointer</code><code class=d>=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Pointer</code><code class=d>&lt;</code><code class=i>Actor</code><code class=d>&gt;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>pointer.Set</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Actor</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>actor</code><code class=d>:=</code><code class=i>pointer.Get</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+The syntax Pointer&lt;Actor&gt; indicates an 'instantiation' of the generic class Pointer&lt;T&gt;.
+<p>
+This is in itself a unique class, so each time you use the Pointer&lt;T&gt; class with a different type for T, you are actually creating a whole new class.
+<p>
+Generic classes are commonly used for writing container classes such as lists, stacks and so on, and the standard Monkey modules provide a set of simple generic container classes.
+<p>
+<a name="interfaces">
+<h2>Interfaces</h2>
+</a>
+<p>
+An interface is similar to a class, except that it can only contain constants and abstract methods.
+<p>
+Classes can implement an interface using the Implements keyword in the class declaration.
+<p>
+Classes that implement an interface must declare each method declared in the interface.
+<p>
+An interface can be used where ever a class is expected, for example when declaring the types of variables, or function return types. An interface cannot however be used with New.
+<p>
+An Interface can also optionally extend existing interfaces, in which cases all methods in all extended interfaces must be declared by any implementing classes.
+<p>
+Interfaces can not be generic.
+<p>
+The syntax for declaring an interface is:
+<p>
+<b>Interface</b> <i>Identifier</i> [ <b>Extends</b> <i>Interfaces</i> ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Declarations...</i><br>
+<b>End</b> [ <b>Interface</b> ]
+<p>
+All methods declared inside an interface are automatically treated as abstract, and can therefore have no 'body'.
+<p>
+Here is an example of using interfaces:
+<p>
+<div class=pretty>
+<code class=k>Interface</code><code class=d>&nbsp;</code><code class=i>Moveable</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Move</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Interface</code><code class=d>&nbsp;</code><code class=i>Drawable</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Draw</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Actor</code><code class=d>&nbsp;</code><code class=k>Implements</code><code class=d>&nbsp;</code><code class=i>Moveable</code><code class=d>,</code><code class=i>Drawable</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Move</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Actor.Move()"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Draw</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Actor.Draw()"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Move</code><code class=d>(&nbsp;</code><code class=i>moveable</code><code class=d>:</code><code class=i>Moveable</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>moveable.Move</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Draw</code><code class=d>(&nbsp;</code><code class=i>drawable</code><code class=d>:</code><code class=i>Drawable</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>drawable.Draw</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>actor</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Actor</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Move</code><code class=d>&nbsp;</code><code class=i>actor</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Draw</code><code class=d>&nbsp;</code><code class=i>actor</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<p>
+<a name="exceptions">
+<h2>Exceptions</h2>
+</a>
+<p>
+Exceptions are special objects that can be 'thrown' to inform your program of unusual or abnormal behavior.
+<p>
+By placing code inside a 'try' block, you can catch thrown exceptions with a corresponding 'catch' block. For example...
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Try</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Throw</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=k>Throwable</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Where&nbsp;am&nbsp;I?"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Catch</code><code class=d>&nbsp;</code><code class=i>ex</code><code class=d>:</code><code class=k>Throwable</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Caught&nbsp;a&nbsp;Throwable!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Try this with and without the throw statement.
+<p>
+Throw statements may appear anywhere in your application, not just inside a try block. When an object is thrown, it is thrown to the most recently executed try block capable of catching the object.
+<p>
+The class of objects used with throw and catch must extend the special built-in class Throwable. The Throwable class itself simply extends Object and provides no new methods or fields, so you may wish to extend Throwable to create your own exception classes with more functionality.
+<p>
+You can also catch multiple classes of exception object per try block, for example:
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Ex1</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=k>Throwable</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Ex2</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=k>Throwable</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>:=</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Try</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;(</code><code class=i>i</code><code class=d>&nbsp;&amp;&nbsp;</code><code class=l>1</code><code class=d>)&nbsp;</code><code class=k>Throw</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Ex1</code><code class=d>&nbsp;</code><code class=k>Else</code><code class=d>&nbsp;</code><code class=k>Throw</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Ex2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Catch</code><code class=d>&nbsp;</code><code class=i>ex</code><code class=d>:</code><code class=i>Ex1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Caught&nbsp;an&nbsp;ex1!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Catch</code><code class=d>&nbsp;</code><code class=i>ex</code><code class=d>:</code><code class=i>Ex2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Caught&nbsp;an&nbsp;ex2!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+When a try block has multiple catch blocks and an exception is thrown, the first catch block capable of handling the exception is executed. If no suitable catch block can be found, the exception is passed to the next most recently executed try block, and so on.
+<p>
+If no catch block can be found to catch an exception, a runtime error occurs and the application is terminated.
+<p>
+<a name="modules">
+<h2>Modules</h2>
+</a>
+<p>
+A Monkey module corresponds to a single Monkey source file, and provides a named scope for the constants, globals, functions and classes declared in that file. Every Monkey source file declares a module, and every module has an associated source file.
+<p>
+The name of the module scope is the same as the name of the file (minus the directory path and file extension), so the names of Monkey source files must also be valid Monkey identifiers.
+<p>
+It is also strongly recommend that file/module names be completely lowercase - both to prevent any issues with cased/uncased filesystems and to provide consistency with the standard module set.
+<p>
+One module may import another using the import statement. All import statements must appear at the top of a module before any declarations. The syntax for an import statement is:
+<p>
+<b>Import</b> <i>ModulePath</i>
+<p>
+Where ModulePath describes the file location of the Monkey module to import. This must be a sequence of 'dot' separated identifiers, and is treated as a relative filesystem path with dots representing directory separators. The last component in the path represents either an actual .monkey source file, or a directory containing a .monkey source file of the same name.
+<p>
+Given a module's relative path, Monkey will look for an actual module to import in the following locations (and in this order):
+<p>
+<ul><li>The current directory - ie: the directory the importing file is in.</li>
+<p>
+<li>The project directory - ie: the directory the main source file is in. This is the source file that was passed to the 'trans' compiler, and that contains the declaration for Main().</li>
+<p>
+<li>The modules directory - ie: the directory named 'modules' in the Monkey distribution.</li>
+<p>
+</ul>For example, given the following import directive:
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>myutil.mycolor</code><br>
+</div>
+<p>
+Monkey will first look for the files myutil/mycolor.monkey and myutil/mycolor/mycolor.monkey in the current directory.
+<p>
+(Note: the reason modules are allowed to be represented as either a single .monkey file, or as a .monkey file within a directory of the same name is for pure convenience. Sometimes it's more convenient for a module to consist of a single file, while sometimes it's more convenient for a module to have its own directory.)
+<p>
+If either is found, it is imported into the current module and the search ends.
+<p>
+If both are found, an error is generated.
+<p>
+If neither is found the search continues with the project directory and, failing that, the modules directory.
+<p>
+If the module is not found anywhere, an error is generated.
+<p>
+Once successfully imported, the importing module can access the declarations made in the imported module, by using the imported module's name as a scope.
+<p>
+Here is a simple import example:
+<p>
+<div class=pretty>
+<code class=r>'----- file1.monkey -----</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file2</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'after this, file2 can be used as a scope</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>file2.X</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'access global X in file2 module</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>file2.Test</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'access function Test in file2 module</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=r>'---- file2.monkey ----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>X</code><code class=d>:=</code><code class=l>1</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Test</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"file2.Test"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+When accessing identifiers in imported modules, Monkey allows you to omit the module scope as long as there are no 'clashes' between identifiers in multiple modules. For example:
+<p>
+<div class=pretty>
+<code class=r>'----- file1.monkey ----</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file2</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file3</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>X</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'OK, accesses file2.X</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>Y</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'OK, accesses file3.Y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Test</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'ERROR! Which Test? file2.Test or file3.Test?</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>file2.Test</code><code class=d>&nbsp;&nbsp;</code><code class=r>'OK, I now know which module to get Test from</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=r>'----- file2.monkey  -----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>X</code><code class=d>:=</code><code class=l>1</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Test</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"file2.Test"</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=r>'----- file3.monkey -----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>Y</code><code class=d>:=</code><code class=l>2</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Test</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"file3.Test"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+By default, any imports made by a module are automatically made available to importers of that module. That is, if module X imports module Y, and module Y imports module Z, the result is that module X effectively imports module Z.
+<p>
+However, if an import is declared to be private, that import is NOT made available. For example:
+<p>
+<div class=pretty>
+<code class=r>'----- file1.monkey -----</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file2</code><br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>X</code><code class=d>&nbsp;&nbsp;</code><code class=r>'OK, accesses file2.X</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>Y</code><code class=d>&nbsp;&nbsp;</code><code class=r>'OK, accesses file3.Y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>Z</code><code class=d>&nbsp;&nbsp;</code><code class=r>'ERROR! can't see file.Z</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=r>'----- file2.monkey -----</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file3</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Public import: When you import file2, you also import file3</code><br>
+<br>
+<code class=k>Private</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file4</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Private - ie: internal use only. Only file2 can access file4.  file1 cannot access file4.</code><br>
+<br>
+<code class=k>Public</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>X</code><code class=d>:=</code><code class=l>1</code><br>
+<br>
+<code class=r>'----- file3.monkey -----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>Y</code><code class=d>:=</code><code class=l>2</code><br>
+<br>
+<code class=r>'----- file4.monkey -----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>Z</code><code class=d>:=</code><code class=l>3</code><br>
+</div>
+<p>
+Modules can be stored in a directory hierarchy and imported using a 'dotted' module path, for example:
+<p>
+<div class=pretty>
+<code class=r>'----- file1.monkey -----</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file2</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>util.file3</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>file2.X</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>file3.Y</code><br>
+<code class=k>End</code><br>
+<br>
+<br>
+<code class=r>'----- util/file2.monkey ----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>X</code><code class=d>:=</code><code class=l>1</code><br>
+<br>
+<code class=r>'----- util/file3.monkey -----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>Y</code><code class=d>:=</code><code class=l>2</code><br>
+</div>
+<p>
+Note that the directory path (in this case, 'util') is not used in any way except to locate the module. The module name is still just 'file3' - not 'util.file3'.
+<p>
+<h3>The Alias directive</h3>
+<p>
+The Alias directive allows you to assign a local name to a constant, global, function or class declared in another module. This can be used to create 'shortcuts' for clashing identifiers.
+<p>
+The syntax for Alias is:
+<p>
+<b>Alias</b> <i>Identifier</i> <b>=</b> <i>ModulePath</i> <b>.</b> <i>Identifier</i>
+<p>
+Alias directives must appear in the 'import' section of a module, before any code.
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=r>'----- file1.monkey -----</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file2</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>file3</code><br>
+<br>
+<code class=k>Alias</code><code class=d>&nbsp;</code><code class=i>T</code><code class=d>=</code><code class=i>file2.T</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'which 'T' to use</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>T</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Prints '1'</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=r>'----- file2.monkey -----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>T</code><code class=d>:=</code><code class=l>1</code><br>
+<br>
+<code class=r>'----- file3.monkey -----</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>T</code><code class=d>:=</code><code class=l>2</code><br>
+</div>
+<p>
+<a name="visibility">
+<h2>Public and Private</h2>
+</a>
+<p>
+The Public and Private directives are used to control the visibility of subsequent declarations in a module or class.
+<p>
+If the Public directive is used in the main body of a module, all subsequent declarations will be public, and will be visible outside of the current module.
+<p>
+If the Private directive is used in the main body of a module, all subsequent declarations will be private and will not be visible outside of the current module.
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=k>Private</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>,</code><code class=i>y</code><code class=d>,</code><code class=i>z</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'These are private to the current module</code><br>
+<br>
+<code class=k>Public</code><br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>P</code><code class=d>,</code><code class=i>Q</code><code class=d>,</code><code class=i>R</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'These can be used by any module</code><br>
+</div>
+<p>
+When used inside a class declaration, Public and Private work in a similar way to control the visibility of subsequent member declarations. For example:
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyClass</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Private</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>,</code><code class=i>y</code><code class=d>,</code><code class=i>z</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'these are NOT visible outside of this module.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Public</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>P</code><code class=d>,</code><code class=i>Q</code><code class=d>,</code><code class=i>R</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'these ARE visible outside of this module.</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Note that private class members are not private to the class, but to the entire module. This means that code outside of the class but within the same module can still access class private members.
+<p>
+<a name="extern">
+<h2>External declarations</h2>
+</a>
+<p>
+The Extern directive is used to connect Monkey code to non-Monkey code. It lets you mix Monkey code (to be translated into the target platform language) with native target platform code.
+<p>
+When the Extern directive is used in the main body of a module, all subsequent global, function and class declarations will be treated as external declarations.
+<p>
+External declarations are assumed to be implemented elsewhere in native code, and as such may not contain a 'body'.
+<p>
+In the case of external global variables, this means the global may not be initialized - it is assumed to be initialized by native code.
+<p>
+In the case of external functions, this means the function may not contain any code, and must not be terminated with an End directive.
+<p>
+In the case of external classes, this means any globals or methods declared in the class may not contain a 'body' either.
+<p>
+External declarations may however be assigned a 'symbol' in the form of a string literal. This is the native symbol to be used by the Monkey translator when the declaration is referenced by Monkey code.
+<p>
+By default, external declarations are public. You can use Extern Private to prevent external declarations from being visible outside the current module.
+<p>
+Here are some examples of using extern:
+<p>
+<div class=pretty>
+<code class=k>Extern</code><br>
+<br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>ActiveDriver</code><code class=d>:</code><code class=i>Driver</code><code class=d>=</code><code class=l>"xyzActiveDriver"</code><code class=d>&nbsp;&nbsp;</code><code class=r>'Native name of this global is xyzActiveDriver</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Driver</code><code class=d>=</code><code class=l>"xyzDriver"</code><code class=d>&nbsp;&nbsp;&nbsp;</code><code class=r>'The native name of this class is 'xyzDriver'.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Method1</code><code class=d>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'By default, native name is same as declaration name - Method1 here.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Method2</code><code class=d>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'native name is Method2</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Public</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'return to public declarations</code><br>
+</div>
+<p>
+<a name="memory">
+<h2>Memory Management</h2>
+</a>
+<p>
+Monkey is a garbage collected language, and depends on the underlying target language to provide memory management.
+<p>
+Finalizers are not supported. If you need an object to be 'destroyable', you will need to add a 'Destroy' type method.
+<p>
+The garbage collector is capable of collecting cyclic data structures such as linked lists automatically.
+<p>
+The current C++ garbage collector will only collect garbage when control is returned to the OS. In the case of C++ Mojo targets such as IOS and GLFW, this occurs after any of the 'On' methods such as OnCreate, OnUpdate etc return.
+<p>
+In general, the best way to use the garbage collector is to ignore it! Although such practices as 'nulling out' object references are common, they are seldom required. 
+<p>
+But it's a good idea to monitor your apps memory requirements as you develop anyway. This will allow you to catch any memory issues, GC related or otherwise, early on.
+<p>
+<a name="preprocessor">
+<h2>The preprocessor</h2>
+</a>
+<p>
+Monkey contains a very simple built-in preprocessor based on the syntax of the Monkey If statement that allows you to enable or disable blocks of code from being generated or translated, based on certain conditions.
+<p>
+The following preprocessor directives are supported:
+<p>
+#If<br>
+#ElseIf<br>
+#Else<br>
+#End<br>
+#Rem<br>
+#Print<br>
+#Error<br>
+<p>
+Preprocessor directives must appear at the start of a line, and may be preceded by optional whitespace.
+<p>
+The #If and #Else If directives must be followed by a constant Monkey expression. If this expression evaluates to true, then code generation is enabled, otherwise it is disabled.
+<p>
+The following built in constants may be used in preprocessor expressions:
+<p>
+<table><tr><th>Constant</th><th>Description</th></tr>
+<tr><td>HOST</td><td>Host operatintg system, one of: winnt macos linux</td></tr>
+<tr><td>LANG</td><td>Target language, one of: js as cs cpp java</td></tr>
+<tr><td>TARGET</td><td>Target system, one of: ios android winrt glfw html5 flash xna psm</td></tr>
+<tr><td>CONFIG</td><td>Target build config, one of: debug release</td></tr>
+<tr><td>CD</td><td>Directory of source file being built</td></tr>
+<tr><td>MODPATH</td><td>Module being built</td></tr>
+</table><p>
+The #Rem directive is exactly the same as #If False - it unconditionally disables code generation. Note that this allows 'block rems' to be 'nested'.
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

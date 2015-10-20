@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Property </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Property</h1>
+<p>
+Declares method as property.
+<p>
+<h2>Syntax</h2>
+<p>
+Method <b>Identifier</b>: <b>ReturnType</b> ( <b>Parameters</b> ) [ <code>Property</code> ] [ Abstract ] [ Final ]<br>
+	<b>Statements...</b><br>
+End [ Method ]
+<p>
+<h2>Description</h2>
+<p>
+The Property keyword declares that a method is acting as a class property. Properties are generally used to access a single (usually private) field in a controlled fashion.
+<p>
+Unlike a standard method, a property acts as a proxy for a field, and so can be written to (and read from) using the same syntax as for a field or variable. For example, reading a property:
+<p>
+<div class=pretty>
+<code class=i>result</code><code class=d>&nbsp;=&nbsp;</code><code class=i>myobject.MyProperty</code><br>
+</div>
+<p>
+<b>Note that because it's acting like a field, no method-call brackets are required.</b>
+<p>
+Writing to a property:
+<p>
+<div class=pretty>
+<code class=i>myobject.MyProperty</code><code class=d>&nbsp;=&nbsp;</code><code class=i>value</code><br>
+</div>
+<p>
+Properties are usually declared in pairs with the same name:
+<p>
+<ul><li>a 'read' version with no parameters which reads a specific field, and;</li>
+<li>a 'write' version with a single parameter which writes to the same field.</li>
+<p>
+</ul>(In the second example above, the value being assigned is the parameter defined in the 'write' property.)
+<p>
+<b>Properties with multiple parameters cannot use this shortened syntax and must be called in the same way as a standard method.</b>
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Method.html">Method</a> | <a href="Programming_Keywords_Abstract.html">Abstract</a> | <a href="Programming_Keywords_Final.html">Final</a><br>
+<a href="Programming_Language reference.html#methods">Language reference (Methods)</a>  
+<p>
+<h2>Examples</h2>
+<p>
+<div class=pretty>
+<code class=r>' Runnable example...</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>BankAccount</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Private</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>balance</code><code class=d>:</code><code class=k>Int</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Public</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Balance</code><code class=d>&nbsp;(</code><code class=i>dollars</code><code class=d>:</code><code class=k>Int</code><code class=d>)&nbsp;</code><code class=k>Property</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>dollars</code><code class=d>&nbsp;&gt;&nbsp;</code><code class=l>1000000</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Sent&nbsp;for&nbsp;security&nbsp;check!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Else</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>balance</code><code class=d>&nbsp;=&nbsp;</code><code class=i>dollars</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Balance</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;()&nbsp;</code><code class=k>Property</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>"$"</code><code class=d>&nbsp;+&nbsp;</code><code class=i>balance</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>account</code><code class=d>:</code><code class=i>BankAccount</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>BankAccount</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>account.Balance</code><code class=d>&nbsp;=&nbsp;</code><code class=l>50</code><code class=d>&nbsp;</code><code class=r>' 00000 ' Join to trigger security check!</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>account.Balance</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

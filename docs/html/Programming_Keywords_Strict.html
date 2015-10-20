@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Strict </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Directive Strict</h1>
+<p>
+Enables monkey's Strict syntax mode.
+<p>
+<h2>Syntax</h2>
+<p>
+Strict
+<p>
+<h2>Description</h2>
+<p>
+By default, Monkey allows you to take certain shortcuts when programming. However, Monkey also offers a special Strict mode for programmers who prefer a stricter language definition.
+<p>
+The differences between the Strict and non-Strict modes are:
+<p>
+<h2>Strict mode</h2>
+<p>
+<ul><li>You must always specify the type of all variables, function return values and function parameters.</li>
+<p>
+<li>All function call parameters must be enclosed in brackets.</li>
+<p>
+<li>A function that does not return Void must end with a Return statement.</li>
+<p>
+</ul><h2>Non-Strict mode</h2>
+<p>
+<ul><li>Variable type, function return type and function parameter types can be optionally omitted. In this case they will default to Int.</li>
+<p>
+<li>Return statements can be omitted at the end of a function. In this case, a Return statement will be automatically generated that will return an appropriate default value for the function type. That is, False for bool, 0 for int and float, "" for string, [] for arrays and Null for objects.</li>
+<p>
+<li>The brackets around function call parameters are optional if the function is being used as a statement, or if the function can be called with no parameters.</li>
+<p>
+</ul>To use Strict mode, the Strict directive must be placed at the very top of your module. Note that Strict is applied on a per-module basis and that Strict and non-Strict modules can legitimately import each other.
+<p>
+<b>While syntax is shown in Strict mode, the examples in this documentation will normally be presented in non-Strict form.</b>
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Return.html">Return</a> | <a href="Programming_Keywords_Int.html">Int</a> | <a href="Programming_Keywords_Float.html">Float</a> | <a href="Modules_monkey.lang_String.html">String</a> | <a href="Programming_Keywords_Bool.html">Bool</a> | <a href="Programming_Keywords_Void.html">Void</a>
+<p>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<code class=k>Strict</code><br>
+<br>
+<code class=r>' In Strict mode...</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>:</code><code class=k>Int</code><code class=d>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' the :Int type definition is compulsory...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>(&nbsp;</code><code class=l>"Strict&nbsp;mode&nbsp;is...different!"</code><code class=d>&nbsp;)&nbsp;&nbsp;</code><code class=r>' all function calls require brackets...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>0</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' and we MUST return a value.</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<h2>Example 2</h2>
+<p>
+<div class=pretty>
+<code class=r>' Non-Strict version of first example, declaring no Return</code><br>
+<code class=r>' type, no brackets for Print statement and no Return value.</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Non-Strict&nbsp;mode&nbsp;is...forgiving!"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

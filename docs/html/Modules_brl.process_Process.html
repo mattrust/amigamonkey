@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.process.html'>brl.process</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Process </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Process</span></h1>
+
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#IsRunning'>IsRunning</a> : Bool ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.process_Process.html#Kill'>Kill</a> : Void ( exitCode:Int )</li>
+					
+						<li><a href='Modules_brl.process_Process.html#ReadStderr'>ReadStderr</a> : Int ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.process_Process.html#ReadStdout'>ReadStdout</a> : Int ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.process_Process.html#Start'>Start</a> : Void ( cmd:String )</li>
+					
+						<li><a href='Modules_brl.process_Process.html#StderrAvail'>StderrAvail</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.process_Process.html#StdoutAvail'>StdoutAvail</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.process_Process.html#Wait'>Wait</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.process_Process.html#WriteStdin'>WriteStdin</a> : Int ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Execute'>Execute</a> : String ( cmd:String )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='IsRunning'></a>
+				<div class="well well-small name"><b>Method IsRunning : Bool () Property</b></div>
+				<div class="description">
+					<p>Returns true is process is currently running.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Kill'></a>
+				<div class="well well-small name"><b>Method Kill : Void ( exitCode:Int )</b></div>
+				<div class="description">
+					<p>Kills process.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadStderr'></a>
+				<div class="well well-small name"><b>Method ReadStderr : Int ( buffer:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Reads bytes from process stderr into <b>buffer</b>.
+<p>
+Returns the number of bytes read.
+<p>
+If the process is running and no bytes are available to be read, this method will block until at least 1 byte has been read.
+<p>
+If the process has finished and no bytes are available to be read, this method will return 0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadStdout'></a>
+				<div class="well well-small name"><b>Method ReadStdout : Int ( buffer:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Reads bytes from process stdout into <b>buffer</b>.
+<p>
+Returns the number of bytes read.
+<p>
+If the process is running and no bytes are available to be read, this method will block until at least 1 byte has been read.
+<p>
+If the process has finished and no bytes are available to be read, this method will return 0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Start'></a>
+				<div class="well well-small name"><b>Method Start : Void ( cmd:String )</b></div>
+				<div class="description">
+					<p>Starts process.
+<p>
+Returns true if process started successfully.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StderrAvail'></a>
+				<div class="well well-small name"><b>Method StderrAvail : Int ()</b></div>
+				<div class="description">
+					<p>Returns the number of bytes available to be read from process stderr.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StdoutAvail'></a>
+				<div class="well well-small name"><b>Method StdoutAvail : Int ()</b></div>
+				<div class="description">
+					<p>Returns the number of bytes available to be read from process stdout.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Wait'></a>
+				<div class="well well-small name"><b>Method Wait : Int ()</b></div>
+				<div class="description">
+					<p>Waits for process to finish and returns process exit code.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='WriteStdin'></a>
+				<div class="well well-small name"><b>Method WriteStdin : Int ( buffer:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Writes bytes from <b>buffer</b> to process stdin.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Execute'></a>
+				<div class="well well-small name"><b>Function Execute : String ( cmd:String )</b></div>
+				<div class="description">
+					<p>Runs a process, waits for it to finish, and returns the process stdout output.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

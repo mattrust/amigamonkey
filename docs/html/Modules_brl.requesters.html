@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  brl.requesters </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">brl.requesters</span></h1>
+
+
+	<p>The requesters module allows you to use simple modal requesters with the glfw3 target on Mac and Windows only!
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Confirm'>Confirm</a> : Bool ( title:String, text:String, serious:Bool )</li>
+					
+						<li><a href='#Notify'>Notify</a> : Void ( title:String, text:String, serious:Bool )</li>
+					
+						<li><a href='#Proceed'>Proceed</a> : Bool ( title:String, text:String, serious:Bool )</li>
+					
+						<li><a href='#RequestDir'>RequestDir</a> : String ( title:String, dir:String="" )</li>
+					
+						<li><a href='#RequestFile'>RequestFile</a> : String ( title:String, filters:String="", save:Bool=false, file:String="" )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Confirm'></a>
+				<div class="well well-small name"><b>Function Confirm : Bool ( title:String, text:String, serious:Bool )</b></div>
+				<div class="description">
+					<p>Confirm activates a simple modal dialog requesting the user to select between YES and NO options. If the user selects YES, then Confirm returns true. Otherwise, false is returned.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Notify'></a>
+				<div class="well well-small name"><b>Function Notify : Void ( title:String, text:String, serious:Bool )</b></div>
+				<div class="description">
+					<p>Notify activates a simple modal dialog informing the user of an event. The optional <b>serious</b> flag can be used to indicate a 'critical' event.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Proceed'></a>
+				<div class="well well-small name"><b>Function Proceed : Bool ( title:String, text:String, serious:Bool )</b></div>
+				<div class="description">
+					<p>Proceed activates a simple modal dialog requesting the user to select between YES, NO and CANCEL options. If the user selects YES, then Proceed return 1. If the user selects NO, then Proceed returns 0. Otherwise, Proceed returns -1.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RequestDir'></a>
+				<div class="well well-small name"><b>Function RequestDir : String ( title:String, dir:String="" )</b></div>
+				<div class="description">
+					<p>RequestDir activates a modal directory requester dialog.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RequestFile'></a>
+				<div class="well well-small name"><b>Function RequestFile : String ( title:String, filters:String="", save:Bool=false, file:String="" )</b></div>
+				<div class="description">
+					<p>RequestFile activates a modal file requester dialog.
+<p>
+The optional <b>filters</b> string can either be a comma separated list of file extensions or, as in the following example, groups of extensions that begin with a "group:" and are separated by a semicolon. 
+<p>
+The <b>save</b> parameter can be true to create a save-style requester, or false to create a load-style requester.</p>
+					
+					
+						<p><b><a href="examples/brl_requesters_RequestFile.monkey">Example</a></b> <div class=pretty><code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>brl.requesters</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>filter</code><code class=d>:=</code><code class=l>"Image&nbsp;Files:png,jpg,bmp;Text&nbsp;Files:txt;All&nbsp;Files:*"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>file</code><code class=d>:=</code><code class=i>RequestFile</code><code class=d>(&nbsp;</code><code class=l>"Select&nbsp;graphic&nbsp;file&nbsp;to&nbsp;open"</code><code class=d>,</code><code class=i>filter</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>file</code><code class=d>&nbsp;</code><code class=i>Notify</code><code class=d>&nbsp;</code><code class=l>"Image&nbsp;file&nbsp;selected"</code><code class=d>,</code><code class=i>file</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<br>
+<code class=k>End</code><br></div></p>
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  For </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword For</h1>
+<p>
+Declares the start of a For/Next loop.
+<p>
+<h2>Syntax</h2>
+<p>
+For Local <b>IndexVar</b> := <b>start_value</b> To <b>end_value</b> [ Step <b>constant_value</b> ]<br>
+	<b>Statements...</b><br>
+Next
+<p>
+For Local <b>IndexVar</b> := <b>start_value</b> Until <b>end_value</b> [ Step <b>constant_value</b> ]<br>
+	<b>Statements...</b><br>
+Next
+<p>
+For Local <b>IndexVar</b> := Eachin <b>value_set</b><br>
+	<b>Statements...</b><br>
+Next
+<p>
+<h2>Description</h2>
+<p>
+For declares the start of a For/Next loop, allowing for iteration through a set of values or objects.
+<p>
+There are three variants of the For/Next loop, modifying the values of the index variable via the range keywords below:
+<p>
+<ul><li><code>To</code>: Iterates through the given start and end values;</li>
+<li><code>Until</code>: This variant of For/Next stops iterating before the last value in the loop, useful for iterating through zero-based arrays. (See Example 3.)</li>
+<li><code>Eachin</code>: Iterates through a set of objects or values, such as a list or array;</li>
+<p>
+</ul>In the To and Until variants, the optional Step keyword, followed by a constant value, allows control over the size of the iteration step.
+<p>
+<b>Alternatives to the closing Next keyword are End For, or simply End.</b>
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Next.html">Next</a> | <a href="Programming_Keywords_To.html">To</a> | <a href="Programming_Keywords_Eachin.html">Eachin</a> | <a href="Programming_Keywords_Until.html">Until</a>
+<p>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=i>k</code><code class=d>=</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>1000</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>k</code><br>
+<code class=k>Next</code><br>
+<br>
+<code class=r>' With optional Step</code><br>
+<br>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=i>k</code><code class=d>=</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>1000</code><code class=d>&nbsp;</code><code class=k>Step</code><code class=d>&nbsp;</code><code class=l>100</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>k</code><br>
+<code class=k>Next</code><br>
+<br>
+<code class=r>' Alternative syntax examples</code><br>
+<br>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=i>k</code><code class=d>=</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>1000</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>k</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=i>k</code><code class=d>=</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>1000</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>k</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>For</code><br>
+</div>
+<p>
+<h2>Example 2</h2>
+<p>
+<div class=pretty>
+<code class=r>' Assume m:MyObject and mylist:List</code><br>
+<br>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=i>m</code><code class=d>=</code><code class=k>Eachin</code><code class=d>&nbsp;</code><code class=i>mylist</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>m.myField</code><br>
+<code class=k>Next</code><br>
+<br>
+<code class=r>' Assume i:Int and myarray:Int[]</code><br>
+<br>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>=</code><code class=k>Eachin</code><code class=d>&nbsp;</code><code class=i>myarray</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>myarray</code><code class=d>[</code><code class=i>i</code><code class=d>]</code><br>
+<code class=k>Next</code><br>
+</div>
+<p>
+<h2>Example 3</h2>
+<p>
+<div class=pretty>
+<code class=i>NUM</code><code class=d>&nbsp;=&nbsp;</code><code class=l>100</code><code class=d>&nbsp;</code><code class=r>' Assume myarray[NUM] has been declared</code><br>
+<br>
+<code class=r>' Prints 0 to 99 without requiring NUM-1</code><br>
+<br>
+<code class=k>For</code><code class=d>&nbsp;</code><code class=i>k</code><code class=d>=</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Until</code><code class=d>&nbsp;</code><code class=i>NUM</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>myarray</code><code class=d>[</code><code class=i>k</code><code class=d>]</code><br>
+<code class=k>Next</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

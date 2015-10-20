@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Target SDKs.html'>Target SDKs</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  The PSM target </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>The PSM target</h1>
+<p>
+The Playstation Mobile (PSM) platform allows you to develop a game for the Playstation Vita and Playstation TV.
+<p>
+<h2>You will need:</h2>
+<p>
+<ul><li>A Windows 7 or Windows 8 PC.</li>
+<p>
+<li>A PSM developer account, and a PSM publisher license, both available from <a href="https://psm.playstation.net">PSM Dev Portal</a>. </li>
+<p>
+<li><a href="https://psm.playstation.net/static/general/all/en/psm_sdk.html">The PSM SDK</a>. At the time of writing (Jan 26, 2015), there are two available SDK versions, 1.2 and 2.0. Monkey projects should work on either version. The primary difference between these two versions is that the newer version only supports PS Vita and PS TV (dropping support for all other PSM certified devices). Version 1.2 is currently being phased out, with submissions from 1.2 only being accepted until March 31, 2015. More details on the SDK can be found on the dev portal. </li>
+<p>
+<li>A PS Vita for testing your game before submission. You don't need a Vita to start development, but do need one to submit and publish your game. </li>
+<p>
+</ul><h2>Notes</h2>
+<p>
+Once you have the PSM SDK installed, the <code>PSM_PATH</code> var in your trans config file must be correctly set to point to the PSM target, eg. PSM_PATH="C:Program Files (x86)SCEPSM". Please see the trans tool for more information about the trans config file.
+<p>
+<p>
+<p>After building your project, check the /psm folder within your project.build directory. There are a few files of interest:
+<p>
+<ul><li>MonkeyGame.csproj - A project file that you can open in PSM Studio.</li>
+<p>
+<li>App.xml - A file where you can set some configuration details about your game. The most useful setting in here is the memory setting, which allows you to allocate different amounts of memory between the "resource heap" and "managed heap", which is a fancy  way of saying "your art" and "your game engine", respectively. If you have a lot of art assets, you may need to allocate more memory towards the resource heap, and less towards the managed heap. You have a total of 96,000kb of memory to work with. </li>
+<p>
+</ul>To set up your Vita to test your game, you need to follow through some steps as <a href="https://psm.playstation.net/static/general/all/psm_sdk/2/doc/en/setup_launcher_vita_en.html">outlined on the PSM Dev Portal</a>.
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.socket.html'>brl.socket</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Socket </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Socket</span></h1>
+
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( protocol:String="stream" )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#IsBound'>IsBound</a> : Bool ()</li>
+					
+						<li><a href='#IsConnected'>IsConnected</a> : Bool ()</li>
+					
+						<li><a href='#LocalAddress'>LocalAddress</a> : SocketAddress ()</li>
+					
+						<li><a href='#Protocol'>Protocol</a> : String ()</li>
+					
+						<li><a href='#RemoteAddress'>RemoteAddress</a> : SocketAddress ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.socket_Socket.html#Accept'>Accept</a> : Socket ()</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#AcceptAsync'>AcceptAsync</a> : Void ( onComplete:IOnAcceptComplete )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#Bind'>Bind</a> : Bool ( host:String, port:Int )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#BindAsync'>BindAsync</a> : Void ( host:String, port:Int, onComplete:IOnBindComplete )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#Connect'>Connect</a> : Bool ( host:String, port:Int )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#ConnectAsync'>ConnectAsync</a> : Void ( host:String, port:Int, onComplete:IOnConnectComplete )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#Receive'>Receive</a> : Int ( data:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#ReceiveAll'>ReceiveAll</a> : Int ( data:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#ReceiveAllAsync'>ReceiveAllAsync</a> : Int ( data:DataBuffer, offset:Int, count:Int, onComplete:IOnReceiveComplete )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#ReceiveAsync'>ReceiveAsync</a> : Int ( data:DataBuffer, offset:Int, count:Int, onComplete:IOnReceiveComplete )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#ReceiveFrom'>ReceiveFrom</a> : Int ( data:DataBuffer, offset:Int, count:Int, address:SocketAddress )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#ReceiveFromAsync'>ReceiveFromAsync</a> : Int ( data:DataBuffer, offset:Int, count:Int, address:SocketAddress, onComplete:IOnReceiveFromComplete )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#Send'>Send</a> : Int ( data:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#SendAsync'>SendAsync</a> : Int ( data:DataBuffer, offset:Int, count:Int, onComplete:IOnSendComplete )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#SendTo'>SendTo</a> : Int ( data:DataBuffer, offset:Int, count:Int, address:SocketAddress )</li>
+					
+						<li><a href='Modules_brl.socket_Socket.html#SendToAsync'>SendToAsync</a> : Int ( data:DataBuffer, offset:Int, count:Int, address:SocketAddress, onComplete:IOnSendToComplete )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( protocol:String="stream" )</b></div>
+				<div class="description">
+					<p>Creates a new socket.
+<p>
+The supported protocols are:
+<p>
+<table><tr><th>Protocol</th><th>Description</th></tr>
+<tr><td>stream</td><td>TCP stream</td></tr>
+<tr><td>server</td><td>TCP server</td></tr>
+<tr><td>datagram</td><td>UDP datagram</td></tr></table></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='IsBound'></a>
+				<div class="well well-small name"><b>Method IsBound : Bool () Property</b></div>
+				<div class="description">
+					<p>Returns true if the socket is currently bound to a local address.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#Bind">Bind</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IsConnected'></a>
+				<div class="well well-small name"><b>Method IsConnected : Bool () Property</b></div>
+				<div class="description">
+					<p>Return true id the socket is currently connected to a remote host.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#Connect">Connect</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LocalAddress'></a>
+				<div class="well well-small name"><b>Method LocalAddress : <a href="Modules_brl.socket_SocketAddress.html">SocketAddress</a> () Property</b></div>
+				<div class="description">
+					<p>Returns the local address of the socket.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Protocol'></a>
+				<div class="well well-small name"><b>Method Protocol : String () Property</b></div>
+				<div class="description">
+					<p>Returns the socket protocol, either "stream", "server", or "datagram".</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoteAddress'></a>
+				<div class="well well-small name"><b>Method RemoteAddress : <a href="Modules_brl.socket_SocketAddress.html">SocketAddress</a> () Property</b></div>
+				<div class="description">
+					<p>Returns the remote address of the socket.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Accept'></a>
+				<div class="well well-small name"><b>Method Accept : <a href="Modules_brl.socket_Socket.html">Socket</a> ()</b></div>
+				<div class="description">
+					<p>Accepts a new connection from a remote host.
+<p>
+The method will block until a new connection is accepted.
+<p>
+The socket must be a server socket. If the socket has not been bound, it will first be bound to a system generated host address and port number.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#Bind">Bind</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AcceptAsync'></a>
+				<div class="well well-small name"><b>Method AcceptAsync : Void ( onComplete:<a href="Modules_brl.socket_IOnAcceptComplete.html">IOnAcceptComplete</a> )</b></div>
+				<div class="description">
+					<p>Accepts a new connection from a remote host asynchronously.
+<p>
+The method returns immediately. Once a new connection is accepted, the <a href="Modules_brl.socket_IOnAcceptComplete.html#OnAcceptComplete">OnAcceptComplete</a> method of the <b>onComplete</b> object is called.
+<p>
+The socket must be a server socket.
+<p>
+In order to allow multiple incoming connections, your code should call AcceptAsync again somewhere inside OnAcceptComplete.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Bind'></a>
+				<div class="well well-small name"><b>Method Bind : Bool ( host:String, port:Int )</b></div>
+				<div class="description">
+					<p>Binds the socket to a local host and port.
+<p>
+If <b>host</b> is "", the socket will be bound to a system allocated host address, generally "localhost" or "127.0.0.1".
+<p>
+If <b>port</b> is 0, the socket will be bound to a system allocated port number.
+<p>
+Returns true if successful. This method will fail if the socket is already bound to a port, or the binding failed, for example if <b>port</b> is already in use.
+<p>
+In the case of server sockets, Bind will cause the server to start listening.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#LocalAddress">LocalAddress</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='BindAsync'></a>
+				<div class="well well-small name"><b>Method BindAsync : Void ( host:String, port:Int, onComplete:<a href="Modules_brl.socket_IOnBindComplete.html">IOnBindComplete</a> )</b></div>
+				<div class="description">
+					<p>Binds the socket to a local host and port asynchronously.
+<p>
+The method returns immediately. Once the bind operation is complete, the <a href="Modules_brl.socket_IOnBindComplete.html#OnBindComplete">OnBindComplete</a> method of the <b>onComplete</b> object is called.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Connect'></a>
+				<div class="well well-small name"><b>Method Connect : Bool ( host:String, port:Int )</b></div>
+				<div class="description">
+					<p>Connects the socket to a remote host.
+<p>
+The method will block until the connection completes.
+<p>
+Returns true if the connection was successful.
+<p>
+The socket must be a stream or datagram socket.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#RemoteAddress">RemoteAddress</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ConnectAsync'></a>
+				<div class="well well-small name"><b>Method ConnectAsync : Void ( host:String, port:Int, onComplete:<a href="Modules_brl.socket_IOnConnectComplete.html">IOnConnectComplete</a> )</b></div>
+				<div class="description">
+					<p>Connects a socket to a remote host asynchronously.
+<p>
+The method returns immediately. Once the connection is complete, the <a href="Modules_brl.socket_IOnConnectComplete.html#OnConnectComplete">OnConnectComplete</a> method of the <b>onComplete</b> object is called.
+<p>
+The socket must be a stream or datagram socket.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Receive'></a>
+				<div class="well well-small name"><b>Method Receive : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Receives data from a remote host and returns the number of bytes received.
+<p>
+The method blocks until either at least 1 byte of data has been received or the socket is closed.
+<p>
+The socket must be a connected stream or connected datagram socket.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#Send">Send</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReceiveAll'></a>
+				<div class="well well-small name"><b>Method ReceiveAll : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Receives data from a remote host and returns the number of bytes received.
+<p>
+The method blocks until either <b>count</b> bytes of data have been received or the socket is closed.
+<p>
+The socket must be a connected stream or connected datagram socket.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#Send">Send</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReceiveAllAsync'></a>
+				<div class="well well-small name"><b>Method ReceiveAllAsync : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int, onComplete:<a href="Modules_brl.socket_IOnReceiveComplete.html">IOnReceiveComplete</a> )</b></div>
+				<div class="description">
+					<p>Receives data from a remote host asynchronously.
+<p>
+The method returns immediately. Once either <b>count</b> bytes of data have been received or the socket is closed, the <a href="Modules_brl.socket_IOnReceiveComplete.html#OnReceiveComplete">OnReceiveComplete</a> method of the <b>onComplete</b> object is called.
+<p>
+The socket must be a connected stream or connected datagram socket.
+<p>
+Note: Be careful not to modify <b>data</b> or <b>address</b> while the operation is in progress.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReceiveAsync'></a>
+				<div class="well well-small name"><b>Method ReceiveAsync : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int, onComplete:<a href="Modules_brl.socket_IOnReceiveComplete.html">IOnReceiveComplete</a> )</b></div>
+				<div class="description">
+					<p>Receives data from a remote host asynchronously.
+<p>
+The method returns immediately. Once at least 1 byte of data has been received or the socket is closed, the <a href="Modules_brl.socket_IOnReceiveComplete.html#OnReceiveComplete">OnReceiveComplete</a> method of the <b>onComplete</b> object is called.
+<p>
+The socket must be a connected stream or connected datagram socket.
+<p>
+Note: Be careful not to modify <b>data</b> or <b>address</b> while the operation is in progress.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReceiveFrom'></a>
+				<div class="well well-small name"><b>Method ReceiveFrom : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int, address:<a href="Modules_brl.socket_SocketAddress.html">SocketAddress</a> )</b></div>
+				<div class="description">
+					<p>Receives data from a remote host and returns the number of bytes received.
+<p>
+The method blocks until at least 1 byte of data is available or the socket is closed.
+<p>
+The address of the remote host that the data was sent from is written to <b>address</b>.
+<p>
+The socket must be an unconnected datagram socket.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReceiveFromAsync'></a>
+				<div class="well well-small name"><b>Method ReceiveFromAsync : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int, address:<a href="Modules_brl.socket_SocketAddress.html">SocketAddress</a>, onComplete:<a href="Modules_brl.socket_IOnReceiveFromComplete.html">IOnReceiveFromComplete</a> )</b></div>
+				<div class="description">
+					<p>Receives data from a remote host asynchronously.
+<p>
+The method returns immediately. Once at least 1 byte of data has been received or the socket is closed, the <a href="Modules_brl.socket_IOnReceiveFromComplete.html#OnReceiveFromComplete">OnReceiveFromComplete</a> method of the <b>onComplete</b> object is called.
+<p>
+The address of the remote host that the data was sent from is written to <b>address</b>.
+<p>
+The socket must be an unconnected datagram socket.
+<p>
+Note: Be careful not to modify <b>data</b> or <b>address</b> while the operation is in progress.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Send'></a>
+				<div class="well well-small name"><b>Method Send : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Sends data to a remote host and returns the number of bytes sent.
+<p>
+The method blocks until either all bytes of data have been sent or the socket is closed.
+<p>
+The socket must be a connected stream or connected datagram socket.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#Receive">Receive</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SendAsync'></a>
+				<div class="well well-small name"><b>Method SendAsync : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int, onComplete:<a href="Modules_brl.socket_IOnSendComplete.html">IOnSendComplete</a> )</b></div>
+				<div class="description">
+					<p>Sends data to a remote host asynchronously.
+<p>
+The method returns immediately. Once all bytes of data have bben been sent or the socket is closed, the <a href="Modules_brl.socket_IOnSendComplete.html#OnSendComplete">OnSendComplete</a> method of the <b>onComplete</b> object is called.
+<p>
+The socket must be a connected stream or connected datagram socket.
+<p>
+<p>
+<p>
+Note: Be careful not to modify <b>data</b> while the operation is in progress.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SendTo'></a>
+				<div class="well well-small name"><b>Method SendTo : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int, address:<a href="Modules_brl.socket_SocketAddress.html">SocketAddress</a> )</b></div>
+				<div class="description">
+					<p>Sends data to the remote host specified by <b>address</b> and returns the number of bytes sent.
+<p>
+The method blocks until either all bytes have been sent or the socket is closed.
+<p>
+The <b>address</b> parameter must contain a valid socket address.
+<p>
+The socket must be an unconnected datagram socket.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.socket_Socket.html#ReceiveFrom">ReceiveFrom</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SendToAsync'></a>
+				<div class="well well-small name"><b>Method SendToAsync : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int, address:<a href="Modules_brl.socket_SocketAddress.html">SocketAddress</a>, onComplete:<a href="Modules_brl.socket_IOnSendToComplete.html">IOnSendToComplete</a> )</b></div>
+				<div class="description">
+					<p>Sends data to the remote host specified by <b>address</b> asynchronously.
+<p>
+The method returns immediately. Once all bytes of data have been sent or the socket is closed, the <a href="Modules_brl.socket_IOnSendToComplete.html#OnSendToComplete">OnSendToComplete</a> method of the <b>onComplete</b> object is called.
+<p>
+The <b>address</b> parameter must contain a valid socket address.
+<p>
+The socket must be an unconnected datagram socket.
+<p>
+Note: Be careful not to modify <b>data</b> or <b>address</b> while the operation is in progress.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

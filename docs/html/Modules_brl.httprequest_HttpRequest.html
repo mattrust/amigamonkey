@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.httprequest.html'>brl.httprequest</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  HttpRequest </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">HttpRequest</span></h1>
+
+
+	<p>The httprequest module allows you to perform http requests such as GET and POST.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+						<li><a href='#New(2)'>New</a> ( requestMethod:String, url:String, onComplete:IOnHttpRequestComplete )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.httprequest_HttpRequest.html#BytesReceived'>BytesReceived</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.httprequest_HttpRequest.html#Open'>Open</a> : Void ( requestMethod:String, url:String, onComplete:IOnHttpRequestComplete )</li>
+					
+						<li><a href='Modules_brl.httprequest_HttpRequest.html#ResponseText'>ResponseText</a> : String ()</li>
+					
+						<li><a href='Modules_brl.httprequest_HttpRequest.html#Send'>Send</a> : Void ()</li>
+					
+						<li><a href='Modules_brl.httprequest_HttpRequest.html#Send(2)'>Send</a> : Void ( data:String, mimeType:String="text/plain;charset=utf-8", encoding:String="utf8" )</li>
+					
+						<li><a href='Modules_brl.httprequest_HttpRequest.html#SetHeader'>SetHeader</a> : Void ( name:String, value:String )</li>
+					
+						<li><a href='Modules_brl.httprequest_HttpRequest.html#Status'>Status</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The httprequest module allows you to perform http requests such as GET and POST.
+	
+	
+		<p><b><a href="examples/brl_httprequest_HttpRequest.monkey">Example</a></b> <div class=pretty><code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>brl.httprequest</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><code class=d>&nbsp;</code><code class=k>Implements</code><code class=d>&nbsp;</code><code class=i>IOnHttpRequestComplete</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>get_req</code><code class=d>:</code><code class=i>HttpRequest</code><code class=d>,</code><code class=i>post_req</code><code class=d>:</code><code class=i>HttpRequest</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnHttpRequestComplete</code><code class=d>:</code><code class=k>Void</code><code class=d>(&nbsp;</code><code class=i>req</code><code class=d>:</code><code class=i>HttpRequest</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>req</code><code class=d>=</code><code class=i>get_req</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Http&nbsp;GET&nbsp;complete!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Else</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Http&nbsp;POST&nbsp;complete!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Status="</code><code class=d>+</code><code class=i>req.Status</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"ResponseText="</code><code class=d>+</code><code class=i>req.ResponseText</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>get_req</code><code class=d>=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>HttpRequest</code><code class=d>(&nbsp;</code><code class=l>"GET"</code><code class=d>,</code><code class=l>"http://posttestserver.com"</code><code class=d>,</code><code class=k>Self</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>get_req.Send</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>post_req</code><code class=d>=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>HttpRequest</code><code class=d>(&nbsp;</code><code class=l>"POST"</code><code class=d>,</code><code class=l>"http://posttestserver.com/post.php"</code><code class=d>,</code><code class=k>Self</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>post_req.Send</code><code class=d>&nbsp;</code><code class=l>"Hello&nbsp;World!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>60</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>KeyHit</code><code class=d>(&nbsp;</code><code class=i>KEY_CLOSE</code><code class=d>&nbsp;)&nbsp;</code><code class=k>Error</code><code class=d>&nbsp;</code><code class=l>""</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>UpdateAsyncEvents</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"Http&nbsp;GET&nbsp;bytes&nbsp;received="</code><code class=d>+</code><code class=i>get_req.BytesReceived</code><code class=d>(),</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"Http&nbsp;POST&nbsp;bytes&nbsp;received="</code><code class=d>+</code><code class=i>post_req.BytesReceived</code><code class=d>(),</code><code class=l>0</code><code class=d>,</code><code class=l>12</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><code class=d>&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<br>
+<code class=k>End</code><br></div></p>
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>Creates a new HttpRequest object.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( requestMethod:String, url:String, onComplete:<a href="Modules_brl.httprequest_IOnHttpRequestComplete.html">IOnHttpRequestComplete</a> )</b></div>
+				<div class="description">
+					<p>Creates a new http request object and opens it.
+<p>
+The <b>requestMethod</b> parameter should be GET, HEAD, POST, PUT, DELETE or any http method recognized by the server.</p>
+					
+						<p><b>See also</b> <a href="Modules_brl.httprequest_HttpRequest.html#Open">Open</a></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='BytesReceived'></a>
+				<div class="well well-small name"><b>Method BytesReceived : Int ()</b></div>
+				<div class="description">
+					<p>Returns the total number of bytes received.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Open'></a>
+				<div class="well well-small name"><b>Method Open : Void ( requestMethod:String, url:String, onComplete:<a href="Modules_brl.httprequest_IOnHttpRequestComplete.html">IOnHttpRequestComplete</a> )</b></div>
+				<div class="description">
+					<p>Opens an http request.
+<p>
+This effectively 'resets' the internal state of the http request.
+<p>
+The <b>requestMethod</b> parameter should be GET, HEAD, POST, PUT, DELETE or any http method recognized by the server.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResponseText'></a>
+				<div class="well well-small name"><b>Method ResponseText : String ()</b></div>
+				<div class="description">
+					<p>The response text returned by the server once the request has completed.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Send'></a>
+				<div class="well well-small name"><b>Method Send : Void ()</b></div>
+				<div class="description">
+					<p>Sends an http request.
+<p>
+Once complete, the OnHttpRequestComplete method of the IOnHttpRequestComplete object passed to the construtor will be called.
+<p>
+Your application must continously call <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a> at regular intervals (for example, once per OnUpdate) while an http request operation is in progress.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Send(2)'></a>
+				<div class="well well-small name"><b>Method Send : Void ( data:String, mimeType:String="text/plain;charset=utf-8", encoding:String="utf8" )</b></div>
+				<div class="description">
+					<p>Sends an http request with data.
+<p>
+Send sets the request's Content-Length header to the encoded length of <b>data</b>.
+<p>
+If <b>mimeType</b> is not an empty string, Send also sets the request <b>Content</b>-Type header.
+<p>
+Once complete, the OnHttpRequestComplete method of the IOnHttpRequestComplete object passed to the construtor will be called.
+<p>
+Your application must continously call <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a> at regular intervals (for example, once per OnUpdate) while an http request operation is in progress for it to complete.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetHeader'></a>
+				<div class="well well-small name"><b>Method SetHeader : Void ( name:String, value:String )</b></div>
+				<div class="description">
+					<p>Sets an http request header option.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Status'></a>
+				<div class="well well-small name"><b>Method Status : Int ()</b></div>
+				<div class="description">
+					<p>The status returned by the server once the request has completed.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

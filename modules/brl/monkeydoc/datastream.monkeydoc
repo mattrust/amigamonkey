@@ -1,0 +1,44 @@
+
+# Module brl.datastream
+
+# Import brl.stream
+
+# Import brl.databuffer
+
+A datastream allows you to read and write data to and from a databuffer in a stream-like way.
+
+Please see the [[DataStream]] class for more information on datastreams.
+
+
+# Class brl.datastream.DataStream Extends Stream
+
+A datastream allows you to read and write data to and from a databuffer in a stream-like way.
+
+
+# Method New( data:DataBuffer,offset:Int=0 )
+
+Creates a datastream that wraps the specified databuffer.
+
+The wrapped range of data begins at byte address @offset and extends to the end of the buffer. Data outside this range will not be modified by any stream operations.
+
+
+# Method New( data:DataBuffer,offset:Int,length:Int )
+
+Creates a datastream that wraps the specified databuffer.
+
+The wrapped range of data begins at byte address @offset and extends for @length bytes. Data outside of this range will not be modified by any stream operations.
+
+
+# Method Data:DataBuffer() Property
+
+Returns the databuffer object wrapped by this datastream.
+
+
+# Method Offset:Int() Property
+
+Returns the start offset of the data in the databuffer object wrapped by this datastream.
+
+
+# Method Length:Int() Property
+
+Returns the length of the data in the databuffer object wrapped by this datastream.

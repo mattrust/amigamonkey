@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  monkey.lang </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">monkey.lang</span></h1>
+
+
+	<p>The lang module contains classes and functions built-in to the monkey language.
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Classes:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_monkey.lang_Array.html'>Array</a></li>
+					
+						<li><a href='Modules_monkey.lang_Object.html'>Object</a></li>
+					
+						<li><a href='Modules_monkey.lang_String.html'>String</a></li>
+					
+						<li><a href='Modules_monkey.lang_Throwable.html'>Throwable</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#DebugLog'>DebugLog</a> : Int ( message:String )</li>
+					
+						<li><a href='#DebugStop'>DebugStop</a> : Int ()</li>
+					
+						<li><a href='#Error'>Error</a> : Int ( message:String )</li>
+					
+						<li><a href='#Print'>Print</a> : Int ( message:String )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='DebugLog'></a>
+				<div class="well well-small name"><b>Function DebugLog : Int ( message:String )</b></div>
+				<div class="description">
+					<p>Writes <b>message</b> to the current debug channel.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DebugStop'></a>
+				<div class="well well-small name"><b>Function DebugStop : Int ()</b></div>
+				<div class="description">
+					<p>Stops program execution.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Error'></a>
+				<div class="well well-small name"><b>Function Error : Int ( message:String )</b></div>
+				<div class="description">
+					<p>Generates a runtime error message and ends program execution.
+<p>
+If <b>message</b> is an empty string, program execution will end but no runtime error message with be generated.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Print'></a>
+				<div class="well well-small name"><b>Function Print : Int ( message:String )</b></div>
+				<div class="description">
+					<p>Prints <b>message</b> to the current output channel.
+<p>
+The behavior of Print is target dependant. In general, monkey will attempt to print to the 'stdout' output channel, but on some targets this is not always an option.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

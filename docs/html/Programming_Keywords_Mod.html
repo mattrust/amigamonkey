@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Mod </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Mod</h1>
+<p>
+Mod is a mathematical operator which performs the modulo (aka. modulus) function, returning the remainder of a division operation.  
+<p>
+<h2>Syntax</h2>
+<p>
+<b>numerator</b> Mod <b>denominator</b><br>
+<p>
+<h2>Description</h2>
+<p>
+Mod performs the modulo operation on two numeric values, dividing a numerator (or dividend) by a denominator or (divisor) and returns the remainder of the division rather than the usual quotient.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Language reference.html#expressions">Language reference</a>  
+<p>
+<h2>Example</h2>
+<p>
+This example shows that ten apples split between seven people results in each person receiving one apple with three left over. (You can't split 3 whole apples between 7 people!)
+<p>
+Play with the numbers to see the effect Mod has, eg. change the number of people to 2.
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>apples</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>people</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>7</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Each&nbsp;person&nbsp;gets&nbsp;"</code><code class=d>&nbsp;+&nbsp;(</code><code class=i>apples</code><code class=d>&nbsp;/&nbsp;</code><code class=i>people</code><code class=d>)&nbsp;+&nbsp;</code><code class=l>"&nbsp;apple(s);"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>leftover</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=i>apples</code><code class=d>&nbsp;</code><code class=k>Mod</code><code class=d>&nbsp;</code><code class=i>people</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>leftover</code><code class=d>&nbsp;+&nbsp;</code><code class=l>"&nbsp;apple(s)&nbsp;are&nbsp;left&nbsp;over."</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+<p>
+This example shows how Mod can be used to limit a range of values, such as keeping an angle between 0 and 360 degrees. As it passes through 360 degrees and beyond, the angle will always be displayed in the range 0 - 360:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>angle</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>350</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>370</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>angle</code><code class=d>&nbsp;</code><code class=k>Mod</code><code class=d>&nbsp;</code><code class=l>360</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

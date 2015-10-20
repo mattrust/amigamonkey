@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_mojo.app.html'>mojo.app</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  App </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">App</span></h1>
+
+
+	<p>This is the main application class.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.app_App.html#OnBack'>OnBack</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnClose'>OnClose</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnCreate'>OnCreate</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnLoading'>OnLoading</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnRender'>OnRender</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnResize'>OnResize</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnResume'>OnResume</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnSuspend'>OnSuspend</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnUpdate'>OnUpdate</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	This is the main application class.
+<p>
+All mojo based applications must declare a class that extends App and that implements the OnCreate, OnUpdate, OnRender and OnLoading methods.
+<p>
+A new instance of this class must be then created inside your applications Main function. The OnCreate, OnUpdate, OnRender and OnLoading methods will be called as necessary while your application runs.
+<p>
+OnCreate is called when mojo has been initialized and your app can safely start using mojo functions. This is generally where code to load resources such and images and sounds goes. This is where the application's update rate is initially set too - see: SetUpdateRate.
+<p>
+OnUpdate is called when the update timer ticks, and is where your game logic code should go. The update timer is set using the SetUpdateRate function.
+<p>
+OnRender is called when your application should render itself. If the update timer is ticking, this is also called as soon as possible after OnUpdate, however OnRender may be called at any time in generally if your application requires refreshing.
+<p>
+OnLoading is called insetad of OnRender when your application should render itself, but there are still resources being loaded.
+<p>
+Import note: 
+<p>
+No mojo functions or methods should be used before OnCreate is called! Before this, mojo is not fully initialized and cannot be safely used. This means that global variables cannot be initialied using Millisecs, LoadImage or indeed ANY mojo functions.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='OnBack'></a>
+				<div class="well well-small name"><b>Method OnBack : Int ()</b></div>
+				<div class="description">
+					<p>This method is called when the application's 'back' button is pressed.
+<p>
+This method is only used by the android and windows phone 8 targets.
+<p>
+By default, the OnBack method calls OnClose. To override this behavior, you must provide your own OnBack method when extending the App class.
+<p>
+Important! On Windows Phone 8, The only time you can end an application is when the OS calls your app's OnClose or OnBack method. To end an application, use <a href="Modules_mojo.app.html#EndApp">EndApp</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnClose'></a>
+				<div class="well well-small name"><b>Method OnClose : Int ()</b></div>
+				<div class="description">
+					<p>This method is called when the application's 'close' button is pressed.
+<p>
+This method is only used by the glfw, android and windows 8 targets.
+<p>
+By default, the OnClose method calls EndApp. To override this behavior, you must provide your own OnClose method when extending the App class.
+<p>
+Important! On Windows Phone 8, The only time you can end an application is when the OS calls your app's OnClose or OnBack method. To end an application, use <a href="Modules_mojo.app.html#EndApp">EndApp</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnCreate'></a>
+				<div class="well well-small name"><b>Method OnCreate : Int ()</b></div>
+				<div class="description">
+					<p>The OnCreate method is called when mojo has been initialized and the application has been successfully created.
+<p>
+At this point, applications can start loading resources such as images and sounds, and set the update rate using SetUpdateRate.
+<p>
+The return value of this method is currently ignored, but should be 0 for future compatibility.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnLoading'></a>
+				<div class="well well-small name"><b>Method OnLoading : Int ()</b></div>
+				<div class="description">
+					<p>This method is called instead of OnRender when the application should render itself, but there are still resources such as images or sounds in the process of being loaded.
+<p>
+The return value of this method is currently ignored, but should be 0 for future compatibility.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app_App.html#OnRender">OnRender</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnRender'></a>
+				<div class="well well-small name"><b>Method OnRender : Int ()</b></div>
+				<div class="description">
+					<p>This method is automatically called when the application should render itself, such as when the application first starts, or following an OnUpdate call.
+<p>
+If your application is taking to long to update and/render itself, OnRender calls may be skipped to allow it to 'catch up'.
+<p>
+The return value of this method is currently ignored, but should be 0 for future compatibility.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app_App.html#OnUpdate">OnUpdate</a>, <a href="Modules_mojo.app_App.html#OnLoading">OnLoading</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnResize'></a>
+				<div class="well well-small name"><b>Method OnResize : Int ()</b></div>
+				<div class="description">
+					<p>This method is called when the application's device window size changes.
+<p>
+This can occur on the desktop target when a window is resized, or on portable targets when the device is rotated.
+<p>
+To determine the new window size, use the <a href="Modules_mojo.app.html#DeviceWidth">DeviceWidth</a> and <a href="Modules_mojo.app.html#DeviceHeight">DeviceHeight</a> functions.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnResume'></a>
+				<div class="well well-small name"><b>Method OnResume : Int ()</b></div>
+				<div class="description">
+					<p>OnResume is called when your application is made active again after having been in a suspended state.
+<p>
+The return value of this method is currently ignored, but should be 0 for future compatibility.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app_App.html#OnSuspend">OnSuspend</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnSuspend'></a>
+				<div class="well well-small name"><b>Method OnSuspend : Int ()</b></div>
+				<div class="description">
+					<p>OnSuspend is called when your application is about to be suspended. 
+<p>
+While suspended, Mojo will make no further calls to any applications 'On' methods, except for OnResume.
+<p>
+Note that on some targets such as iOS and Android, OnSuspend represents a 'last chance' to save application data before your application is terminated.
+<p>
+The return value from this method is currently ignored, but should be 0 for future compatibility.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app_App.html#OnResume">OnResume</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnUpdate'></a>
+				<div class="well well-small name"><b>Method OnUpdate : Int ()</b></div>
+				<div class="description">
+					<p>This method is automatically called when the application's update timer ticks. Once OnUpdate has been called, mojo will then attempt to call OnRender as soon as possible.
+<p>
+Note that OnUpdate is only called if SetUpdateRate has been called to start the update timer. Otherwise, your application will receive OnRender calls only.
+<p>
+OnUpdate is commonly used in conjunction with OnRender to manage the main game loop. OnUpdate is typically used to update objects and game state, while OnRender is used to draw graphics. 
+<p>
+The return value from this method is currently ignored, but should be 0 for future compatibility.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app.html#SetUpdateRate">SetUpdateRate</a></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

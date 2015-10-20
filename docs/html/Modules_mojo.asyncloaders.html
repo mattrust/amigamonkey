@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  mojo.asyncloaders </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">mojo.asyncloaders</span></h1>
+
+
+	<p>The Mojo async loaders module provides functions and interfaces for loading images and sounds asynchronously.
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Imports:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.asyncevent.html'>brl.asyncevent</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Interfaces:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.asyncloaders_IOnLoadImageComplete.html'>IOnLoadImageComplete</a></li>
+					
+						<li><a href='Modules_mojo.asyncloaders_IOnLoadSoundComplete.html'>IOnLoadSoundComplete</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#LoadImageAsync'>LoadImageAsync</a> : Void ( path:String, frames:Int=1, flags:Int=image.defaultflags, onComplete:IOnLoadImageComplete )</li>
+					
+						<li><a href='#LoadSoundAsync'>LoadSoundAsync</a> : Void ( path:String, onComplete:IOnLoadSoundComplete )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='LoadImageAsync'></a>
+				<div class="well well-small name"><b>Function LoadImageAsync : Void ( path:String, frames:Int=1, flags:Int=image.defaultflags, onComplete:<a href="Modules_mojo.asyncloaders_IOnLoadImageComplete.html">IOnLoadImageComplete</a> )</b></div>
+				<div class="description">
+					<p>Begins loading an image asynchronously.
+<p>
+Once the image has loaded, the <a href="Modules_mojo.asyncloaders_IOnLoadImageComplete.html#OnLoadImageComplete">OnLoadImageComplete</a> method of the specified <b>onComplete</b> object will be invoked.
+<p>
+Note: When using asynchronous features, your app must continually call the <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a> function to process async events. This can be done be calling UpdateAsyncEvents once per OnUpdate.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadSoundAsync'></a>
+				<div class="well well-small name"><b>Function LoadSoundAsync : Void ( path:String, onComplete:<a href="Modules_mojo.asyncloaders_IOnLoadSoundComplete.html">IOnLoadSoundComplete</a> )</b></div>
+				<div class="description">
+					<p>Begins loading a sound asynchronously.
+<p>
+Once the sound has loaded, the <a href="Modules_mojo.asyncloaders_IOnLoadSoundComplete.html#OnLoadSoundComplete">OnLoadSoundComplete</a> method of the <b>onComplete</b> object will be invoked.
+<p>
+Note: When using asynchronous features, your app must continually call the <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a> function to process async events. This can be done be calling UpdateAsyncEvents once per OnUpdate.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

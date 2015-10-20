@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Interface </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Interface</h1>
+<p>
+Declares an interface.
+<p>
+<h2>Syntax</h2>
+<p>
+Interface <b>Identifier</b> [ Extends <b>Interfaces</b> ]<br>
+		 <b>Declarations...</b><br>
+End [ Interface ]
+<p>
+<h2>Description</h2>
+<p>
+The Interface keyword begins the declaration of an interface.
+<p>
+Please see the Interfaces section of the monkey language reference for more information on interfaces.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_End.html">End</a> | <a href="Programming_Keywords_Class.html">Class</a> | <a href="Programming_Keywords_Implements.html">Implements</a><br>
+<a href="Programming_Language reference.html#interfaces">Language reference (Interfaces)</a>  
+<p>
+<h2>Example</h2>
+<p>
+An example of a simple interface.
+<p>
+<div class=pretty>
+<code class=k>Interface</code><code class=d>&nbsp;</code><code class=i>Computer</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Boot</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Process</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Display</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>PC</code><code class=d>&nbsp;</code><code class=k>Implements</code><code class=d>&nbsp;</code><code class=i>Computer</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Boot</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"BIOS&nbsp;version&nbsp;1.01.&nbsp;Performing&nbsp;ancient&nbsp;rituals..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Process</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Calculating&nbsp;1&nbsp;+&nbsp;1..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Display</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"The&nbsp;result&nbsp;of&nbsp;1&nbsp;+&nbsp;1&nbsp;equals&nbsp;2!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>C64</code><code class=d>&nbsp;</code><code class=k>Implements</code><code class=d>&nbsp;</code><code class=i>Computer</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Boot</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"****&nbsp;COMMODORE&nbsp;64&nbsp;BASIC&nbsp;V2&nbsp;****&nbsp;|&nbsp;64K&nbsp;RAM&nbsp;SYSTEM&nbsp;&nbsp;38911&nbsp;BASIC&nbsp;BYTES&nbsp;FREE"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Process</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Calculating&nbsp;missile&nbsp;position..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Display</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Enemies&nbsp;exploding!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>""</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"PC"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>""</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>ibm</code><code class=d>:</code><code class=i>Computer</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>PC</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>ibm.Boot</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>ibm.Process</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>ibm.Display</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>""</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"C64"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>""</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>commodore</code><code class=d>:</code><code class=i>Computer</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>C64</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>commodore.Boot</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>commodore.Process</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>commodore.Display</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

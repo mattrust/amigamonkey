@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.tcpstream.html'>brl.tcpstream</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  TcpStream </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">TcpStream</span></h1>
+
+
+	<p>A tcp stream represents a synchronous tcp connection to a host on the internet.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_brl.stream_Stream.html">Stream</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+						<li><a href='#New(2)'>New</a> ( socket:Socket )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.tcpstream_TcpStream.html#Connect'>Connect</a> : Bool ( host:String, port:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.stream_Stream.html#Eof'>Eof</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Length'>Length</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Position'>Position</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.stream_Stream.html#Close'>Close</a> : Void ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Read'>Read</a> : Int ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadAll'>ReadAll</a> : Void ( buffer:DataBuffer, offset:int, count:int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadAll(2)'>ReadAll</a> : DataBuffer ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadByte'>ReadByte</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadFloat'>ReadFloat</a> : Float ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadInt'>ReadInt</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadShort'>ReadShort</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadString'>ReadString</a> : String ( count:Int, encoding:String="utf8" )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadString(2)'>ReadString</a> : String ( encoding:String="utf8" )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Seek'>Seek</a> : Int ( position:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Write'>Write</a> : Int ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteAll'>WriteAll</a> : Void ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteByte'>WriteByte</a> : Void ( value:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteFloat'>WriteFloat</a> : Void ( value:Float )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteInt'>WriteInt</a> : Void ( value:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteShort'>WriteShort</a> : Void ( value:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteString'>WriteString</a> : Void ( value:String, encoding:String="utf8" )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A tcp stream represents a synchronous tcp connection to a host on the internet.
+<p>
+<b>IMPORTANT! Performing synchronous tcp I/O may cause your app to be rejected by some publishers, as it may result in your app 'blocking' during execution as it waits for incoming data. To prevent this, use a plain <a href="Modules_brl.socket_Socket.html">Socket</a> to perform asynchronous I/O instead. It is strongly recommended that synchronous tcp streams are only used with the stdcpp target.</b>
+<p>
+After creating a tcp stream, you should use the <a href="Modules_brl.tcpstream_TcpStream.html#Connect">Connect</a> method to make a connection to a remote host.
+<p>
+Once connected, you can read and write the stream using any of the <a href="Modules_brl.stream_Stream.html">Stream</a> methods.
+<p>
+Tcp streams are only currently supported on the android, ios, win8, glfw and stdcpp targets.
+	
+	
+		<p><b><a href="examples/brl_tcpstream_TcpStream.monkey">Example</a></b> <div class=pretty>
+<code class=d>#</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>TARGET</code><code class=d>&lt;&gt;</code><code class=l>"glfw"</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>TARGET</code><code class=d>&lt;&gt;</code><code class=l>"android"</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>TARGET</code><code class=d>&lt;&gt;</code><code class=l>"ios"</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>TARGET</code><code class=d>&lt;&gt;</code><code class=l>"stdcpp"</code><br>
+<code class=d>#</code><code class=k>Error</code><code class=d>&nbsp;</code><code class=l>"Invalid&nbsp;target!"</code><br>
+<code class=d>#</code><code class=k>Endif</code><br>
+<br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>brl.tcpstream</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>stream</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>TcpStream</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=k>Not</code><code class=d>&nbsp;</code><code class=i>stream.Connect</code><code class=d>(&nbsp;</code><code class=l>"www.monkeycoder.co.nz"</code><code class=d>,</code><code class=l>80</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Failed&nbsp;to&nbsp;connect!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Connected!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stream.WriteLine</code><code class=d>&nbsp;</code><code class=l>"GET&nbsp;/&nbsp;HTTP/1.0"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stream.WriteLine</code><code class=d>&nbsp;</code><code class=l>"Host:&nbsp;www.monkeycoder.co.nz"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stream.WriteLine</code><code class=d>&nbsp;</code><code class=l>""</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>While</code><code class=d>&nbsp;</code><code class=k>Not</code><code class=d>&nbsp;</code><code class=i>stream.Eof</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>line</code><code class=d>:=</code><code class=i>stream.ReadLine</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>line</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Wend</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stream.Close</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"BYE!!!!"</code><br>
+<br>
+<code class=k>End</code><br>
+</div></p>
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>Creates a new unconnected tcp stream.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( socket:<a href="Modules_brl.socket_Socket.html">Socket</a> )</b></div>
+				<div class="description">
+					<p>Creates a new tcp stream from an existing socket. The socket must be a stream type socket.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Connect'></a>
+				<div class="well well-small name"><b>Method Connect : Bool ( host:String, port:Int )</b></div>
+				<div class="description">
+					<p>Attempts to connect to the specified host and returns true if successful.
+<p>
+Once connected, you can use stream read/write commands to communicate with the host.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

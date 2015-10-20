@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  mojo.app </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">mojo.app</span></h1>
+
+
+	<p>The app module contains the App class along with various support functions for controlling application behaviour.
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Imports:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.audio.html'>mojo.audio</a></li>
+					
+						<li><a href='Modules_mojo.graphics.html'>mojo.graphics</a></li>
+					
+						<li><a href='Modules_mojo.input.html'>mojo.input</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+								
+		<tr>
+			<td class="span1 name">Classes:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.app_App.html'>App</a></li>
+					
+						<li><a href='Modules_mojo.app_DisplayMode.html'>DisplayMode</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#DesktopMode'>DesktopMode</a> : DisplayMode ()</li>
+					
+						<li><a href='#DeviceHeight'>DeviceHeight</a> : Int ()</li>
+					
+						<li><a href='#DeviceWidth'>DeviceWidth</a> : Int ()</li>
+					
+						<li><a href='#DisplayModes'>DisplayModes</a> : DisplayMode[] ()</li>
+					
+						<li><a href='#EndApp'>EndApp</a> : Void ()</li>
+					
+						<li><a href='#GetDate'>GetDate</a> : Int[] ()</li>
+					
+						<li><a href='#GetDate(2)'>GetDate</a> : Void ( date:Int[] )</li>
+					
+						<li><a href='#HideMouse'>HideMouse</a> : Void ()</li>
+					
+						<li><a href='#LoadState'>LoadState</a> : String ()</li>
+					
+						<li><a href='#LoadString'>LoadString</a> : String ( path:String )</li>
+					
+						<li><a href='#Millisecs'>Millisecs</a> : Int ()</li>
+					
+						<li><a href='#OpenUrl'>OpenUrl</a> : Void ( url:String )</li>
+					
+						<li><a href='#SaveState'>SaveState</a> : Void ( state:String )</li>
+					
+						<li><a href='#SetDeviceWindow'>SetDeviceWindow</a> : Void ( width:Int, height:Int, flags:Int )</li>
+					
+						<li><a href='#SetSwapInterval'>SetSwapInterval</a> : Void ( interval:Int )</li>
+					
+						<li><a href='#SetUpdateRate'>SetUpdateRate</a> : Void ( hertz:Int )</li>
+					
+						<li><a href='#ShowMouse'>ShowMouse</a> : Void ()</li>
+					
+						<li><a href='#UpdateRate'>UpdateRate</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='DesktopMode'></a>
+				<div class="well well-small name"><b>Function DesktopMode : <a href="Modules_mojo.app_DisplayMode.html">DisplayMode</a> ()</b></div>
+				<div class="description">
+					<p>Gets the display mode used by the desktop.
+<p>
+On targets other that desktop and xna, this returns a DisplayMode with width and height equal to <a href="Modules_mojo.app.html#DeviceWidth">DeviceWidth</a> and <a href="Modules_mojo.app.html#DeviceHeight">DeviceHeight</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DeviceHeight'></a>
+				<div class="well well-small name"><b>Function DeviceHeight : Int ()</b></div>
+				<div class="description">
+					<p>Returns the height of the application's device window, in pixels.
+<p>
+On the desktop and xna targets, you can use <a href="Modules_mojo.app.html#SetDeviceWindow">SetDeviceWindow</a> to alter the size of the device window.
+<p>
+On other targets, you cannot directly control the size of the graphics device via mojo. This must be done by editing the 'native' project code for the target.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DeviceWidth'></a>
+				<div class="well well-small name"><b>Function DeviceWidth : Int ()</b></div>
+				<div class="description">
+					<p>Returns the width of the application's device window, in pixels.
+<p>
+On the desktop and xna targets, you can use <a href="Modules_mojo.app.html#SetDeviceWindow">SetDeviceWindow</a> to alter the size of the device window.
+<p>
+On other targets, you cannot directly control the size of the graphics device via mojo. This must be done by editing the 'native' project code for the target.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DisplayModes'></a>
+				<div class="well well-small name"><b>Function DisplayModes : <a href="Modules_mojo.app_DisplayMode.html">DisplayMode</a>[] ()</b></div>
+				<div class="description">
+					<p>Gets an array of valid fullscreen display modes for use with <a href="Modules_mojo.app.html#SetDeviceWindow">SetDeviceWindow</a>.
+<p>
+On targets other than desktop and xna, this returns an empty array.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='EndApp'></a>
+				<div class="well well-small name"><b>Function EndApp : Void ()</b></div>
+				<div class="description">
+					<p>Ends the current application.
+<p>
+Note that ending an application may not be completely possible on some targets - for example, html5 and flash applications cannot be 'closed' because they are usually embedded in a browser. However, Monkey will attempt to end the app as best it can, at least ensuring that no more app code will be executed.
+<p>
+Important! On Windows Phone 8, The only time you can end an application is when the OS calls your app's OnClose or OnBack method. Calling EndApp at any other time will have no effect on Windows Phone 8.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetDate'></a>
+				<div class="well well-small name"><b>Function GetDate : Int[] ()</b></div>
+				<div class="description">
+					<p>Returns the current date and time as an array of 7 integers: year, month (1-12), day (1-31), hours (0-23), minutes (0-59), seconds (0-59) and milliseconds (0-999).
+<p>
+On the GLFW target, GetDate is only accurate to the second. Milliseconds are not available and index 6 of the GetDate array will always return 0.</p>
+					
+					
+						<p><b><a href="examples/mojo_app_GetDate.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>60</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>date</code><code class=d>:=</code><code class=i>GetDate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>months</code><code class=d>:=[</code><code class=l>"Jan"</code><code class=d>,</code><code class=l>"Feb"</code><code class=d>,</code><code class=l>"Mar"</code><code class=d>,</code><code class=l>"Apr"</code><code class=d>,</code><code class=l>"May"</code><code class=d>,</code><code class=l>"Jun"</code><code class=d>,</code><code class=l>"Jul"</code><code class=d>,</code><code class=l>"Aug"</code><code class=d>,</code><code class=l>"Sep"</code><code class=d>,</code><code class=l>"Oct"</code><code class=d>,</code><code class=l>"Nov"</code><code class=d>,</code><code class=l>"Dec"</code><code class=d>]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>day</code><code class=d>:=(</code><code class=l>"0"</code><code class=d>+</code><code class=i>date</code><code class=d>[</code><code class=l>2</code><code class=d>])[-</code><code class=l>2</code><code class=d>..]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>month</code><code class=d>:=</code><code class=i>months</code><code class=d>[</code><code class=i>date</code><code class=d>[</code><code class=l>1</code><code class=d>]-</code><code class=l>1</code><code class=d>]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>year</code><code class=d>:=</code><code class=i>date</code><code class=d>[</code><code class=l>0</code><code class=d>]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>hour</code><code class=d>:=(</code><code class=l>"0"</code><code class=d>+</code><code class=i>date</code><code class=d>[</code><code class=l>3</code><code class=d>])[-</code><code class=l>2</code><code class=d>..]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>min</code><code class=d>:=(</code><code class=l>"0"</code><code class=d>+</code><code class=i>date</code><code class=d>[</code><code class=l>4</code><code class=d>])[-</code><code class=l>2</code><code class=d>..]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>sec</code><code class=d>:=(</code><code class=l>"0"</code><code class=d>+</code><code class=i>date</code><code class=d>[</code><code class=l>5</code><code class=d>])[-</code><code class=l>2</code><code class=d>..]&nbsp;+&nbsp;</code><code class=l>"."</code><code class=d>&nbsp;+&nbsp;(</code><code class=l>"00"</code><code class=d>+</code><code class=i>date</code><code class=d>[</code><code class=l>6</code><code class=d>])[-</code><code class=l>3</code><code class=d>..]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>now</code><code class=d>:=</code><code class=i>hour</code><code class=d>+</code><code class=l>":"</code><code class=d>+</code><code class=i>min</code><code class=d>+</code><code class=l>":"</code><code class=d>+</code><code class=i>sec</code><code class=d>+</code><code class=l>"&nbsp;&nbsp;"</code><code class=d>+</code><code class=i>day</code><code class=d>+</code><code class=l>"&nbsp;"</code><code class=d>+</code><code class=i>month</code><code class=d>+</code><code class=l>"&nbsp;"</code><code class=d>+</code><code class=i>year</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=i>now</code><code class=d>,</code><code class=i>DeviceWidth</code><code class=d>/</code><code class=l>2</code><code class=d>,</code><code class=i>DeviceHeight</code><code class=d>/</code><code class=l>2</code><code class=d>,</code><code class=l>.5</code><code class=d>,</code><code class=l>.5</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetDate(2)'></a>
+				<div class="well well-small name"><b>Function GetDate : Void ( date:Int[] )</b></div>
+				<div class="description">
+					<p>Fills the <b>date</b> array with 7 integers representing the current date: year, month (1-12), day (1-31), hours (0-23), minutes (0-59), seconds (0-59) and milliseconds (0-999).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HideMouse'></a>
+				<div class="well well-small name"><b>Function HideMouse : Void ()</b></div>
+				<div class="description">
+					<p>Hides the mouse pointer if the underlying operation system supports a mouse.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadState'></a>
+				<div class="well well-small name"><b>Function LoadState : String ()</b></div>
+				<div class="description">
+					<p>Loads a string representing the application's persistant state as previously saved with SaveState.
+<p>
+If the application state hasn't yet been previously saved, LoadState returns an empty string.
+<p>
+This is generally used to store data such as user preferences and high score tables.
+<p>
+Note: On the android target, building and uploading a new version of an application to a device will not clear the application's state. To do this, you must manually uninstall the application from the device first.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app.html#SaveState">SaveState</a></p>
+					
+					
+						<p><b><a href="examples/mojo_app_LoadState.monkey">Example</a></b> <div class=pretty>
+<code class=r>'run this app several times to see application state being updated.</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.app</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.graphics</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>state</code><code class=d>$</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'comment out the following line to reset state</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>state</code><code class=d>=</code><code class=i>LoadState</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>state</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"state&nbsp;found&nbsp;-&nbsp;updating&nbsp;state!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>state</code><code class=d>=</code><code class=k>Int</code><code class=d>(&nbsp;</code><code class=i>state</code><code class=d>&nbsp;)+</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Else</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"state&nbsp;not&nbsp;found&nbsp;-&nbsp;creating&nbsp;initial&nbsp;state!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>state</code><code class=d>=</code><code class=l>"1"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SaveState</code><code class=d>&nbsp;</code><code class=i>state</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><code class=d>&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"state="</code><code class=d>+</code><code class=i>state</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadString'></a>
+				<div class="well well-small name"><b>Function LoadString : String ( path:String )</b></div>
+				<div class="description">
+					<p>Loads a string from path.</p>
+					
+						<p><b>See also</b> <a href="Programming_Resource paths.html">Resource paths</a>, <a href="Programming_File formats.html">File formats</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Millisecs'></a>
+				<div class="well well-small name"><b>Function Millisecs : Int ()</b></div>
+				<div class="description">
+					<p>Returns the number milliseconds (thousandths of a second) the application has been running. Divide this by 1000.0 to get the number of seconds the applications has been running.</p>
+					
+					
+						<p><b><a href="examples/mojo_app_Millisecs.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.app</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.graphics</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><code class=d>&nbsp;</code><code class=l>128</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>255</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"Application&nbsp;has&nbsp;been&nbsp;running&nbsp;for:&nbsp;"</code><code class=d>+</code><code class=i>Millisecs</code><code class=d>()/</code><code class=l>1000.0</code><code class=d>+</code><code class=l>"&nbsp;seconds."</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OpenUrl'></a>
+				<div class="well well-small name"><b>Function OpenUrl : Void ( url:String )</b></div>
+				<div class="description">
+					<p>Opens the given url using the underlying operating system.
+<p>
+OpenUrl is only available on the hltm5, glfw, android, ios and win8 targets. On other targets, OpenUrl does nothing.</p>
+					
+					
+						<p><b><a href="examples/mojo_app_OpenUrl.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>60</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>MouseHit</code><code class=d>(</code><code class=l>0</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>MouseY</code><code class=d>()\&lt;</code><code class=i>DeviceHeight</code><code class=d>/</code><code class=l>2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>OpenUrl</code><code class=d>&nbsp;</code><code class=l>"http://www.monkeycoder.co.nz"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Else</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>OpenUrl</code><code class=d>&nbsp;</code><code class=l>"mailto:blitzmunter@gmail.com"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"Click&nbsp;above&nbsp;to&nbsp;visit&nbsp;Monkeycoder,&nbsp;below&nbsp;to&nbsp;email&nbsp;Mark!"</code><code class=d>,</code><code class=i>DeviceWidth</code><code class=d>/</code><code class=l>2</code><code class=d>,</code><code class=i>DeviceHeight</code><code class=d>/</code><code class=l>2</code><code class=d>,</code><code class=l>.5</code><code class=d>,</code><code class=l>.5</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SaveState'></a>
+				<div class="well well-small name"><b>Function SaveState : Void ( state:String )</b></div>
+				<div class="description">
+					<p>Saves a string representing the application's persistant state.
+<p>
+This is generally used to store data such as user preferences and high score tables.
+<p>
+Note: On the android target, building and uploading a new version of an application to a device will not clear the application's state. To do this, you must manually uninstall the application from the device first.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app.html#LoadState">LoadState</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetDeviceWindow'></a>
+				<div class="well well-small name"><b>Function SetDeviceWindow : Void ( width:Int, height:Int, flags:Int )</b></div>
+				<div class="description">
+					<p>Sets the application's device window to the given width and height.
+<p>
+You can only change the device window on the desktop and xna targets.
+<p>
+Calling this function does NOT result in your application's <a href="Modules_mojo.app_App.html#OnResize">OnResize</a> method being called.
+<p>
+<b>flags</b> can be any combination of the following values (use the | operator to combine flags):
+<p>
+<table><tr><th><b>flags</b></th><th><b>meaning</b></th><th><b>targets</b></th></tr>
+<tr><td>1</td><td>Fullscreen</td><td>glfw3, xna</td></tr>
+<tr><td>2</td><td>Resizable window</td><td>glfw3</td></tr>
+<tr><td>4</td><td>Decorated window</td><td>glfw3</td></tr>
+<tr><td>8</td><td>Floating window</td><td>glfw3</td></tr>
+<tr><td>16</td><td>Depth buffered</td><td>glfw3</td></tr>
+<tr><td>32</td><td>Single buffered</td><td>glfw3</td></tr>
+<tr><td>64</td><td>Use second monitor</td><td>glfw3</td></tr>
+</table><p>
+Use <a href="Modules_mojo.app.html#DisplayModes">DisplayModes</a> for a list of valid fullscreen device width/heights.
+<p>
+Note that this function is not affected by any app config settings such as #GLFW_WINDOW_FULLSCREEN.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetSwapInterval'></a>
+				<div class="well well-small name"><b>Function SetSwapInterval : Void ( interval:Int )</b></div>
+				<div class="description">
+					<p>Attempts to change the 'swap interval' of the application's device.
+<p>
+This refers to how many frames to wait before graphics are displayed (or 'swapped') after being rendered. Setting the swap interval to '1' effectively enables vsync, '0' disables it.
+<p>
+SetSwapInterval only has any effect on the desktop target and, even then, is not universally supported by all graphics drivers on the PC. It may also only work in fullscreen mode.
+<p>
+Use with care!</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetUpdateRate'></a>
+				<div class="well well-small name"><b>Function SetUpdateRate : Void ( hertz:Int )</b></div>
+				<div class="description">
+					<p>Sets the application's update rate.
+<p>
+If <b>hertz</b> is non-zero, this is the number of times per second that the application's OnUpdate method should be called. Commonly used update rates are 60, 30, 20, 15, 12 or 10 updates per second. OnRender is also called at the same frequency if possible (after each OnUpdate), meaning SetUpdateRate effectively also sets the target frames per second.
+<p>
+If <b>hertz</b> is zero, the app goes into 'free running' mode. In this mode, the app executes OnUpdate/OnRender in pairs as quickly as possible. The exact behaviour differs depending on target:
+<p>
+<table><tr><th>Target</th><th>Effect of update rate 0</th></tr>
+<tr><td>Desktop</td><td>Updates are perform as quickly as possible. Timing is provided by vsync, or the app can perform 'delta timing'.</td></tr>
+<tr><td>Html5</td><td>Updates are performed using the requestAnimationFrame feature, which depends on the refresh rate of the monitor (usually 60hz).</td></tr>
+<tr><td>iOS, Android, WinRT, PSM</td><td>Updates are performed at vsynced 60hz.</td></tr>
+<tr><td>Flash, Xna</td><td>Updates are performed at 60hz.</td></tr></table></p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app_App.html#OnUpdate">OnUpdate</a>, <a href="Modules_mojo.app.html#UpdateRate">UpdateRate</a>, <a href="Modules_mojo.app.html#SetSwapInterval">SetSwapInterval</a></p>
+					
+					
+						<p><b><a href="examples/mojo_app_SetUpdateRate.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.app</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo.graphics</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>updates</code><code class=d>,</code><code class=i>updateRate</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>updateRate</code><code class=d>=</code><code class=l>15</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=i>updateRate</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>updates</code><code class=d>+=</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>updates</code><code class=d>=</code><code class=i>updateRate</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>updates</code><code class=d>=</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>updateRate</code><code class=d>*=</code><code class=l>2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>updateRate</code><code class=d>=</code><code class=l>240</code><code class=d>&nbsp;</code><code class=i>updateRate</code><code class=d>=</code><code class=l>15</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=i>updateRate</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><code class=d>&nbsp;</code><code class=l>128</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>255</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"updateRate="</code><code class=d>+</code><code class=i>updateRate</code><code class=d>+</code><code class=l>",&nbsp;updates="</code><code class=d>+</code><code class=i>updates</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ShowMouse'></a>
+				<div class="well well-small name"><b>Function ShowMouse : Void ()</b></div>
+				<div class="description">
+					<p>Shows the mouse pointer if the underlying operation system supports a mouse.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UpdateRate'></a>
+				<div class="well well-small name"><b>Function UpdateRate : Int ()</b></div>
+				<div class="description">
+					<p>Returns the current update rate, as set by SetUpdateRate.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.app.html#SetUpdateRate">SetUpdateRate</a></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  os </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">os</span></h1>
+
+
+	<p>The os module provides miscellaneous operating system functionality, such as file, directory and environment variable access.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constants:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li>FILETYPE_DIR : Int</li>
+					
+						<li>FILETYPE_FILE : Int</li>
+					
+						<li>FILETYPE_NONE : Int</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#AppArgs'>AppArgs</a> : String[] ()</li>
+					
+						<li><a href='#AppPath'>AppPath</a> : String ()</li>
+					
+						<li><a href='#ChangeDir'>ChangeDir</a> : Int ( path:String )</li>
+					
+						<li><a href='#CopyDir'>CopyDir</a> : Int ( srcpath:String, dstpath:String, recursive:Bool, hidden:Bool )</li>
+					
+						<li><a href='#CopyFile'>CopyFile</a> : Int ( src:String, dst:String )</li>
+					
+						<li><a href='#CreateDir'>CreateDir</a> : Int ( path:String )</li>
+					
+						<li><a href='#CurrentDir'>CurrentDir</a> : String ()</li>
+					
+						<li><a href='#DeleteDir'>DeleteDir</a> : Int ( path:String )</li>
+					
+						<li><a href='#DeleteDir(2)'>DeleteDir</a> : Int ( path:String, recursive:Bool )</li>
+					
+						<li><a href='#DeleteFile'>DeleteFile</a> : Int ( path:String )</li>
+					
+						<li><a href='#Execute'>Execute</a> : Int ( cmd:String )</li>
+					
+						<li><a href='#ExitApp'>ExitApp</a> : Int ( retcode:Int )</li>
+					
+						<li><a href='#ExtractDir'>ExtractDir</a> : String ( path:String )</li>
+					
+						<li><a href='#ExtractExt'>ExtractExt</a> : String ( path:String )</li>
+					
+						<li><a href='#FileSize'>FileSize</a> : Int ( path:String )</li>
+					
+						<li><a href='#FileTime'>FileTime</a> : Int ( path:String )</li>
+					
+						<li><a href='#FileType'>FileType</a> : Int ( path:String )</li>
+					
+						<li><a href='#GetEnv'>GetEnv</a> : String ( name:String )</li>
+					
+						<li><a href='#HostOS'>HostOS</a> : String ()</li>
+					
+						<li><a href='#LoadDir'>LoadDir</a> : String[] ( path:String )</li>
+					
+						<li><a href='#LoadDir(2)'>LoadDir</a> : String[] ( path:String, recursive:Bool, hidden:Bool=false )</li>
+					
+						<li><a href='#LoadString'>LoadString</a> : String ( path:String )</li>
+					
+						<li><a href='#RealPath'>RealPath</a> : String ( path:String )</li>
+					
+						<li><a href='#SaveString'>SaveString</a> : Int ( str:String, path:String )</li>
+					
+						<li><a href='#SetEnv'>SetEnv</a> : Int ( name:String, value:String )</li>
+					
+						<li><a href='#StripAll'>StripAll</a> : String ( path:String )</li>
+					
+						<li><a href='#StripDir'>StripDir</a> : String ( path:String )</li>
+					
+						<li><a href='#StripExt'>StripExt</a> : String ( path:String )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The os module provides miscellaneous operating system functionality, such as file, directory and environment variable access.
+<p>
+The os module also includes several string processing functions for extracting various components from file system paths such as directory and file extension.
+<p>
+IMPORTANT: The os module is currently only available for the glfw and stdcpp targets.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AppArgs'></a>
+				<div class="well well-small name"><b>Function AppArgs : String[] ()</b></div>
+				<div class="description">
+					<p>Returns the application startup parameters.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AppPath'></a>
+				<div class="well well-small name"><b>Function AppPath : String ()</b></div>
+				<div class="description">
+					<p>Returns the file system path of the currently running application.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ChangeDir'></a>
+				<div class="well well-small name"><b>Function ChangeDir : Int ( path:String )</b></div>
+				<div class="description">
+					<p>Changes the current directory of the running application.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CopyDir'></a>
+				<div class="well well-small name"><b>Function CopyDir : Int ( srcpath:String, dstpath:String, recursive:Bool, hidden:Bool )</b></div>
+				<div class="description">
+					<p>Copies the directory at srcpath to dstpath, creating dstpath if necessary.
+<p>
+If recursive is True, then subdirectories are also copied.
+<p>
+If hidden is True, then hidden files - files starting with a dot - are also copied.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CopyFile'></a>
+				<div class="well well-small name"><b>Function CopyFile : Int ( src:String, dst:String )</b></div>
+				<div class="description">
+					<p>Copies a file from srcpath to dstpath.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CreateDir'></a>
+				<div class="well well-small name"><b>Function CreateDir : Int ( path:String )</b></div>
+				<div class="description">
+					<p>Create a new directory at path.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CurrentDir'></a>
+				<div class="well well-small name"><b>Function CurrentDir : String ()</b></div>
+				<div class="description">
+					<p>Returns the current directory of the currently running application.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DeleteDir'></a>
+				<div class="well well-small name"><b>Function DeleteDir : Int ( path:String )</b></div>
+				<div class="description">
+					<p>Deletes the directory at path.
+<p>
+If recursive is True, then subdirectories are also deleted - use with care!</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DeleteDir(2)'></a>
+				<div class="well well-small name"><b>Function DeleteDir : Int ( path:String, recursive:Bool )</b></div>
+				<div class="description">
+					<p>Deletes the directory at path.
+<p>
+If recursive is True, then subdirectories are also deleted - use with care!</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DeleteFile'></a>
+				<div class="well well-small name"><b>Function DeleteFile : Int ( path:String )</b></div>
+				<div class="description">
+					<p>Deletes the specified file.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Execute'></a>
+				<div class="well well-small name"><b>Function Execute : Int ( cmd:String )</b></div>
+				<div class="description">
+					<p>Executes a shell command and returns the result. This is generally 0 for success, or non-0 for failure.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ExitApp'></a>
+				<div class="well well-small name"><b>Function ExitApp : Int ( retcode:Int )</b></div>
+				<div class="description">
+					<p>Exits the application with the given return code.
+<p>
+In general, ExitApp should return 0 if successful, or <0 upon failure.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ExtractDir'></a>
+				<div class="well well-small name"><b>Function ExtractDir : String ( path:String )</b></div>
+				<div class="description">
+					<p>Extracts and returns the directory of a file system path.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ExtractExt'></a>
+				<div class="well well-small name"><b>Function ExtractExt : String ( path:String )</b></div>
+				<div class="description">
+					<p>Extracts and returns the file type extension of a file system path.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FileSize'></a>
+				<div class="well well-small name"><b>Function FileSize : Int ( path:String )</b></div>
+				<div class="description">
+					<p>Return the length of a file, in bytes.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FileTime'></a>
+				<div class="well well-small name"><b>Function FileTime : Int ( path:String )</b></div>
+				<div class="description">
+					<p>Returns the time the file at path was last modified.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FileType'></a>
+				<div class="well well-small name"><b>Function FileType : Int ( path:String )</b></div>
+				<div class="description">
+					<p>Returns an integer representing the type of a file, one of: 0 for no file, 1 for a normal file, 2 for a directory.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetEnv'></a>
+				<div class="well well-small name"><b>Function GetEnv : String ( name:String )</b></div>
+				<div class="description">
+					<p>Gets an environment variable.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HostOS'></a>
+				<div class="well well-small name"><b>Function HostOS : String ()</b></div>
+				<div class="description">
+					<p>Returns a string describing the host operating system. The returned value will be one of:
+<p>
+<table><tr><th>HostOS</th><th>Operating system</th></tr>
+<tr><td><code>winnt</code></td><td>Windows</td></tr>
+<tr><td><code>macos</code></td><td>MacOS</td></tr>
+<tr><td><code>linux</code></td><td>Linux</td></tr></table></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadDir'></a>
+				<div class="well well-small name"><b>Function LoadDir : String[] ( path:String )</b></div>
+				<div class="description">
+					<p>Loads the file names in the directory specified by path into a string array.
+<p>
+If recursive is True, LoadDir will also load file names in subdirectories, but will not add subdirectories to the output string array.
+<p>
+If hidden is True, then hidden files - files starting with a dot - are also loaded.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadDir(2)'></a>
+				<div class="well well-small name"><b>Function LoadDir : String[] ( path:String, recursive:Bool, hidden:Bool=false )</b></div>
+				<div class="description">
+					<p>Loads the file names in the directory specified by path into a string array.
+<p>
+If recursive is True, LoadDir will also load file names in subdirectories.
+<p>
+If hidden is True, then hidden files - files starting with a dot - are also loaded.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadString'></a>
+				<div class="well well-small name"><b>Function LoadString : String ( path:String )</b></div>
+				<div class="description">
+					<p>Loads a string from the file at path.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RealPath'></a>
+				<div class="well well-small name"><b>Function RealPath : String ( path:String )</b></div>
+				<div class="description">
+					<p>Returns the real, or 'absolute', file system path corresponding to the given path.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SaveString'></a>
+				<div class="well well-small name"><b>Function SaveString : Int ( str:String, path:String )</b></div>
+				<div class="description">
+					<p>Saves str to a file specified by path.
+<p>
+If a file already exists at path, it will be overwritten.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetEnv'></a>
+				<div class="well well-small name"><b>Function SetEnv : Int ( name:String, value:String )</b></div>
+				<div class="description">
+					<p>Sets an environment variable.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StripAll'></a>
+				<div class="well well-small name"><b>Function StripAll : String ( path:String )</b></div>
+				<div class="description">
+					<p>Removes both the directory and file extension from a file system path, returning just the file name.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StripDir'></a>
+				<div class="well well-small name"><b>Function StripDir : String ( path:String )</b></div>
+				<div class="description">
+					<p>Removes the directory from a file system path, and returns the file name and extension.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StripExt'></a>
+				<div class="well well-small name"><b>Function StripExt : String ( path:String )</b></div>
+				<div class="description">
+					<p>Extracts and returns the file extension of a file system path.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Elseif </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Elseif</h1>
+<p>
+Where the initial expression in a conditional block proves False, ElseIf allows for the testing of another expression, executing an alternative section of code should that expression prove True.
+<p>
+<h2>Syntax</h2>
+<p>
+If <b>expression</b> [Then]<br>
+		<b>Statements...</b><br>
+Elseif <b>expression</b> [Then]<br>
+		<b>Statements...</b><br>
+Endif  
+<p>
+<h2>Description</h2>
+<p>
+Where the initial expression in a conditional block proves False, Elseif (or, optionally, Else If) marks the beginning of an alternative program execution path, whereby the statements following will be executed, but only where the Elseif expression is True.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_If.html">If</a> | <a href="Programming_Keywords_Else.html">Else</a> | <a href="Programming_Keywords_Endif.html">Endif</a><br>
+<a href="Programming_Language reference.html#statements">Language reference</a>  
+<p>
+<h2>Examples</h2>
+<p>
+<div class=pretty>
+<code class=r>' Simple If check with alternative program flow dependent on a positive Elseif test:</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"a&nbsp;equals&nbsp;one"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Elseif</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"a&nbsp;equals&nbsp;zero"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

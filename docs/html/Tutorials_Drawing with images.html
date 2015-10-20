@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Tutorials.html'>Tutorials</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Drawing with images </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Drawing with Images</h1>
+<p>
+In this tutorial we load some images from our apps data folder and learn more about <a href="Modules_mojo.graphics.html">mojo.graphics</a>.
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>image</code><code class=d>:</code><code class=i>Image</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>30</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>image</code><code class=d>=</code><code class=i>LoadImage</code><code class=d>(</code><code class=l>"monkey64.png"</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawImage</code><code class=d>&nbsp;</code><code class=i>image</code><code class=d>,</code><code class=l>20</code><code class=d>,</code><code class=l>20</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Create a new monkey file, paste the above code, and save as "game.monkey" in a new folder on your computer.
+<p>
+This app, when run, produces a black display as the <a href="Modules_mojo.graphics.html#LoadImage">LoadImage</a> command will fail to find the file monkey64.png.
+<p>
+In the same folder that you saved "game.monkey" create a new directory named "game.data". Copy this <a href="http://commondatastorage.googleapis.com/monkeycoder.co.nz/blitz-wiki/monkeylogos/monkey64.png">image</a> to the newly created .data folder.
+<p>
+<h2>Add Points where you Click</h2>
+<p>
+Now we add a new Point class that contains an x y coordinate pair using floating point values.
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Point</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>#</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>y</code><code class=d>#</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+We also add a List container to manage the Points that we store each time the user clicks on the screen.
+<p>
+<div class=pretty>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>points</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>List</code><code class=d>&lt;</code><code class=i>Point</code><code class=d>&gt;</code><br>
+</div>
+<p>
+The := syntax is a shortcut for a standard equate that infers the type of the Left Hand Side (LHS) from the type on the Right Hand Side (RHS). In this case the Field named points of type List&LT;Point&GT; could have also been declared and initialized using the longer winded:
+<p>
+<div class=pretty>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>points</code><code class=d>:</code><code class=i>List</code><code class=d>&lt;</code><code class=i>Point</code><code class=d>&gt;=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>List</code><code class=d>&lt;</code><code class=i>Point</code><code class=d>&gt;</code><br>
+</div>
+<p>
+The type List&LT;Point&GT; is an example of a monkey template. A List&LT;Point&GT; supports the standard List interface but specifically for objects of type Point.
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Point</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>#</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>y</code><code class=d>#</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>image</code><code class=d>:</code><code class=i>Image</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>points</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>List</code><code class=d>&lt;</code><code class=i>Point</code><code class=d>&gt;</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>30</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>image</code><code class=d>=</code><code class=i>LoadImage</code><code class=d>(</code><code class=l>"monkey64.png"</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>AddPoint</code><code class=d>(</code><code class=i>x</code><code class=d>#,</code><code class=i>y</code><code class=d>#)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>p</code><code class=d>:</code><code class=i>Point</code><code class=d>=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Point</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>p.x</code><code class=d>=</code><code class=i>x</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>p.y</code><code class=d>=</code><code class=i>y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>points.AddLast</code><code class=d>&nbsp;</code><code class=i>p</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>MouseHit</code><code class=d>()&nbsp;</code><code class=i>AddPoint</code><code class=d>&nbsp;</code><code class=i>MouseX</code><code class=d>,</code><code class=i>MouseY</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>point</code><code class=d>:=</code><code class=k>Eachin</code><code class=d>&nbsp;</code><code class=i>points</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawImage</code><code class=d>&nbsp;</code><code class=i>image</code><code class=d>,</code><code class=i>point.x</code><code class=d>,</code><code class=i>point.y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+The <a href="Modules_monkey.list_List.html#AddLast">AddLast</a> method is called on the list to add an entry each time the user clicks the mouse.
+<p>
+The OnRender method draws the list of monkeys by using the enumeration
+<p>
+<div class=pretty>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>point</code><code class=d>:=</code><code class=k>Eachin</code><code class=d>&nbsp;</code><code class=i>points</code><br>
+</div>
+<p>
+This allows monkey code to process each element of the list in the order they were added.
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

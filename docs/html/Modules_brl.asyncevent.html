@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  brl.asyncevent </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">brl.asyncevent</span></h1>
+
+
+	<p>The asyncevent module provides core functionality for handling asynchronous (async) events.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Interfaces:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.asyncevent_IAsyncEventSource.html'>IAsyncEventSource</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#AddAsyncEventSource'>AddAsyncEventSource</a> : Void ( source:IAsyncEventSource )</li>
+					
+						<li><a href='#RemoveAsyncEventSource'>RemoveAsyncEventSource</a> : Void ( source:IAsyncEventSource )</li>
+					
+						<li><a href='#UpdateAsyncEvents'>UpdateAsyncEvents</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The asyncevent module provides core functionality for handling asynchronous (async) events.
+<p>
+An async event occurs when an async operation completes or changes state. Async operations are operations that execute 'in the background' while your app is running, typically on another thread, and include network data transfers and network connections.
+<p>
+When an async event occurs, your program is notified by means of a method call to an event handler object you  provided when the async operation was started. Such event handler objects must implement the correct interface method for the operation being performed. For example, when you start an async socket receive <a href="Modules_brl.socket_Socket.html#ReceiveAsync">ReceiveAsync</a> operation, you must provide an object with a method that implements the <a href="Modules_brl.socket_IOnReceiveComplete.html">IOnReceiveComplete</a> interface method. This is the method that will be called when the async receive completes.
+<p>
+In order for async events to occur, the global <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a> function must be called at regular intervals - once per OnUpdate is generally enough. This is when your event handler methods will actually be called.
+<p>
+Internally, the <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a> function simply calls the UpdateAsyncEvents interface method for each object contained in a global queue. You can add and remove your own objects to and from this queue with the <a href="Modules_brl.asyncevent.html#AddAsyncEventSource">AddAsyncEventSource</a> and <a href="Modules_brl.asyncevent.html#RemoveAsyncEventSource">RemoveAsyncEventSource</a> functions. Objects in this queue must implement the <a href="Modules_brl.asyncevent_IAsyncEventSource.html">IAsyncEventSource</a> interface.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AddAsyncEventSource'></a>
+				<div class="well well-small name"><b>Function AddAsyncEventSource : Void ( source:<a href="Modules_brl.asyncevent_IAsyncEventSource.html">IAsyncEventSource</a> )</b></div>
+				<div class="description">
+					<p>Adds <b>source</b> to the global list of event sources to be processed by <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveAsyncEventSource'></a>
+				<div class="well well-small name"><b>Function RemoveAsyncEventSource : Void ( source:<a href="Modules_brl.asyncevent_IAsyncEventSource.html">IAsyncEventSource</a> )</b></div>
+				<div class="description">
+					<p>Removes <b>source</b> from the global list of event sources to be processed by <a href="Modules_brl.asyncevent.html#UpdateAsyncEvents">UpdateAsyncEvents</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UpdateAsyncEvents'></a>
+				<div class="well well-small name"><b>Function UpdateAsyncEvents : Void ()</b></div>
+				<div class="description">
+					<p>Calls the <a href="Modules_brl.asyncevent_IAsyncEventSource.html#UpdateAsyncEvents">UpdateAsyncEvents</a> method for each event source contained in the global list of event sources.
+<p>
+You must call this function repeatedly (for example, at the start of OnUpdate) for the various OnComplete handlers to continue to execute.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

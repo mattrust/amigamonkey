@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Null </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Null</h1>
+<p>
+Null is a Monkey constant representing an empty Object reference.
+<p>
+<h2>Syntax</h2>
+<p>
+Null represents an empty Object, thereby allowing comparison between Null and an object's handle in order to determine whether or not the object actually exists.
+<p>
+An object's handle may also be set to Null, thereby freeing the object and marking it for garbage collection (assuming no other handles still point to it); however, it is recommended that objects be allowed to go out of scope where possible, rather than nullifying them.
+<p>
+<h2>Description</h2>
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Language reference.html#classes">Language reference (Classes)</a>  
+<p>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Example</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>something</code><code class=d>:</code><code class=k>Int</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>e</code><code class=d>:</code><code class=i>Example</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' e = New Example ' Uncomment this line to change the outcome...</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>e</code><code class=d>&nbsp;=&nbsp;</code><code class=k>Null</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Object&nbsp;doesn't&nbsp;exist!"</code><code class=d>&nbsp;</code><code class=k>Else</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Object&nbsp;exists!"</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

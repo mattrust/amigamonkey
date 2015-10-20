@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  mojo.input </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">mojo.input</span></h1>
+
+
+	<p>The input module allows programs to check for user input from a wide variety of devices such keyboards, mice, joysticks and touchsceens.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Imports:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.keycodes.html'>mojo.keycodes</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#AccelX'>AccelX</a> : Float ()</li>
+					
+						<li><a href='#AccelY'>AccelY</a> : Float ()</li>
+					
+						<li><a href='#AccelZ'>AccelZ</a> : Float ()</li>
+					
+						<li><a href='#DisableKeyboard'>DisableKeyboard</a> : Int ()</li>
+					
+						<li><a href='#EnableKeyboard'>EnableKeyboard</a> : Int ()</li>
+					
+						<li><a href='#GetChar'>GetChar</a> : Int ()</li>
+					
+						<li><a href='#JoyDown'>JoyDown</a> : Int ( button:Int, unit:Int=0 )</li>
+					
+						<li><a href='#JoyHit'>JoyHit</a> : Int ( button:Int, unit:Int=0 )</li>
+					
+						<li><a href='#JoyX'>JoyX</a> : Float ( index:Int=0, unit:Int=0 )</li>
+					
+						<li><a href='#JoyY'>JoyY</a> : Float ( index:Int=0, unit:Int=0 )</li>
+					
+						<li><a href='#JoyZ'>JoyZ</a> : Float ( index:Int=0, unit:Int=0 )</li>
+					
+						<li><a href='#KeyDown'>KeyDown</a> : Int ( key:Int )</li>
+					
+						<li><a href='#KeyHit'>KeyHit</a> : Int ( key:Int )</li>
+					
+						<li><a href='#MouseDown'>MouseDown</a> : Int ( button:Int )</li>
+					
+						<li><a href='#MouseHit'>MouseHit</a> : Int ( button:Int )</li>
+					
+						<li><a href='#MouseX'>MouseX</a> : Float ()</li>
+					
+						<li><a href='#MouseY'>MouseY</a> : Float ()</li>
+					
+						<li><a href='#PeekChar'>PeekChar</a> : Int ( index:Int )</li>
+					
+						<li><a href='#TouchDown'>TouchDown</a> : Int ( index:Int )</li>
+					
+						<li><a href='#TouchHit'>TouchHit</a> : Int ( index:Int )</li>
+					
+						<li><a href='#TouchX'>TouchX</a> : Float ( index:Int )</li>
+					
+						<li><a href='#TouchY'>TouchY</a> : Float ( index:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The input module allows programs to check for user input from a wide variety of devices such keyboards, mice, joysticks and touchsceens.
+<p>
+The input module uses a 'polling' input model, meaning that your program must continually check (or 'poll') the state of input devices. Polling should be performed during the OnUpdate phase of your program.
+<p>
+Please see the <a href="Programming_Key codes.html">Key codes</a> page for a full list of keyboard, mouse and joystick constants.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AccelX'></a>
+				<div class="well well-small name"><b>Function AccelX : Float ()</b></div>
+				<div class="description">
+					<p>Returns the x compononent of the acceleration applied to the device, as measured by the device's accelerometer if present.
+<p>
+The value returned is in the range -1 to 1 inclusive.
+<p>
+If the device has no accelerometer, 0 is returned.
+<p>
+Accelerometer functionality is currently only available on the android, html5 and ios targets.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AccelY'></a>
+				<div class="well well-small name"><b>Function AccelY : Float ()</b></div>
+				<div class="description">
+					<p>Returns the y compononent of the acceleration applied to the device, as measured by the device's accelerometer if present.
+<p>
+The value returned is in the range -1 to 1 inclusive.
+<p>
+If the device has no accelerometer, 0 is returned.
+<p>
+Accelerometer functionality is currently only available on the andriod, html5 and ios targets.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AccelZ'></a>
+				<div class="well well-small name"><b>Function AccelZ : Float ()</b></div>
+				<div class="description">
+					<p>Returns the z compononent of the acceleration applied to the device, as measured by the device's accelerometer if present.
+<p>
+The value returned is in the range -1 to 1 inclusive.
+<p>
+If the device has no accelerometer, 0 is returned.
+<p>
+Accelerometer functionality is currently only available on the android,html5 and ios targets.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DisableKeyboard'></a>
+				<div class="well well-small name"><b>Function DisableKeyboard : Int ()</b></div>
+				<div class="description">
+					<p>On the android and ios targets, this function disables the native virtual keyboard. On all other targets, both EnableKeyboard and DisableKeyboard have no effect.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#EnableKeyboard">EnableKeyboard</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='EnableKeyboard'></a>
+				<div class="well well-small name"><b>Function EnableKeyboard : Int ()</b></div>
+				<div class="description">
+					<p>On the android and ios targets, this function enables the native virtual keyboard. On all other targets, both EnableKeyboard and DisableKeyboard have no effect.
+<p>
+A virtual keyboard is a graphical representation of a keyboard overlaid on the display that allows users to enter text by means of touching symbols representing keys.
+<p>
+After enabling the virtual keyboard, you program will be able to use GetChar to receive keystrokes, just as if there were a real keyboard present. It is up to the program to eventually call DisableKeyboard when appropriate, for example, when GetChar returns 13 (ie: the 'Enter' key) or 27 (ie: the 'Esc' key).
+<p>
+On the GLFW, HTML5, Flash and XNA (Windows) targets, keyboard support is always assumed to be available and your program can always use GetChar to receive keystrokes.
+<p>
+On the XNA XBOX and Windows Phone 7 targets, keyboard support is currently unavailable.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#DisableKeyboard">DisableKeyboard</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetChar'></a>
+				<div class="well well-small name"><b>Function GetChar : Int ()</b></div>
+				<div class="description">
+					<p>Returns the character code of the next character in the keyboard character queue, or 0 if no more characters are available. The character is removed from the keyboard character queue.
+<p>
+The keyboard queue contains characters codes as opposed to the key codes used by KeyDown and KeyUp. Character codes differ from key codes in that they are generally printable and may be modified by the shift, control and alt keys. Character codes also 'repeat' at a rate determined by the OS.
+<p>
+The mapping from key codes to character codes is controlled by the underlying OS, but in practice will generally map to ASCII codes.
+<p>
+The input module also provides special character code mappings for a number of unprintable keys: 
+<p>
+CHAR_TAB, CHAR_BACKSPACE, CHAR_ENTER, CHAR_ESCAPE, CHAR_PAGEUP, CHAR_PAGEDOWN, CHAR_END, CHAR_HOME, CHAR_LEFT, CHAR_UP, CHAR_RIGHT, CHAR_DOWN, CHAR_INSERT, CHAR_DELETE</p>
+					
+					
+						<p><b><a href="examples/mojo_input_GetChar.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>text</code><code class=d>$=</code><code class=l>"Type&nbsp;something:"</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>30</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Repeat</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>char</code><code class=d>=</code><code class=i>GetChar</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=k>Not</code><code class=d>&nbsp;</code><code class=i>char</code><code class=d>&nbsp;</code><code class=k>Exit</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>char</code><code class=d>&gt;=</code><code class=l>32</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>text</code><code class=d>+=</code><code class=i>String.FromChar</code><code class=d>(&nbsp;</code><code class=i>char</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Forever</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=i>text</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='JoyDown'></a>
+				<div class="well well-small name"><b>Function JoyDown : Int ( button:Int, unit:Int=0 )</b></div>
+				<div class="description">
+					<p>Return 1 if the specified joystick button is currently held down, else 0.
+<p>
+The button parameter should be one of the following constants:
+<p>
+<table><tr><th>Joystick button</th><th>Description</th></tr>
+<tr><td>JOY_A</td><td>'A' on Xbox 360 controller, 'Cross' on PS3</td></tr>
+<tr><td>JOY_B</td><td>'B' on Xbox 360 controller, 'Circle' on PS3</td></tr>
+<tr><td>JOY_X</td><td>'X' on XBox 360 controller, 'Square' on PS3</td></tr>
+<tr><td>JOY_Y</td><td>'Y' on XBox 360 controller, 'Triangle' on PS3</td></tr>
+<tr><td>JOY_LB</td><td>Left shoulder button</td></tr>
+<tr><td>JOY_RB</td><td>Right Shoulder button</td></tr>
+<tr><td>JOY_BACK</td><td>'Back' on Xbox 360 controller, 'Select' on PS3</td></tr>
+<tr><td>JOY_START</td><td>Start button</td></tr>
+<tr><td>JOY_LEFT</td><td>Directional pad Left button</td></tr>
+<tr><td>JOY_UP</td><td>Directional pad Up button</td></tr>
+<tr><td>JOY_RIGHT</td><td>Directional pad Right button</td></tr>
+<tr><td>JOY_DOWN</td><td>Directional pad Down button</td></tr>
+<tr><td>JOY_LSB</td><td>Left stick button</td></tr>
+<tr><td>JOY_RSB</td><td>Right stick button</td></tr>
+<tr><td>JOY_MENU</td><td>Menu button</td></tr></table></p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#JoyHit">JoyHit</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='JoyHit'></a>
+				<div class="well well-small name"><b>Function JoyHit : Int ( button:Int, unit:Int=0 )</b></div>
+				<div class="description">
+					<p>Return the number of times the specified joystick button has been pressed since the last OnUpdate.
+<p>
+The button parameter should be one of the following constants:
+<p>
+<table><tr><th>Joystick button</th><th>Description</th></tr>
+<tr><td>JOY_A</td><td>'A' on Xbox 360 controller, 'Cross' on PS3</td></tr>
+<tr><td>JOY_B</td><td>'B' on Xbox 360 controller, 'Circle' on PS3</td></tr>
+<tr><td>JOY_X</td><td>'X' on XBox 360 controller, 'Square' on PS3</td></tr>
+<tr><td>JOY_Y</td><td>'Y' on XBox 360 controller, 'Triangle' on PS3</td></tr>
+<tr><td>JOY_LB</td><td>Left shoulder button</td></tr>
+<tr><td>JOY_RB</td><td>Right Shoulder button</td></tr>
+<tr><td>JOY_BACK</td><td>'Back' on Xbox 360 controller, 'Select' on PS3</td></tr>
+<tr><td>JOY_START</td><td>Start button</td></tr>
+<tr><td>JOY_LEFT</td><td>Directional pad Left button</td></tr>
+<tr><td>JOY_UP</td><td>Directional pad Up button</td></tr>
+<tr><td>JOY_RIGHT</td><td>Directional pad Right button</td></tr>
+<tr><td>JOY_DOWN</td><td>Directional pad Down button</td></tr>
+<tr><td>JOY_LSB</td><td>Left stick button</td></tr>
+<tr><td>JOY_RSB</td><td>Right stick button</td></tr>
+<tr><td>JOY_MENU</td><td>Menu button</td></tr></table></p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#JoyDown">JoyDown</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='JoyX'></a>
+				<div class="well well-small name"><b>Function JoyX : Float ( index:Int=0, unit:Int=0 )</b></div>
+				<div class="description">
+					<p>Returns the x, or horizontal, state of a joystick.
+<p>
+The return value will be in the range -1 to +1, with -1 representing 'left' and +1 representing 'right'.
+<p>
+In the case of controllers with 2 joysticks, the index parameter should be 0 for the left hand joystick, or 1 for the right hand joystick.
+<p>
+Note: On the XNA target, JoyX, JoyY and JoyZ will all return 0 until a joystick button is pressed. This is to comply with xbox live publishing guidelines that state that it must be possible to use any of the 4 controllers to play a game. Mojo will therefore wait until a button is pressed (usually in response to a 'press button to start' style message on the title page) before deciding which controller is in use.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='JoyY'></a>
+				<div class="well well-small name"><b>Function JoyY : Float ( index:Int=0, unit:Int=0 )</b></div>
+				<div class="description">
+					<p>Returns the y, or vertical, state of a joystick.
+<p>
+The return value will be in the range -1 to +1, with -1 representing 'down' and +1 representing 'up'.
+<p>
+In the case of controllers with 2 joysticks, the index parameter should be 0 for the left hand joystick, or 1 for the right hand joystick.
+<p>
+Note: On the XNA target, JoyX, JoyY and JoyZ will all return 0 until a joystick button is pressed. This is to comply with xbox live publishing guidelines that state that it must be possible to use any of the 4 controllers to play a game. Mojo will therefore wait until a button is pressed (usually in response to a 'press button to start' style message on the title page) before deciding which controller is in use.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='JoyZ'></a>
+				<div class="well well-small name"><b>Function JoyZ : Float ( index:Int=0, unit:Int=0 )</b></div>
+				<div class="description">
+					<p>On Playstation/Xbox style controllers, JoyZ returns the state of the analog shoulder controls.
+<p>
+The returned value will be in the range 0 to 1, with 0 indicating 'unpressed' and 1 indicating 'fully pressed'.
+<p>
+The index parameter should be 0 for the left handler shoulder control, or 1 for the right hand shoulder control.
+<p>
+Note: On the XNA target, JoyX, JoyY and JoyZ will all return 0 until a joystick button is pressed. This is to comply with xbox live publishing guidelines that state that it must be possible to use any of the 4 controllers to play a game. Mojo will therefore wait until a controller button is pressed (usually in response to a 'press button to start' style message on the title page) before deciding which controller is in use.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='KeyDown'></a>
+				<div class="well well-small name"><b>Function KeyDown : Int ( key:Int )</b></div>
+				<div class="description">
+					<p>Returns 1 if the specified key is currently held down, otherwise 0.</p>
+					
+						<p><b>See also</b> <a href="Programming_Key codes.html">Key codes</a>, <a href="Modules_mojo.input.html#KeyHit">KeyHit</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='KeyHit'></a>
+				<div class="well well-small name"><b>Function KeyHit : Int ( key:Int )</b></div>
+				<div class="description">
+					<p>Returns the number of times the specified key has been hit since the last OnUpdate.
+<p>
+Note that any on/off style 'buttons' on any device can be read using the KeyDown and KeyHit commands. For example, to read the state of the left mouse button you can use KeyDown( KEY_LMB ) in addition to MouseDown( MOUSE_LEFT ).</p>
+					
+						<p><b>See also</b> <a href="Programming_Key codes.html">Key codes</a>, <a href="Modules_mojo.input.html#KeyDown">KeyDown</a></p>
+					
+					
+						<p><b><a href="examples/mojo_input_KeyHit.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>lineY</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>lineY</code><code class=d>=</code><code class=i>DeviceHeight</code><code class=d>()/</code><code class=l>2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>30</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>hit</code><code class=d>=</code><code class=i>KeyHit</code><code class=d>(&nbsp;</code><code class=i>KEY_LMB</code><code class=d>&nbsp;)&nbsp;</code><code class=r>'Uses KeyHit to check the left mouse button.  You could also use MouseHit( MOUSE_LEFT )</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>hit</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>MouseY</code><code class=d>()&lt;</code><code class=i>lineY</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"You&nbsp;clicked&nbsp;above&nbsp;the&nbsp;line."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Else</code><code class=d>&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>hit</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>MouseY</code><code class=d>()&gt;=</code><code class=i>lineY</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"You&nbsp;clicked&nbsp;on&nbsp;or&nbsp;below&nbsp;the&nbsp;line."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawLine</code><code class=d>&nbsp;</code><code class=l>0</code><code class=d>,</code><code class=i>lineY</code><code class=d>,</code><code class=i>DeviceWidth</code><code class=d>(),</code><code class=i>lineY</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='MouseDown'></a>
+				<div class="well well-small name"><b>Function MouseDown : Int ( button:Int )</b></div>
+				<div class="description">
+					<p>Returns 1 if the specified mouse button is currently held down, otherwise 0.
+<p>
+The button parameter should be one of:
+<p>
+<table><tr><th>Mouse button</th><th>Description</th></tr>
+<tr><td>MOUSE_LEFT</td><td>Left mouse button</td></tr>
+<tr><td>MOUSE_RIGHT</td><td>Right mouse button</td></tr>
+<tr><td>MOUSE_MIDDLE</td><td>Middle mouse button</td></tr></table></p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#MouseHit">MouseHit</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='MouseHit'></a>
+				<div class="well well-small name"><b>Function MouseHit : Int ( button:Int )</b></div>
+				<div class="description">
+					<p>Returns the number of times the specified mouse button has been pressed since the last OnUpdate.
+<p>
+The button parameter should be one of:
+<p>
+<table><tr><th>Mouse button</th><th>Description</th></tr>
+<tr><td>MOUSE_LEFT</td><td>Left mouse button</td></tr>
+<tr><td>MOUSE_RIGHT</td><td>Right mouse button</td></tr>
+<tr><td>MOUSE_MIDDLE</td><td>Middle mouse button</td></tr></table></p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#MouseDown">MouseDown</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='MouseX'></a>
+				<div class="well well-small name"><b>Function MouseX : Float ()</b></div>
+				<div class="description">
+					<p>Returns the x coordinate of the mouse pointer.
+<p>
+On devices with a touch screen but no mouse, MouseX will instead return TouchX( 0 ).</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#MouseY">MouseY</a>, <a href="Modules_mojo.input.html#TouchX">TouchX</a></p>
+					
+					
+						<p><b><a href="examples/mojo_input_MouseX.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>30</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=l>"MouseX="</code><code class=d>+</code><code class=i>MouseX</code><code class=d>+</code><code class=l>",&nbsp;MouseY="</code><code class=d>+</code><code class=i>MouseY</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawCircle</code><code class=d>&nbsp;</code><code class=i>MouseX</code><code class=d>,</code><code class=i>MouseY</code><code class=d>,</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='MouseY'></a>
+				<div class="well well-small name"><b>Function MouseY : Float ()</b></div>
+				<div class="description">
+					<p>Returns the y coordinate of the mouse pointer.
+<p>
+On devices with a touch screen but no mouse, MouseY will instead return TouchY( 0 ).</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#MouseX">MouseX</a>, <a href="Modules_mojo.input.html#TouchY">TouchY</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekChar'></a>
+				<div class="well well-small name"><b>Function PeekChar : Int ( index:Int )</b></div>
+				<div class="description">
+					<p>Returns the character of the character at the specified index in the keyboard character queue. The character is NOT removed from the keyboard character queue.
+<p>
+If there is no character at the specified index, 0 is returned.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='TouchDown'></a>
+				<div class="well well-small name"><b>Function TouchDown : Int ( index:Int )</b></div>
+				<div class="description">
+					<p>Returns 1 if the finger specified by index is currently touching the touchscreen, otherwise 0.
+<p>
+Note that index refers to the order touches have been made. The first finger to touch the touchscreen will be assigned index 0. If another finger then also touches the touchscreen, it will be assigned index 1 and so on.
+<p>
+If a finger is touching, you can get its x and y coordinates using the TouchX and TouchY commands.
+<p>
+On devices with a mouse but no touch screen, TouchDown( 0 ) will instead return MouseDown( MOUSE_LEFT ).</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#TouchX">TouchX</a>, <a href="Modules_mojo.input.html#TouchY">TouchY</a>, <a href="Modules_mojo.input.html#TouchHit">TouchHit</a>, <a href="Modules_mojo.input.html#MouseDown">MouseDown</a></p>
+					
+					
+						<p><b><a href="examples/mojo_input_TouchDown.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyApp</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>touching</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>30</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>touching</code><code class=d>=</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>=</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Until</code><code class=d>&nbsp;</code><code class=l>32</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>TouchDown</code><code class=d>(&nbsp;</code><code class=i>i</code><code class=d>&nbsp;)&nbsp;</code><code class=i>touching</code><code class=d>+=</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=i>touching</code><code class=d>,</code><code class=l>0</code><code class=d>,</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyApp</code><br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='TouchHit'></a>
+				<div class="well well-small name"><b>Function TouchHit : Int ( index:Int )</b></div>
+				<div class="description">
+					<p>Returns the number of times the specified finger has made contact with the touchscreen since the last OnUpdate.
+<p>
+Note that index refers to the order touches have been made. The first finger to touch the touchscreen will be assigned index 0. If another finger then also touches the touchscreen, it will be assigned index 1 and so on.
+<p>
+If a finger is touching, you can get its x and y coordinates using the TouchX and TouchY commands.
+<p>
+On devices with a mouse but no touch screen, TouchHit( 0 ) will instead return MouseHit( MOUSE_LEFT ).</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#TouchX">TouchX</a>, <a href="Modules_mojo.input.html#TouchY">TouchY</a>, <a href="Modules_mojo.input.html#TouchDown">TouchDown</a>, <a href="Modules_mojo.input.html#MouseHit">MouseHit</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='TouchX'></a>
+				<div class="well well-small name"><b>Function TouchX : Float ( index:Int )</b></div>
+				<div class="description">
+					<p>Returns the x coordinate of the finger on a touch screen device.
+<p>
+Note that index refers to the order touches have been made. The first finger to touch the touchscreen will be assigned index 0. If another finger then also touches the touchscreen, it will be assigned index 1 and so on.
+<p>
+On devices with a mouse but no touch screen, TouchX( 0 ) will instead return MouseX.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#TouchY">TouchY</a>, <a href="Modules_mojo.input.html#TouchHit">TouchHit</a>, <a href="Modules_mojo.input.html#TouchDown">TouchDown</a>, <a href="Modules_mojo.input.html#MouseX">MouseX</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='TouchY'></a>
+				<div class="well well-small name"><b>Function TouchY : Float ( index:Int )</b></div>
+				<div class="description">
+					<p>Returns the y coordinate of the finger on a touch screen device.
+<p>
+Note that index refers to the order touches have been made. The first finger to touch the touchscreen will be assigned index 0. If another finger then also touches the touchscreen, it will be assigned index 1 and so on.
+<p>
+On devices with a mouse but no touch screen, TouchY( 0 ) will instead return MouseY.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.input.html#TouchX">TouchX</a>, <a href="Modules_mojo.input.html#TouchDown">TouchDown</a>, <a href="Modules_mojo.input.html#TouchHit">TouchHit</a>, <a href="Modules_mojo.input.html#MouseY">MouseY</a></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

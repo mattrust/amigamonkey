@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Target SDKs.html'>Target SDKs</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  The WinRT target </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<p>
+<h1>The WinRT target</h1>
+<p>
+The WinRT target allows you to develop games for the Windows 8 and Windows Phone 8.
+<p>
+<h2>You will need</h2>
+<p>
+<ul><li>A PC running Windows 8.</li>
+<p>
+<li>Microsoft Visual Studio Express 2012 for Window 8 to develop Windows Store games (or 2013 for apps with IAP support).</li>
+<p>
+<li>Microsoft Visual Studio Express 2012 for Windows Phone to develop Windows Phone 8 games.</li>
+<p>
+</ul><h2>Notes</h2>
+<p>
+Monkey is currently unable to launch games built for WinRT targets.
+<p>
+Once you have built a WinRT target, you will need to locate the '.sln' file in your projects winrt_win8.build or winrt_winphone8.build folder and open it with Visual Studio Express.
+<p>
+<h2>Testing in-app purchases</h2>
+<p>
+<ul><li>Windows 8</li>
+<p>
+</ul>To test in-app purchases on Windows 8 you will need to set the app config var WINRT_TEST_IAP to true before importing brl.monkeystore, eg:
+<p>
+<div class=pretty>
+<code class=d>#</code><code class=i>WINRT_TEST_IAP</code><code class=d>=</code><code class=k>True</code><br>
+<br>
+<code class=k>import</code><code class=d>&nbsp;</code><code class=i>brl.monkeystore</code><br>
+</div>
+<p>
+You will also need to modify the Assets/WindowsStoreProxy.xml file in the target project to reflect the items available for purchase by your app - there is no way to test Windows 8 IAP live/online.
+<p>
+Note: In-app purchases are only supported on Windows 8.1. You will need to use Visual Studio Express 2013 to develop for Windows 8.1.
+<p>
+<p>
+<ul><li>Windows Phone 8</li>
+<p>
+</ul>To test in-app purchases on Windows Phone 8, you will need to create a 'beta app submission' in the Windows Phone Dev Center. This basically involves the same steps you would need to make to set up a 'real' app submission. Please visit this page for more information: http://go.microsoft.com/fwlink/?LinkId=223181
+<p>
+Make sure that your app's Product Id matches the Product Id shown in the Windows Phone Dev Center!
+<p>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

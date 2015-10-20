@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  mojo </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">mojo</span></h1>
+
+
+	<p>Tho mojo modules provide a lightweight programming framework designed primarily for creating simple 2d games.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Imports:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.app.html'>mojo.app</a></li>
+					
+						<li><a href='Modules_mojo.asyncloaders.html'>mojo.asyncloaders</a></li>
+					
+						<li><a href='Modules_mojo.audio.html'>mojo.audio</a></li>
+					
+						<li><a href='Modules_mojo.graphics.html'>mojo.graphics</a></li>
+					
+						<li><a href='Modules_mojo.input.html'>mojo.input</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Tho mojo modules provide a lightweight programming framework designed primarily for creating simple 2d games.
+<p>
+Mojo applications must extend the mojo App class declared in mojo.app and create a new instance of this class somewhere inside the Monkey Main() function. This is what actually creates the application.
+<p>
+All data for mojo programs (images, sounds and text files) must go into a special data directory. This directory has the same name as the program's main source file, only with a '.data' extension instead of '.monkey'. For example, if your main source file is called 'joust2k.monkey', then your data directory will need to be named 'joust2k.data'.
+<p>
+Mojo functions should not be called until your application's OnCreate method is called. This means you cannot initialize global variables with values returned by mojo functions such as MilliSecs - you must instead initialize such variables in your application's OnCreate method or later.
+<p>
+To import all the mojo modules into your program, simply use:
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+</div>
+<p>
+This will automatically import the mojo.app, mojo.graphics, mojo.audio and mojo.input modules for you in one hit.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

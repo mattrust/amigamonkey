@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  reflection </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">reflection</span></h1>
+
+
+	<p>Reflection allows your program to inspect and access all or some of your program's declarations dynamically at runtime.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Classes:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_reflection_ArrayBoxer.html'>ArrayBoxer</a></li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html'>ClassInfo</a></li>
+					
+						<li><a href='Modules_reflection_ConstInfo.html'>ConstInfo</a></li>
+					
+						<li><a href='Modules_reflection_FieldInfo.html'>FieldInfo</a></li>
+					
+						<li><a href='Modules_reflection_FunctionInfo.html'>FunctionInfo</a></li>
+					
+						<li><a href='Modules_reflection_GlobalInfo.html'>GlobalInfo</a></li>
+					
+						<li><a href='Modules_reflection_MethodInfo.html'>MethodInfo</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constants:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li>ATTRIBUTE_ABSTRACT : Int</li>
+					
+						<li>ATTRIBUTE_EXTERN : Int</li>
+					
+						<li>ATTRIBUTE_FINAL : Int</li>
+					
+						<li>ATTRIBUTE_INTERFACE : Int</li>
+					
+						<li>ATTRIBUTE_PRIVATE : Int</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#ArrayClass'>ArrayClass</a> : ClassInfo ( elementType:String )</li>
+					
+						<li><a href='#BoolClass'>BoolClass</a> : ClassInfo ()</li>
+					
+						<li><a href='#BoxBool'>BoxBool</a> : Object ( value:Bool )</li>
+					
+						<li><a href='#BoxFloat'>BoxFloat</a> : Object ( value:Float )</li>
+					
+						<li><a href='#BoxInt'>BoxInt</a> : Object ( value:Int )</li>
+					
+						<li><a href='#BoxString'>BoxString</a> : Object ( value:String )</li>
+					
+						<li><a href='#FloatClass'>FloatClass</a> : ClassInfo ()</li>
+					
+						<li><a href='#GetClass'>GetClass</a> : ClassInfo ( name:String )</li>
+					
+						<li><a href='#GetClass(2)'>GetClass</a> : ClassInfo ( obj:Object )</li>
+					
+						<li><a href='#GetClasses'>GetClasses</a> : ClassInfo[] ()</li>
+					
+						<li><a href='#GetConst'>GetConst</a> : ConstInfo ( name:String )</li>
+					
+						<li><a href='#GetConsts'>GetConsts</a> : ConstInfo[] ()</li>
+					
+						<li><a href='#GetFunction'>GetFunction</a> : FunctionInfo ( name:String, argTypes:ClassInfo[] )</li>
+					
+						<li><a href='#GetFunctions'>GetFunctions</a> : FunctionInfo[] ()</li>
+					
+						<li><a href='#GetGlobal'>GetGlobal</a> : GlobalInfo ( name:String )</li>
+					
+						<li><a href='#GetGlobals'>GetGlobals</a> : GlobalInfo[] ()</li>
+					
+						<li><a href='#IntClass'>IntClass</a> : ClassInfo ()</li>
+					
+						<li><a href='#StringClass'>StringClass</a> : ClassInfo ()</li>
+					
+						<li><a href='#UnboxBool'>UnboxBool</a> : Bool ( box:Object )</li>
+					
+						<li><a href='#UnboxFloat'>UnboxFloat</a> : Float ( box:Object )</li>
+					
+						<li><a href='#UnboxInt'>UnboxInt</a> : Int ( box:Object )</li>
+					
+						<li><a href='#UnboxString'>UnboxString</a> : String ( box:Object )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Reflection allows your program to inspect and access all or some of your program's declarations dynamically at runtime.
+<p>
+<h3>Enabling reflection</h3>
+<p>
+To enable reflection, you must at least import the reflection module.
+<p>
+In addition, you must provide a 'reflection filter' to specify which modules are to be reflected. This is done using the REFLECTION_FILTER app config setting, which should contain the set of modules you want to be reflected. In addition, the reflection filter may use the '*' wildcard character to match 'any text' in a module path.
+<p>
+The simplest way to set the reflection filter is to use the wildcard character '*' on its own, eg:
+<p>
+<div class=pretty>
+<code class=d>#</code><code class=i>REFLECTION_FILTER</code><code class=d>=</code><code class=l>"*"</code><code class=d>&nbsp;&nbsp;</code><code class=r>'reflect everything!</code><br>
+<br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>reflection</code><br>
+</div>
+<p>
+However, this will cause <b>all</b> modules to be reflected, which in the case of even moderately sized programs will incur major overhead both in terms of compilation time and runtime app size. Instead, it's best to set the filter to only specify the modules you need reflected.
+<p>
+Multiple reflection filters may be specified using the ';' separator character, eg:
+<p>
+<div class=pretty>
+<code class=d>#</code><code class=i>REFLECTION_FILTER</code><code class=d>=</code><code class=l>"myapp.gadgets;myapp.listeneres"</code><code class=d>&nbsp;</code><code class=r>'reflect both the myapp.gadgets and myapp.listeners modules</code><br>
+</div>
+<p>
+The reflection filter may also be appended to using the preprocessor += operator, eg:
+<p>
+<div class=pretty>
+<code class=i>REFLECTION_FILTER</code><code class=d>=</code><code class=l>"myapp.gadgets"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'reflect the myapp.gadgets module...</code><br>
+<code class=i>REFLECTION_FILTER</code><code class=d>+=</code><code class=l>"myapp.listeners"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'...and the myapp.listeners module.</code><br>
+</div>
+<p>
+Using the '*' wildcard, sets of 'submodules can be specified, eg:
+<p>
+<div class=pretty>
+<code class=i>REFLECTION_FILTER</code><code class=d>=</code><code class=l>"myapp.gadgets;myapp.gadgets.*"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'reflect the myapp.gadgets module AND any myapp.gadgets submodules.</code><br>
+</div>
+<p>
+<h3>Declaration names</h3>
+<p>
+Declarations that appear at 'module scope' - that is, declarations that do not appear within a class - are fully qualified by the module they appear in.
+<p>
+For example, the DrawImage function that appears in the mojo.graphics module is named "mojo.graphics.DrawImage".
+<p>
+This is the name returned by the various Name() methods, and is the name you should use with the GetConst, GetGlobal, GetFunction and GetClass functions.
+<p>
+As a convenience, you can also use unqualified names with the Get functions as long as there is only one unique declaration with the given name.
+<p>
+For example, GetFunction( "mojo.graphics.DrawImage" ) and GetFunction( "DrawImage" ) will return the same FunctionInfo object, as long as DrawImage is only declared in one module.
+<p>
+Declarations that appear at class scope are not qualified.
+<p>
+<h3>Box objects</h3>
+<p>
+Non-object values of type int, float, string and array must be 'boxed' before they are passed to reflection methods such as SetValue and Invoke.
+<p>
+To do this, use the BoxInt, BoxFloat, BoxString functions. These functions all return a 'box' Object which is suitable for use with SetValue and Invoke.
+<p>
+Similarly, reflection methods such as GetValue and Invoke that return non-object values will return boxed values. 
+<p>
+To unbox these values, use the UnboxInt, UnboxFloat and UnboxString functions.
+<p>
+Here's an example of boxing and unboxing in action:
+<p>
+<div class=pretty>
+<code class=d>#</code><code class=i>REFLECTION_FILTER</code><code class=d>=</code><code class=l>"*"</code><br>
+<br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>reflection</code><br>
+<br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>MyGlobal</code><code class=d>:=</code><code class=l>123</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=r>'Get GlobalInfo for MyGlobal </code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>g</code><code class=d>:=</code><code class=i>GetGlobal</code><code class=d>(&nbsp;</code><code class=l>"MyGlobal"</code><code class=d>&nbsp;)</code><br>
+<br>
+<code class=r>'Read and unbox value of MyGlobal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>n1</code><code class=d>:=</code><code class=i>UnboxInt</code><code class=d>(&nbsp;</code><code class=i>g.GetValue</code><code class=d>()&nbsp;)</code><br>
+<br>
+<code class=r>'Print it...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"n1="</code><code class=d>+</code><code class=i>n1</code><br>
+<br>
+<code class=r>'Box and write value of MyGlobal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>g.SetValue</code><code class=d>(&nbsp;</code><code class=i>BoxInt</code><code class=d>(&nbsp;</code><code class=i>n1</code><code class=d>*</code><code class=l>2</code><code class=d>&nbsp;)&nbsp;)</code><br>
+<br>
+<code class=r>'Read, unbox and dump...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>n2</code><code class=d>:=</code><code class=i>UnboxInt</code><code class=d>(&nbsp;</code><code class=i>g.GetValue</code><code class=d>()&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"n2="</code><code class=d>+</code><code class=i>n2</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Boxing and Unboxing arrays is slightly trickier - you must use the Box and Unbox functions declared in the ArrayBoxer class to do this. Here's an example:
+<p>
+<div class=pretty>
+<code class=d>#</code><code class=i>REFLECTION_FILTER</code><code class=d>=</code><code class=l>"*"</code><br>
+<br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>reflection</code><br>
+<br>
+<code class=k>Global</code><code class=d>&nbsp;</code><code class=i>MyGlobal</code><code class=d>:</code><code class=k>Int</code><code class=d>[]</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'create an int array</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>intArray</code><code class=d>:</code><code class=k>Int</code><code class=d>[]=[</code><code class=l>1</code><code class=d>,</code><code class=l>2</code><code class=d>,</code><code class=l>3</code><code class=d>,</code><code class=l>4</code><code class=d>,</code><code class=l>5</code><code class=d>]</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'box it...	</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>boxedArray</code><code class=d>:=</code><code class=i>ArrayBoxer</code><code class=d>&lt;</code><code class=k>Int</code><code class=d>&gt;.</code><code class=i>Box</code><code class=d>(&nbsp;</code><code class=i>intArray</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'set value of MyGlobal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>GetGlobal</code><code class=d>(&nbsp;</code><code class=l>"MyGlobal"</code><code class=d>&nbsp;).</code><code class=i>SetValue</code><code class=d>(&nbsp;</code><code class=i>boxedArray</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'dump array</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>:=</code><code class=k>Eachin</code><code class=d>&nbsp;</code><code class=i>MyGlobal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>i</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'reassign MyGlobal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>MyGlobal</code><code class=d>=[</code><code class=l>6</code><code class=d>,</code><code class=l>7</code><code class=d>,</code><code class=l>8</code><code class=d>,</code><code class=l>9</code><code class=d>,</code><code class=l>10</code><code class=d>]</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'read value of MyGlobal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>boxedArray</code><code class=d>=</code><code class=i>GetGlobal</code><code class=d>(&nbsp;</code><code class=l>"MyGlobal"</code><code class=d>&nbsp;).</code><code class=i>GetValue</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Unbox it...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>intArray</code><code class=d>=</code><code class=i>ArrayBoxer</code><code class=d>&lt;</code><code class=k>Int</code><code class=d>&gt;.</code><code class=i>Unbox</code><code class=d>(&nbsp;</code><code class=i>boxedArray</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'dump unboxed array</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>:=</code><code class=k>Eachin</code><code class=d>&nbsp;</code><code class=i>intArray</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>i</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='ArrayClass'></a>
+				<div class="well well-small name"><b>Function ArrayClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> ( elementType:String )</b></div>
+				<div class="description">
+					<p>Returns the class of an array.
+<p>
+The elementType parameter is case sensitive, and must be the fully qualified name of the element type.
+<p>
+The elementType parameter may itself be an array, in which case the returned class represents a multidimensional array.
+<p>
+This is actually the class of the objects used to box arrays, since arrays aren't objects and therefore don't have a class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='BoolClass'></a>
+				<div class="well well-small name"><b>Function BoolClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> ()</b></div>
+				<div class="description">
+					<p>Returns the class of a 'bool'.
+<p>
+This is actually the class of the objects used to box bools, since bools aren't objects and therefore don't have a class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='BoxBool'></a>
+				<div class="well well-small name"><b>Function BoxBool : Object ( value:Bool )</b></div>
+				<div class="description">
+					<p>Creates a box object with the given value.
+<p>
+Box objects can be passed to the SetValue methods of FieldInfo and GlobalInfo objects, and used as parameters for the Invoke methods of MethodInfo and FunctionInfo objects.
+<p>
+Box objects are also returned by the GetValue methods of ConstInfo, FieldInfo and GlobalInfo objects, and by the Invoke methods of MethodInfo and FunctionInfo objects.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#UnboxBool">UnboxBool</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='BoxFloat'></a>
+				<div class="well well-small name"><b>Function BoxFloat : Object ( value:Float )</b></div>
+				<div class="description">
+					<p>Creates a box object with the given value.
+<p>
+Box objects can be passed to the SetValue methods of FieldInfo and GlobalInfo objects, and used as parameters for the Invoke methods of MethodInfo and FunctionInfo objects.
+<p>
+Box objects are also returned by the GetValue methods of ConstInfo, FieldInfo and GlobalInfo objects, and by the Invoke methods of MethodInfo and FunctionInfo objects.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#UnboxFloat">UnboxFloat</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='BoxInt'></a>
+				<div class="well well-small name"><b>Function BoxInt : Object ( value:Int )</b></div>
+				<div class="description">
+					<p>Creates a box object with the given value.
+<p>
+Box objects can be passed to the SetValue methods of FieldInfo and GlobalInfo objects, and used as parameters for the Invoke methods of MethodInfo and FunctionInfo objects.
+<p>
+Box objects are also returned by the GetValue methods of ConstInfo, FieldInfo and GlobalInfo objects, and by the Invoke methods of MethodInfo and FunctionInfo objects.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#UnboxInt">UnboxInt</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='BoxString'></a>
+				<div class="well well-small name"><b>Function BoxString : Object ( value:String )</b></div>
+				<div class="description">
+					<p>Creates a box object with the given value.
+<p>
+Box objects can be passed to the SetValue methods of FieldInfo and GlobalInfo objects, and used as parameters for the Invoke methods of MethodInfo and FunctionInfo objects.
+<p>
+Box objects are also returned by the GetValue methods of ConstInfo, FieldInfo and GlobalInfo objects, and by the Invoke methods of MethodInfo and FunctionInfo objects.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#UnboxString">UnboxString</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FloatClass'></a>
+				<div class="well well-small name"><b>Function FloatClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> ()</b></div>
+				<div class="description">
+					<p>Returns the class of a 'float'.
+<p>
+This is actually the class of the objects used to box floats, since floats aren't objects and therefore don't have a class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetClass'></a>
+				<div class="well well-small name"><b>Function GetClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> ( name:String )</b></div>
+				<div class="description">
+					<p>Returns the ClassInfo object with the given name, or Null if no object is found.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetClasses">GetClasses</a>, <a href="Modules_reflection_ClassInfo.html">ClassInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetClass(2)'></a>
+				<div class="well well-small name"><b>Function GetClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> ( obj:Object )</b></div>
+				<div class="description">
+					<p>Returns the ClassInfo object with the given name, or Null if no object is found.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetClasses">GetClasses</a>, <a href="Modules_reflection_ClassInfo.html">ClassInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetClasses'></a>
+				<div class="well well-small name"><b>Function GetClasses : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a>[] ()</b></div>
+				<div class="description">
+					<p>Returns an array of all reflected classes.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetClass">GetClass</a>, <a href="Modules_reflection_ClassInfo.html">ClassInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetConst'></a>
+				<div class="well well-small name"><b>Function GetConst : <a href="Modules_reflection_ConstInfo.html">ConstInfo</a> ( name:String )</b></div>
+				<div class="description">
+					<p>Returns the ConstInfo object with the given name, or Null if no object is found.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetConsts">GetConsts</a>, <a href="Modules_reflection_ConstInfo.html">ConstInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetConsts'></a>
+				<div class="well well-small name"><b>Function GetConsts : <a href="Modules_reflection_ConstInfo.html">ConstInfo</a>[] ()</b></div>
+				<div class="description">
+					<p>Returns an array of all consts declared at module scope.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetConst">GetConst</a>, <a href="Modules_reflection_ConstInfo.html">ConstInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetFunction'></a>
+				<div class="well well-small name"><b>Function GetFunction : <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a> ( name:String, argTypes:<a href="Modules_reflection_ClassInfo.html">ClassInfo</a>[] )</b></div>
+				<div class="description">
+					<p>Returns the FunctionInfo object with the given name and parameter types, or Null if no object is found.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetFunctions">GetFunctions</a>, <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetFunctions'></a>
+				<div class="well well-small name"><b>Function GetFunctions : <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a>[] ()</b></div>
+				<div class="description">
+					<p>Returns an array of all reflected functions.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetFunction">GetFunction</a>, <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetGlobal'></a>
+				<div class="well well-small name"><b>Function GetGlobal : <a href="Modules_reflection_GlobalInfo.html">GlobalInfo</a> ( name:String )</b></div>
+				<div class="description">
+					<p>Returns the GlobalInfo object with the given name, or Null if no object is found.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetGlobals">GetGlobals</a>, <a href="Modules_reflection_GlobalInfo.html">GlobalInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetGlobals'></a>
+				<div class="well well-small name"><b>Function GetGlobals : <a href="Modules_reflection_GlobalInfo.html">GlobalInfo</a>[] ()</b></div>
+				<div class="description">
+					<p>Returns an array of all reflected globals.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#GetGlobal">GetGlobal</a>, <a href="Modules_reflection_GlobalInfo.html">GlobalInfo</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IntClass'></a>
+				<div class="well well-small name"><b>Function IntClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> ()</b></div>
+				<div class="description">
+					<p>Returns the class of an 'int'.
+<p>
+This is actually the class of the objects used to box ints, since ints aren't objects and therefore don't have a class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StringClass'></a>
+				<div class="well well-small name"><b>Function StringClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> ()</b></div>
+				<div class="description">
+					<p>Returns the class of a 'string'.
+<p>
+This is actually the class of the objects used to box strings, since strings aren't objects and therefore don't have a class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UnboxBool'></a>
+				<div class="well well-small name"><b>Function UnboxBool : Bool ( box:Object )</b></div>
+				<div class="description">
+					<p>Unboxes a bool. The box must have been previously created with BoxBool.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#BoxBool">BoxBool</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UnboxFloat'></a>
+				<div class="well well-small name"><b>Function UnboxFloat : Float ( box:Object )</b></div>
+				<div class="description">
+					<p>Unboxes a float. The box must have been previously created with BoxFloat.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#BoxFloat">BoxFloat</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UnboxInt'></a>
+				<div class="well well-small name"><b>Function UnboxInt : Int ( box:Object )</b></div>
+				<div class="description">
+					<p>Unboxes an int. The box must have been previously created with BoxInt.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#BoxInt">BoxInt</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UnboxString'></a>
+				<div class="well well-small name"><b>Function UnboxString : String ( box:Object )</b></div>
+				<div class="description">
+					<p>Unboxes a string. The box must have been previously created with BoxString.</p>
+					
+						<p><b>See also</b> <a href="Modules_reflection.html#BoxString">BoxString</a></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

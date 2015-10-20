@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Try </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Try</h1>
+<p>
+Declares the start of a Try/Catch block.
+<p>
+<h2>Syntax</h2>
+Try<br>
+		<b>code</b><br>
+Catch <b>exception</b><br>
+		<b>error handling code</b><br>
+End [Try]<br>
+<p>
+<h2>Description</h2>
+<p>
+A Try/Catch block is an error-handling construct that allows custom code to be executed in situations which may otherwise cause undesirable behaviour.
+<p>
+The Try/Catch block opens with Try and closes with End (or End Try). The code to be executed within must be followed by at least one Catch section.
+<p>
+In the event of an error occurring within the Try/Catch block, an exception object (based on the native Throwable class) should be 'thrown' via the Throw instruction.
+<p>
+If an exception occurs, program flow jumps to a Catch section declared explicitly for the given exception type. The exception object is 'caught' and the relevant error-handling code is executed.
+<p>
+You can declare multiple exception classes to handle different types of exception and should create a matching Catch section for each one.
+<p>
+After an exception is caught and handled, program flow exits the Try/Catch block and continues.
+<p>
+When a try block has multiple catch blocks and an exception is thrown, the first catch block capable of handling the exception is executed. If no suitable catch block can be found, the exception is passed to the next most recently executed try block, and so on.
+<p>
+If no catch block can be found to catch an exception, a runtime error occurs and the application is terminated.
+<p>
+The Try/Catch method of error-handling allows code to be written without the need to manually check for errors at each step, provided an exception has been set up to handle any errors that <b>are</b> likely to be encountered.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Catch.html">Catch</a> | <a href="Programming_Keywords_Throw.html">Throw</a> | <a href="Modules_monkey.lang_Throwable.html">Throwable</a> | <a href="Programming_Keywords_End.html">End</a><br>
+<a href="Programming_Language reference.html#exceptions">Language reference</a>
+<p>
+<h2>Examples</h2>
+<p>
+Here is a basic example of error handling via the use of a custom exception:
+<p>
+<div class=pretty>
+<br>
+<code class=r>' A custom exception class:</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>CustomException</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=k>Throwable</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>message</code><code class=d>:</code><code class=k>String</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;(</code><code class=i>msg</code><code class=d>:</code><code class=k>String</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Self.message</code><code class=d>&nbsp;=&nbsp;</code><code class=i>msg</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=r>' A test function that throws an exception if a is 10 or above:</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>CheckAndPrint</code><code class=d>&nbsp;(</code><code class=i>a</code><code class=d>:</code><code class=k>Int</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;&lt;&nbsp;</code><code class=l>10</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;</code><code class=k>Else</code><code class=d>&nbsp;</code><code class=k>Throw</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>CustomException</code><code class=d>&nbsp;(</code><code class=l>"The&nbsp;value&nbsp;of&nbsp;'a'&nbsp;must&nbsp;be&nbsp;less&nbsp;than&nbsp;10!"</code><code class=d>)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=r>' Runnable example:</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Try</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>20</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>CheckAndPrint</code><code class=d>&nbsp;</code><code class=i>value</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' -----------------------</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'  Exception handling...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' -----------------------</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' A value of 10 or more passed to CheckAndPrint will throw a CustomException,</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' which we 'catch' here:</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Catch</code><code class=d>&nbsp;</code><code class=i>err</code><code class=d>:</code><code class=i>CustomException</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>err.message</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Program flow now exits the Try block...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"We&nbsp;still&nbsp;got&nbsp;to&nbsp;the&nbsp;end!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+This example demonstrates the use of multiple exception classes to catch different types of error; it allows different errors to be handled in different ways.
+<p>
+Note that this example is largely the same as the previous example but modified to use two custom exception types.
+<p>
+Note also that the For loop in the Main function deliberately starts from zero here; you can try changing it back to one to verify that the code no longer throws a HissyFit.
+<p>
+<div class=pretty>
+<br>
+<code class=r>' A custom exception class:</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>CustomException</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=k>Throwable</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>message</code><code class=d>:</code><code class=k>String</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;(</code><code class=i>msg</code><code class=d>:</code><code class=k>String</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Self.message</code><code class=d>&nbsp;=&nbsp;</code><code class=i>msg</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=r>' A second custom exception class:</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>HissyFit</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=k>Throwable</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>message</code><code class=d>:</code><code class=k>String</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;(</code><code class=i>msg</code><code class=d>:</code><code class=k>String</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Self.message</code><code class=d>&nbsp;=&nbsp;</code><code class=l>"HUGE&nbsp;ERROR!!!&nbsp;"</code><code class=d>&nbsp;+&nbsp;</code><code class=i>msg</code><code class=d>&nbsp;+&nbsp;</code><code class=l>"&nbsp;AAAAAAAAAAAAAAAHHHHH!!!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=r>' A test function that throws a CustomException if 'a' is 10 or greater;</code><br>
+<code class=r>' or throw a HissyFit if 'a' is zero:</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>CheckAndPrint</code><code class=d>&nbsp;(</code><code class=i>a</code><code class=d>:</code><code class=k>Int</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Throw</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>HissyFit</code><code class=d>&nbsp;(</code><code class=l>"The&nbsp;value&nbsp;of&nbsp;'a'&nbsp;cannot&nbsp;be&nbsp;0!"</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;&lt;&nbsp;</code><code class=l>10</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;</code><code class=k>Else</code><code class=d>&nbsp;</code><code class=k>Throw</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>CustomException</code><code class=d>&nbsp;(</code><code class=l>"The&nbsp;value&nbsp;of&nbsp;'a'&nbsp;must&nbsp;be&nbsp;less&nbsp;than&nbsp;10!"</code><code class=d>)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Try</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>value</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>20</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>CheckAndPrint</code><code class=d>&nbsp;</code><code class=i>value</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' -----------------------</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'  Exception handling...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' -----------------------</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' A value of 10 or more passed to CheckAndPrint will throw a CustomException,</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' which we 'catch' here:</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Catch</code><code class=d>&nbsp;</code><code class=i>err</code><code class=d>:</code><code class=i>CustomException</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>err.message</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' A value of zero passed to CheckAndPrint will throw a HissyFit,</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' which we catch here:</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Catch</code><code class=d>&nbsp;</code><code class=i>bigerror</code><code class=d>:</code><code class=i>HissyFit</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>bigerror.message</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"We&nbsp;still&nbsp;got&nbsp;to&nbsp;the&nbsp;end!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

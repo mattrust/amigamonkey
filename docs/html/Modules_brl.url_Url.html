@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.url.html'>brl.url</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Url </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Url</span></h1>
+
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( url:String, defaultScheme:String="http", defaultPort:Int=80 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Domain'>Domain</a> : String ()</li>
+					
+						<li><a href='#Fragment'>Fragment</a> : String ()</li>
+					
+						<li><a href='#FullPath'>FullPath</a> : String ()</li>
+					
+						<li><a href='#Password'>Password</a> : String ()</li>
+					
+						<li><a href='#Path'>Path</a> : String ()</li>
+					
+						<li><a href='#Port'>Port</a> : Int ()</li>
+					
+						<li><a href='#Query'>Query</a> : String ()</li>
+					
+						<li><a href='#Scheme'>Scheme</a> : String ()</li>
+					
+						<li><a href='#Username'>Username</a> : String ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.url_Url.html#Set'>Set</a> : Void ( url:String )</li>
+					
+						<li><a href='Modules_brl.url_Url.html#ToString'>ToString</a> : String ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( url:String, defaultScheme:String="http", defaultPort:Int=80 )</b></div>
+				<div class="description">
+					<p>Creates a new url object.
+<p>
+If the url does not contain a scheme or port, the appropriate <b>defaultScheme</b> and/or <b>defaultPort</b> value is used.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Domain'></a>
+				<div class="well well-small name"><b>Method Domain : String () Property</b></div>
+				<div class="description">
+					<p>Returns the domain part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Fragment'></a>
+				<div class="well well-small name"><b>Method Fragment : String () Property</b></div>
+				<div class="description">
+					<p>Returns the anchor part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FullPath'></a>
+				<div class="well well-small name"><b>Method FullPath : String () Property</b></div>
+				<div class="description">
+					<p>Returns the path, query and fragment parts of the url, combined with appropriate separators.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Password'></a>
+				<div class="well well-small name"><b>Method Password : String () Property</b></div>
+				<div class="description">
+					<p>Returns the password part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Path'></a>
+				<div class="well well-small name"><b>Method Path : String () Property</b></div>
+				<div class="description">
+					<p>Returns the path part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Port'></a>
+				<div class="well well-small name"><b>Method Port : Int () Property</b></div>
+				<div class="description">
+					<p>Returns the port part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Query'></a>
+				<div class="well well-small name"><b>Method Query : String () Property</b></div>
+				<div class="description">
+					<p>Returns the query part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Scheme'></a>
+				<div class="well well-small name"><b>Method Scheme : String () Property</b></div>
+				<div class="description">
+					<p>Returns the scheme part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Username'></a>
+				<div class="well well-small name"><b>Method Username : String () Property</b></div>
+				<div class="description">
+					<p>Returns the username part of the url.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Set'></a>
+				<div class="well well-small name"><b>Method Set : Void ( url:String )</b></div>
+				<div class="description">
+					<p>Changes the url.
+<p>
+If the url does not contain a scheme or port, the appropriate default scheme and/or port value provided to the constructor is used.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ToString'></a>
+				<div class="well well-small name"><b>Method ToString : String ()</b></div>
+				<div class="description">
+					<p>Returns the url as a string.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  App config settings </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>App config settings</h1>
+<p>
+App config settings are settings that affect how a project is built.
+<p>
+These are used for features that are highly target specific, or that somehow affect the build process in some way and can't be implemented using plain Monkey code.
+<p>
+There are 3 ways to specify app config settings:
+<p>
+<ul><li>With <a href="Tools_Trans.html">Trans</a> using the command line.</li>
+<p>
+<li>In Monkey source code using the preprocessor, eg: <code>#MOJO_AUTO_SUSPEND_ENABLED=False</code>. Settings made this way will not overwrite settings passed to Trans.</li>
+<p>
+<li>By editing the CONFIG.MONKEY text file in your apps .build/target folder. Settings in CONFIG.MONKEY will not overwrite any settings passed to Trans or in Monkey source code, so this provides a mechanism for defining 'default' settings.</li>
+<p>
+</ul>The following app config settings are currently supported:
+<p>
+<div class=pretty>
+<code class=r>'Data file filters, examples shown, actual allowable values depend on target</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>TEXT_FILES</code><code class=d>=</code><code class=l>"*.txt|*.xml|*.json"</code><br>
+<code class=d>#</code><code class=i>IMAGE_FILES</code><code class=d>=</code><code class=l>"*.png|*.jpg"</code><br>
+<code class=d>#</code><code class=i>SOUND_FILES</code><code class=d>=</code><code class=l>"*.wav|*.ogg"</code><br>
+<code class=d>#</code><code class=i>MUSIC_FILES</code><code class=d>=</code><code class=l>"*.wav|*.ogg"</code><br>
+<code class=d>#</code><code class=i>BINARY_FILES</code><code class=d>=</code><code class=l>"*.bin|*.dat"</code><br>
+<code class=d>#</code><code class=i>FAST_SYNC_PROJECT_DATA</code><code class=d>=</code><code class=k>True</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set to True to enable 'fast syncing' of project data when building - warning: has problems with xcode, False by default.</code><br>
+<br>
+<code class=r>'Mojo settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>MOJO_AUTO_SUSPEND_ENABLED</code><code class=d>=</code><code class=k>True</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set to True to cause app to suspend when desktop window loses focus.</code><br>
+<code class=d>#</code><code class=i>MOJO_HICOLOR_TEXTURES</code><code class=d>=</code><code class=k>True</code><code class=d>&nbsp;</code><br>
+<code class=d>#</code><code class=i>MOJO_IMAGE_FILTERING_ENABLED</code><code class=d>=</code><code class=k>True</code><br>
+<br>
+<code class=r>'Html5 settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>HTML5_WEBAUDIO_ENABLED</code><code class=d>=</code><code class=k>True</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set to false to disable webaudio support for mojo audio, and to use older multimedia audio system instead.</code><br>
+<br>
+<code class=r>'GLFW settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>GLFW_USE_MINGW</code><code class=d>=</code><code class=k>True</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set to false on Windows to use MSVC instead of MinGW to build glfw apps.</code><br>
+<code class=d>#</code><code class=i>GLFW_WINDOW_TITLE</code><code class=d>=</code><code class=l>"Monkey&nbsp;Game"</code><br>
+<code class=d>#</code><code class=i>GLFW_WINDOW_WIDTH</code><code class=d>=</code><code class=l>640</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set this and HEIGHT to 0 for a 'windowless' glfw app</code><br>
+<code class=d>#</code><code class=i>GLFW_WINDOW_HEIGHT</code><code class=d>=</code><code class=l>480</code><code class=d>&nbsp;</code><br>
+<code class=d>#</code><code class=i>GLFW_WINDOW_RESIZABLE</code><code class=d>=</code><code class=k>False</code><br>
+<code class=d>#</code><code class=i>GLFW_WINDOW_FULLSCREEN</code><code class=d>=</code><code class=k>False</code><br>
+<code class=d>#</code><code class=i>GLFW_WINDOW_SAMPLES</code><code class=d>=</code><code class=l>0</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set to number of samples for multisampling (glfw3 only).</code><br>
+<code class=d>#</code><code class=i>GLFW_WINDOW_DECORATED</code><code class=d>=</code><code class=k>True</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set to false to create a broderless window (glfw3 only).</code><br>
+<code class=d>#</code><code class=i>GLFW_VERSION</code><code class=d>=</code><code class=l>2</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Set to GLFW version, ie: 2 or 3.			</code><br>
+<br>
+<code class=d>#</code><code class=i>GLFW_APP_LABEL</code><code class=d>=</code><code class=l>"My&nbsp;App"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Human readable label for app. </code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Must be set for monkey://internal to map to 'per user' app data dir.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'If not set (the default), monkey://internal is shared by all users of app.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'monkey://external is ALWAYS shared by all users of app.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Must contain filesystem friendly chars only - generally, [A-Z], [a-z], [0-9], </code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'&lt;space&gt;, &lt;underscore&gt; &lt;minus&gt;, &lt;dot&gt; should be OK.</code><br>
+<code class=d>#</code><code class=i>GLFW_APP_PUBLISHER</code><code class=d>=</code><code class=l>"My&nbsp;Company"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Optional human readable publisher name for app. Must be filesystem friendly.</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Not defined by default.</code><br>
+<br>
+<br>
+<code class=r>'XNA settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_WIDTH</code><code class=d>=</code><code class=l>640</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_HEIGHT</code><code class=d>=</code><code class=l>480</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_WIDTH_XBOX</code><code class=d>=</code><code class=l>640</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_HEIGHT_XBOX</code><code class=d>=</code><code class=l>480</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_WIDTH_PHONE</code><code class=d>=</code><code class=l>320</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_HEIGHT_PHONE</code><code class=d>=</code><code class=l>480</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_RESIZABLE</code><code class=d>=</code><code class=k>False</code><br>
+<code class=d>#</code><code class=i>XNA_WINDOW_FULLSCREEN</code><code class=d>=</code><code class=k>False</code><br>
+<br>
+<code class=r>'IOS settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>IOS_RETINA_ENABLED</code><code class=d>=</code><code class=k>True</code><br>
+<code class=d>#</code><code class=i>IOS_ACCELEROMETER_ENABLED</code><code class=d>=</code><code class=k>True</code><br>
+<code class=d>#</code><code class=i>IOS_DISPLAY_LINK_ENABLED</code><code class=d>=</code><code class=k>False</code><br>
+<br>
+<code class=r>'Android settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>ANDROID_APP_LABEL</code><code class=d>=</code><code class=l>"Monkey&nbsp;Game"</code><br>
+<code class=d>#</code><code class=i>ANDROID_APP_PACKAGE</code><code class=d>=</code><code class=l>"com.monkeycoder.monkeygame"</code><br>
+<code class=d>#</code><code class=i>ANDROID_SCREEN_ORIENTATION</code><code class=d>=</code><code class=l>"portrait"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'one of: user, portrait, landscape</code><br>
+<code class=d>#</code><code class=i>ANDROID_VERSION_CODE</code><code class=d>=</code><code class=l>"1"</code><br>
+<code class=d>#</code><code class=i>ANDROID_VERSION_NAME</code><code class=d>=</code><code class=l>"1.0"</code><br>
+<code class=d>#</code><code class=i>ANDROID_NATIVE_GL_ENABLED</code><code class=d>=</code><code class=k>False</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'for use with the opengl modules</code><br>
+<code class=d>#</code><code class=i>ANDROID_KEY_STORE</code><code class=d>=</code><code class=l>"../../release-key.keystore"</code><br>
+<code class=d>#</code><code class=i>ANDROID_KEY_ALIAS</code><code class=d>=</code><code class=l>"release-key-alias"</code><br>
+<code class=d>#</code><code class=i>ANDROID_KEY_STORE_PASSWORD</code><code class=d>=</code><code class=l>"password"</code><br>
+<code class=d>#</code><code class=i>ANDROID_KEY_ALIAS_PASSWORD</code><code class=d>=</code><code class=l>"password"</code><br>
+<code class=d>#</code><code class=i>ANDROID_SIGN_APP</code><code class=d>=</code><code class=k>False</code><br>
+<br>
+<code class=r>'OpenGL settings. To override, set these in your code BEFORE importing opengl.gles11 or opengl.gles20</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>OPENGL_DEPTH_BUFFER_ENABLED</code><code class=d>=</code><code class=k>True</code><br>
+<br>
+<code class=r>'Reflection settings</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>REFLECTION_FILTER</code><code class=d>=</code><code class=l>""</code><br>
+<br>
+<code class=r>'Admob settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>ADMOB_PUBLISHER_ID</code><code class=d>=</code><code class=l>"abcdabcdabcdabc"</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'from your admob account</code><br>
+<code class=d>#</code><code class=i>ADMOB_ANDROID_TEST_DEVICE1</code><code class=d>=</code><code class=l>"TEST_EMULATOR"</code><br>
+<code class=d>#</code><code class=i>ADMOB_ANDROID_TEST_DEVICE2</code><code class=d>=</code><code class=l>"ABCDABCDABCDABCDABCDABCDABCDABCD"</code><code class=d>&nbsp;&nbsp;</code><code class=r>'your device's admob ID for test mode</code><br>
+<code class=d>#</code><code class=i>ADMOB_ANDROID_TEST_DEVICE3</code><code class=d>=</code><code class=l>""</code><br>
+<code class=d>#</code><code class=i>ADMOB_ANDROID_TEST_DEVICE4</code><code class=d>=</code><code class=l>""</code><br>
+<br>
+<code class=r>'C++ settings, defaults shown</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>CPP_DOUBLE_PRECISION_FLOATS</code><code class=d>=</code><code class=k>False</code><code class=d>&nbsp;&nbsp;</code><code class=r>'Set to True to enable 64 bit floats.</code><br>
+<code class=d>#</code><code class=i>CPP_GC_MODE</code><code class=d>=</code><code class=l>1</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'0 disable GC, 1=incremental collect after every OnWhatever, 2=Incremental collect every GC allocation</code><br>
+<code class=d>#</code><code class=i>CPP_GC_TRIGGER</code><code class=d>=</code><code class=l>8388608</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Allocated memory (in bytes) before a GC 'sweep' occurs. Defaults to 8 MiB</code><br>
+<code class=d>#</code><code class=i>CPP_GC_MAX_LOCALS</code><code class=d>=</code><code class=l>8192</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'This is used with GC_MODE 2 to track local object vars and defaults to 8192</code><br>
+<br>
+<code class=r>'Misc</code><br>
+<code class=r>'</code><br>
+<code class=d>#</code><code class=i>CC_OPTS</code><code class=d>=</code><code class=l>""</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'additional gcc options for stdcpp target, eg: #CC_OPTS+="-DMyDefine"</code><br>
+<br>
+</div>
+<p>
+Not all settings are supported by all targets, and when not supported they will silently fail.
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

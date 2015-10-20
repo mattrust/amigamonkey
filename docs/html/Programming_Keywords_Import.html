@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Import </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Directive Import</h1>
+<p>
+Module import directive.
+<p>
+<h2>Syntax</h2>
+<p>
+Import module<b>[.submodule]</b>
+<p>
+<h2>Description</h2>
+<p>
+A Monkey program consists of one or more modules, each of which is represented by a single source file; the name of the module is taken from the name of the source file. For example, if your file is named "particles.monkey" then the module will be called "particles".
+<p>
+A module may 'import' other modules, gaining access to their declarations such as classes, functions, global variables, constants, etc. Imported modules in turn may import other modules, which may themselves import other modules, and so on.
+<p>
+To import another module, the Import keyword must be placed at the top of your source file, but <b>after</b> the Strict keyword if used.
+<p>
+Monkey also supports cyclic imports, whereby modules can import each other, gaining access to each other's declarations.
+<p>
+<h2>See also</h2>
+<a href="Programming_Keywords_Strict.html">Strict</a><br>
+<a href="Programming_Language reference.html#modules">Language reference</a>
+<p>
+<h2>Example</h2>
+<p>
+A common use case: importing the mojo module in a game application.
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Game goes here!</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+In Strict mode, Strict should be declared before any imports:
+<p>
+<div class=pretty>
+<code class=k>Strict</code><br>
+<br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Game goes here!</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>0</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<h2>Example 2</h2>
+<p>
+This runnable two-part example shows a main module followed by a module to be imported. They should be saved as two separate files in the same folder.
+<p>
+<b>Main module:</b>
+<div class=pretty>
+<code class=r>' Main module, save as, eg. mygame.monkey  </code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>hello</code><code class=d>&nbsp;&nbsp;</code><br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SayHello</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<b>Module to be imported:</b>
+<div class=pretty>
+<code class=r>' Save as hello.monkey  </code><br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>SayHello</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+The main module, mygame, can now access the SayHello function of the imported 'hello' module.
+<p>
+<h2>Example 3</h2>
+<p>
+This two-part cyclic import example shows a main module, mygame, which imports multiple modules; each of these modules imports mygame in return.
+<p>
+<b>Main module:</b>
+<div class=pretty>
+<code class=r>' Saved as mygame.monkey  </code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>player</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>rocket</code><br>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>bullet</code><code class=d>&nbsp;&nbsp;</code><br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Game goes here!</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<b>At the top of player.monkey, rocket.monkey and bullet.monkey:</b>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mygame</code><br>
+<code class=r>' ...</code><br>
+</div>
+<p>
+Because the main module, mygame, imports player, rocket and bullet, each module importing mygame can access all declarations in player, rocket and bullet. Any new imports added to mygame will automatically become available.
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

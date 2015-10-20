@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Return </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Return</h1>
+<p>
+The Return keyword causes program flow to exit a function or method and return a value to the calling statement.  
+<p>
+<h2>Syntax</h2>
+<p>
+Return <b>value</b><br>
+<p>
+<h2>Description</h2>
+<p>
+The Return keyword is used to exit a function or method while providing a return value.
+<p>
+In <b>Strict</b> mode, all functions and methods <b>must</b> explicitly return a value.  
+<p>
+In <b>non-Strict</b> mode, Return may be used with or without a value to simply exit a function or method at any point. When the return value is omitted in this way, a default zero or Null value, or an empty string, will be returned, depending on the function or method's return type.  
+<p>
+Note that Return can be omitted completely in non-Strict mode; a default zero or Null value, or an empty string, will be returned to the caller at the natural end of the function or method.  
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Function.html">Function</a> | <a href="Programming_Keywords_Method.html">Method</a><br>
+<a href="Programming_Language reference.html#functions">Language reference</a>  
+<p>
+<h2>Examples</h2>
+<p>
+This runnable example returns a string dependent on the animal passed to the MakeSound function; try changing "dog" to "cat" or "cow":
+<p>
+<div class=pretty>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>animal</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;=&nbsp;</code><code class=l>"dog"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"The&nbsp;"</code><code class=d>&nbsp;+&nbsp;</code><code class=i>animal</code><code class=d>&nbsp;+&nbsp;</code><code class=l>"&nbsp;says&nbsp;"</code><code class=d>&nbsp;+&nbsp;</code><code class=i>MakeSound</code><code class=d>&nbsp;(</code><code class=i>animal</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>MakeSound</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;(</code><code class=i>animal_type</code><code class=d>:</code><code class=k>String</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Select</code><code class=d>&nbsp;</code><code class=i>animal_type</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Case</code><code class=d>&nbsp;</code><code class=l>"dog"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>"Woof!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Case</code><code class=d>&nbsp;</code><code class=l>"cat"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>"Meeow!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Case</code><code class=d>&nbsp;</code><code class=l>"cow"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>"Moo!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+</div>
+<p>
+In non-Strict mode, you can call Return without a value, in which case a default value will be returned. (See description.)  
+<p>
+In this example, if <b>level</b> is zero we simply exit the function early with a Return call.  
+<p>
+However, note that if <b>level</b> is <b>non</b>-zero, the example doesn't call Return at all; in this case, a default value would be returned at the end of the function.  
+<p>
+<div class=pretty>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>PassedTest</code><code class=d>&nbsp;(</code><code class=i>level</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Return</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Top&nbsp;dog!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>2</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Not&nbsp;bad!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>3</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Loser!"</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+</div>
+<p>
+(You could of course add a <b>Return</b> at the end of this function if you wanted to. <b>Return 1</b>, for example, would allow the function to return 0 for a test failure and 1 for a pass.)
+<p>
+Here's the same example updated for Strict mode. Note that we <b>must</b> return a value here; in this case, the Return at the end is <b>not</b> optional (though the value could be anything).  
+<p>
+<div class=pretty>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>PassedTest</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;(</code><code class=i>level</code><code class=d>:</code><code class=k>Int</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Top&nbsp;dog!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>2</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Not&nbsp;bad!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>level</code><code class=d>&nbsp;=&nbsp;</code><code class=l>3</code><code class=d>&nbsp;</code><code class=k>Then</code><code class=d>&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Loser!"</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+</div>
+<p>
+In Strict mode, a minimal Monkey program would look like this, with the Main function explicitly returning an integer value:  
+<p>
+<div class=pretty>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>1</code><br>
+<code class=k>End</code><br>
+<br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

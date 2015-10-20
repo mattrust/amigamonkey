@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  monkey.math </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">monkey.math</span></h1>
+
+
+	<p>The math module provides math related constants and functions.
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constants:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li>HALFPI : Float</li>
+					
+						<li>PI : Float</li>
+					
+						<li>TWOPI : Float</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#ACos'>ACos</a> : Float ( x:Float )</li>
+					
+						<li><a href='#ACosr'>ACosr</a> : Float ( x:Float )</li>
+					
+						<li><a href='#ASin'>ASin</a> : Float ( x:Float )</li>
+					
+						<li><a href='#ASinr'>ASinr</a> : Float ( x:Float )</li>
+					
+						<li><a href='#ATan'>ATan</a> : Float ( x:Float )</li>
+					
+						<li><a href='#ATan2'>ATan2</a> : Float ( x:Float, y:Float )</li>
+					
+						<li><a href='#ATan2r'>ATan2r</a> : Float ( x:Float, y:Float )</li>
+					
+						<li><a href='#ATanr'>ATanr</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Abs'>Abs</a> : Int ( x:Int )</li>
+					
+						<li><a href='#Abs(2)'>Abs</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Ceil'>Ceil</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Clamp'>Clamp</a> : Int ( x:Int, min:Int, max:Int )</li>
+					
+						<li><a href='#Clamp(2)'>Clamp</a> : Float ( x:Float, min:Float, max:Float )</li>
+					
+						<li><a href='#Cos'>Cos</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Cosr'>Cosr</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Exp'>Exp</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Floor'>Floor</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Log'>Log</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Max'>Max</a> : Int ( x:Int, y:Int )</li>
+					
+						<li><a href='#Max(2)'>Max</a> : Float ( x:Float, y:Float )</li>
+					
+						<li><a href='#Min'>Min</a> : Int ( x:Int, y:Int )</li>
+					
+						<li><a href='#Min(2)'>Min</a> : Float ( x:Float, y:Float )</li>
+					
+						<li><a href='#Pow'>Pow</a> : Float ( x:Float, y:Float )</li>
+					
+						<li><a href='#Sgn'>Sgn</a> : Int ( x:Int )</li>
+					
+						<li><a href='#Sgn(2)'>Sgn</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Sin'>Sin</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Sinr'>Sinr</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Sqrt'>Sqrt</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Tan'>Tan</a> : Float ( x:Float )</li>
+					
+						<li><a href='#Tanr'>Tanr</a> : Float ( x:Float )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='ACos'></a>
+				<div class="well well-small name"><b>Function ACos : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc cosine of <b>x</b>, in degrees.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ACosr'></a>
+				<div class="well well-small name"><b>Function ACosr : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc cosine of <b>x</b>, in radians.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ASin'></a>
+				<div class="well well-small name"><b>Function ASin : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc sine of <b>x</b>, in degrees.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ASinr'></a>
+				<div class="well well-small name"><b>Function ASinr : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc sine of <b>x</b>, in radians.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ATan'></a>
+				<div class="well well-small name"><b>Function ATan : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc tangent of <b>x</b>, in degrees.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ATan2'></a>
+				<div class="well well-small name"><b>Function ATan2 : Float ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc tangent of <b>x</b> / <b>y</b>, in degrees.
+<p>
+The function uses the signs of <b>x</b> and <b>y</b> to compute the correct quadrant for the result.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ATan2r'></a>
+				<div class="well well-small name"><b>Function ATan2r : Float ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc tangent of <b>x</b> / <b>y</b>, in radians.
+<p>
+The function uses the signs of <b>x</b> and <b>y</b> to compute the correct quadrant for the result.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ATanr'></a>
+				<div class="well well-small name"><b>Function ATanr : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the arc tangent of <b>x</b>, in radians.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Abs'></a>
+				<div class="well well-small name"><b>Function Abs : Int ( x:Int )</b></div>
+				<div class="description">
+					<p>Returns the absolute value of <b>x</b>, that is, +<b>x</b> if <b>x</b>>=0 and -<b>x</b> if <b>x</b><0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Abs(2)'></a>
+				<div class="well well-small name"><b>Function Abs : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the absolute value of <b>x</b>, that is, +<b>x</b> if <b>x</b>>=0 and -<b>x</b> if <b>x</b><0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Ceil'></a>
+				<div class="well well-small name"><b>Function Ceil : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the smallest integral value that is not less than <b>x</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Clamp'></a>
+				<div class="well well-small name"><b>Function Clamp : Int ( x:Int, min:Int, max:Int )</b></div>
+				<div class="description">
+					<p>Clamps <b>x</b> to the range <b>min</b> through <b>max</b> inclusive.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Clamp(2)'></a>
+				<div class="well well-small name"><b>Function Clamp : Float ( x:Float, min:Float, max:Float )</b></div>
+				<div class="description">
+					<p>Clamps <b>x</b> to the range <b>min</b> through <b>max</b> inclusive.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Cos'></a>
+				<div class="well well-small name"><b>Function Cos : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the cosine of <b>x</b> degrees.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Cosr'></a>
+				<div class="well well-small name"><b>Function Cosr : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the cosine of <b>x</b> radians.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Exp'></a>
+				<div class="well well-small name"><b>Function Exp : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the base-e exponential function of <b>x</b>, which is the <b>e</b> number raised to the power <b>x</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Floor'></a>
+				<div class="well well-small name"><b>Function Floor : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the largest integral value that is not greater than <b>x</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Log'></a>
+				<div class="well well-small name"><b>Function Log : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the natural logarithm of <b>x</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Max'></a>
+				<div class="well well-small name"><b>Function Max : Int ( x:Int, y:Int )</b></div>
+				<div class="description">
+					<p>Returns the maximum of <b>x</b> and <b>y</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Max(2)'></a>
+				<div class="well well-small name"><b>Function Max : Float ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Returns the maximum of <b>x</b> and <b>y</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Min'></a>
+				<div class="well well-small name"><b>Function Min : Int ( x:Int, y:Int )</b></div>
+				<div class="description">
+					<p>Returns the minimum of <b>x</b> and <b>y</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Min(2)'></a>
+				<div class="well well-small name"><b>Function Min : Float ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Returns the minimum of <b>x</b> and <b>y</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Pow'></a>
+				<div class="well well-small name"><b>Function Pow : Float ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Returns <b>x</b> raised to the power <b>y</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Sgn'></a>
+				<div class="well well-small name"><b>Function Sgn : Int ( x:Int )</b></div>
+				<div class="description">
+					<p>Returns -1 if <b>x</b> is less than zero, +1 if <b>x</b> is greater than zero or 0 if <b>x</b> is equal to zero.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Sgn(2)'></a>
+				<div class="well well-small name"><b>Function Sgn : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns -1 if <b>x</b> is less than zero, +1 if <b>x</b> is greater than zero or 0 if <b>x</b> is equal to zero.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Sin'></a>
+				<div class="well well-small name"><b>Function Sin : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the sine of <b>x</b> degrees.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Sinr'></a>
+				<div class="well well-small name"><b>Function Sinr : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the sine of <b>x</b> radians.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Sqrt'></a>
+				<div class="well well-small name"><b>Function Sqrt : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the square root of <b>x</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Tan'></a>
+				<div class="well well-small name"><b>Function Tan : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the tangent of <b>x</b> degrees.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Tanr'></a>
+				<div class="well well-small name"><b>Function Tanr : Float ( x:Float )</b></div>
+				<div class="description">
+					<p>Returns the tangent of <b>x</b> radians.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

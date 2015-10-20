@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  End </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword End</h1>
+<p>
+Declares the end of a class, function, method or similar block-style definition, or of certain loop or conditional blocks.
+<p>
+<h2>Syntax</h2>
+<b>Block keyword</b><br>
+End [<b>Block keyword</b>]
+<p>
+<h2>Description</h2>
+<p>
+The End keyword closes off a class, function, method or similar block (eg. interfaces, future additions), but may also be used in place of block-specific keywords which close certain loops or conditional blocks (ie. those that don't need to perform testing at the end of the block).
+<p>
+End may also be combined with a space followed by the block opening keyword. For example, a Class block may be closed by End or End Class according to individual preference.
+<p>
+Some examples are listed below.
+<p>
+<b>Class-block closing options:</b>
+<p>
+<div class=pretty>
+<code class=k>Class</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>Class</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>Class</code><br>
+</div>
+<p>
+<b>Function-block closing options:</b>
+<div class=pretty>
+<code class=k>Function</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>Function</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>Function</code><br>
+</div>
+<p>
+<b>If-block closing options:</b>
+<div class=pretty>
+<code class=k>If</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>Endif</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>If</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>If</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>If</code><br>
+</div>
+<p>
+<b>Select-block closing options:</b>
+<div class=pretty>
+<code class=k>Select</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>Select</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>Select</code><br>
+</div>
+<p>
+<b>For-loop closing options:</b>
+<div class=pretty>
+<code class=k>For</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>Next</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>For</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>For</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>For</code><br>
+</div>
+<p>
+<b>While-block closing options:</b>
+<div class=pretty>
+<code class=k>While</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>Wend</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>While</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+<div class=pretty>
+<code class=k>While</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Contents...</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>While</code><br>
+</div>
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Class.html">Class</a> <a href="Programming_Keywords_Function.html">Function</a> <a href="Programming_Keywords_Method.html">Method</a> <a href="Programming_Keywords_Interface.html">Interface</a>  
+<a href="Programming_Keywords_If.html">If</a> <a href="Programming_Keywords_Endif.html">Endif</a> <a href="Programming_Keywords_Select.html">Select</a> <a href="Programming_Keywords_For.html">For</a> <a href="Programming_Keywords_Next.html">Next</a> <a href="Programming_Keywords_While.html">While</a> <a href="Programming_Keywords_Wend.html">Wend</a>  
+<p>
+<h2>Example</h2>
+<p>
+Classes, functions, etc:
+<p>
+<div class=pretty>
+<code class=r>' CLASS BLOCKS:</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Animal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Animal</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><code class=d>&nbsp;</code><code class=k>Class</code><br>
+<br>
+<code class=r>' FUNCTION BLOCKS:</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Walk</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Walk</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><code class=d>&nbsp;</code><code class=k>Function</code><br>
+</div>
+<p>
+Loop/conditional blocks:
+<p>
+<div class=pretty>
+<code class=r>' IF BLOCKS:  </code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=i>b</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=i>b</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><code class=d>&nbsp;</code><code class=k>If</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=i>b</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=r>' FOR BLOCKS:  </code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><code class=d>&nbsp;</code><code class=k>For</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><code class=d>&nbsp;</code><code class=k>To</code><code class=d>&nbsp;</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=r>' WHILE BLOCKS:  </code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>While</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;&lt;&nbsp;</code><code class=i>b</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Wend</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>While</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;&lt;&nbsp;</code><code class=i>b</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><code class=d>&nbsp;</code><code class=k>While</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>While</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;&lt;&nbsp;</code><code class=i>b</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Code</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

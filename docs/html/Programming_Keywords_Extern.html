@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Extern </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Directive Extern</h1>
+<p>
+External code directive.
+<p>
+<h2>Syntax</h2>
+<p>
+Extern [Private]
+<p>
+<h2>Description</h2>
+<p>
+The Extern directive is used to connect Monkey code to non-Monkey code. It lets you mix Monkey code (to be translated into the target platform language) with native target platform code.
+<p>
+The optional Private modifier can be used to prevent external declarations from being visible outside the current module.
+<p>
+For further information on Extern, please see the Extern section of the monkey language reference.
+<p>
+<h2>See also</h2>
+<a href="Programming_Keywords_Public.html">Public</a><br>
+<a href="Programming_Language reference.html#extern">Language reference</a>
+<p>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<code class=k>Extern</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' External declarations</code><br>
+<br>
+<code class=k>Public</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Return to public declarations</code><br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

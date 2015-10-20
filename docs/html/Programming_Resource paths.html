@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Resource paths </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<p>
+<h1>Resource paths in monkey</h1>
+<p>
+App resources may be stored in many different locations, for example, in an app's data dir, on the local filesystem, or on a remote server.
+<p>
+When using functions and methods that open or load resources, you can use any of the following special prefixes when specifying resource paths:
+<p>
+<ul><li>Use the "http://" or "https://" prefix to locate resources stored on a server.</li>
+<p>
+<li>Use the "monkey://data/" prefix to locate resources that were placed in the app's data/ directory when it was built.</li>
+<p>
+<li>Use the "monkey://internal/" prefix to locate resources stored in the app's internal storage directory.</li>
+<p>
+</ul>Not all prefixes work on all targets and the exact behavior of each prefix is target dependant. For example, android and ios can load images from http:// but not audio, while glfw cannot load from http:// at all. Full support for all prefixes is an ongoing mission!
+<p>
+Also, note that Mojo module load commands will automatically insert a "monkey://data/" prefix before any path that does not already incude a prefix. For example, LoadImage( "myimage.png" ) is the same as LoadImage( "monkey://data/myimage.png" ).
+<p>
+<p>
+<h2>Supported resource path prefixes</h2>
+<p>
+<ul><li><b>web</b> = http://, https://</li>
+<li><b>data</b> = monkey://data/</li>
+<li><b>file</b> = monkey://internal/</li>
+<p>
+</ul><table><tr><th>Function</th><th>Android</th><th>iOS</th><th>Win8</th><th>Glfw</th><th>Html5</th><th>Flash</th><th>Xna</th><th>Psm</th><th>Stdcpp</th></tr>
+<tr><td><a href="Modules_mojo.app.html#LoadString">LoadString</a></td><td>web, data, file</td><td>data, file</td><td>data, file</td><td>data, file</td><td>web, data</td><td>data</td><td>data</td><td>data</td><td>NA</td></tr>
+<tr><td><a href="Modules_mojo.graphics.html#LoadImage">LoadImage</a></td><td>web, data, file</td><td>web, data, file</td><td>data, file</td><td>data, file</td><td>web, data</td><td>data</td><td>data</td><td>data</td><td>NA</td></tr>
+<tr><td><a href="Modules_mojo.audio.html#LoadSound">LoadSound</a></td><td>data</td><td>data, file</td><td>data, file</td><td>data, file</td><td>web, data</td><td>data</td><td>data</td><td>data</td><td>NA</td></tr>
+<tr><td><a href="Modules_mojo.audio.html#PlayMusic">PlayMusic</a></td><td>data</td><td>data, file</td><td>data, file</td><td>data, file</td><td>web, data</td><td>data</td><td>data</td><td>data</td><td>NA</td></tr>
+<tr><td><a href="Modules_brl.databuffer_DataBuffer.html#Load">DataBuffer.Load</a></td><td>web, data, file</td><td>data, file</td><td>data, file</td><td>data,file</td><td>web, data</td><td>data</td><td>data</td><td>data</td><td>file</td></tr>
+<tr><td><a href="Modules_brl.filestream_FileStream.html#Open">FileStream.Open</a></td><td>file</td><td>file</td><td>file</td><td>file</td><td>NA</td><td>NA</td><td>file</td><td>file</td><td>file</td></tr>
+</table><p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

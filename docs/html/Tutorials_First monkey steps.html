@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Tutorials.html'>Tutorials</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  First monkey steps </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>First Monkey steps</h1>
+<p>
+<a href="http://nitrologic.blogspot.co.nz/">Skid</a> spills some source...
+<p>
+<p>
+<h2>Main</h2>
+<p>
+We begin with the smallest monkey program.
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello"</code><br>
+<code class=k>End</code><br>
+</div>
+	
+In which, with the HTML5 target selected, we verify we are able to create and view our monkey developments. 
+<p>
+To learn more about the Main entry point of a program make sure you read the Programs and Declarations section of the <a href="Programming_Language reference.html">Language reference</a>.
+<p>
+<p>
+<h2>Game App</h2>
+<p>
+We now build a mojo <a href="Modules_mojo.app_App.html">App</a> which we call Game (in monkey class names are typically capitalized).
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"hello"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+A mojo <a href="Modules_mojo.app_App.html">App</a> is used to provide us methods of input, graphics and sound. The framework above creates a single App using the Game class definition.  
+<p>
+<p>
+<h2>Spiral animation</h2>
+<p>
+With our game object defined we extend the basic Update and Render parts of the app.
+<p>
+The minimum requirements for an animating monkey application are an <a href="Modules_mojo.app_App.html">App</a> implementing the methods:
+<p>
+<ul><li><a href="Modules_mojo.app_App.html#OnCreate">OnCreate</a> must call <a href="Modules_mojo.app.html#SetUpdateRate">SetUpdateRate</a></li>
+<p>
+<li><a href="Modules_mojo.app_App.html#OnUpdate">OnUpdate</a> can use mojo input commands</li>
+<p>
+<li><a href="Modules_mojo.app_App.html#OnRender">OnRender</a> can use mojo drawing commands</li>
+<p>
+</ul>The following draws an animated spiral shape using the <a href="Modules_mojo.graphics.html#DrawPoint">DrawPoint</a> command.
+<p>
+<div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>mojo</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>App</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' radial sprial with axis aligned phase</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Function</code><code class=d>&nbsp;</code><code class=i>DrawSpiral</code><code class=d>(</code><code class=i>clock</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>w</code><code class=d>=</code><code class=i>DeviceWidth</code><code class=d>/</code><code class=l>2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>#=</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Until</code><code class=d>&nbsp;</code><code class=i>w</code><code class=d>*</code><code class=l>1.5</code><code class=d>&nbsp;</code><code class=k>Step</code><code class=d>&nbsp;</code><code class=l>.2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>#,</code><code class=i>y</code><code class=d>#</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>x</code><code class=d>=</code><code class=i>w</code><code class=d>+</code><code class=i>i</code><code class=d>*</code><code class=i>Sin</code><code class=d>(</code><code class=i>i</code><code class=d>*</code><code class=l>3</code><code class=d>+</code><code class=i>clock</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>y</code><code class=d>=</code><code class=i>w</code><code class=d>+</code><code class=i>i</code><code class=d>*</code><code class=i>Cos</code><code class=d>(</code><code class=i>i</code><code class=d>*</code><code class=l>2</code><code class=d>+</code><code class=i>clock</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawPoint</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>,</code><code class=i>y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>updateCount</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnCreate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"spiral"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>SetUpdateRate</code><code class=d>&nbsp;</code><code class=l>60</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnUpdate</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>updateCount</code><code class=d>+=</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>OnRender</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Cls</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawSpiral</code><code class=d>&nbsp;</code><code class=i>updateCount</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawSpiral</code><code class=d>&nbsp;</code><code class=i>updateCount</code><code class=d>*</code><code class=l>1.1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Game</code><code class=d>()</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+Each spiral drawn by the program begins at the middle of the screen and spirals out using the Maths functions <a href="Modules_monkey.math.html#Sin">Sin</a> and <a href="Modules_monkey.math.html#Cos">Cos</a>.
+<p>
+Here is the final application:
+<p>
+<iframe src="data/First monkey steps/spiral/spiral.build/html5/MonkeyGame.html" width=640 height=480 scrolling=no></iframe>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

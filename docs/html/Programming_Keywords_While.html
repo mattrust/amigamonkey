@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  While </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword While</h1>
+<p>
+Marks the start of a While loop.
+<p>
+<h2>Syntax</h2>
+<p>
+While <b>expression</b><br>
+	<b>Statements...</b><br>
+Wend
+<p>
+While <b>expression</b><br>
+	<b>Statements...</b><br>
+End
+<p>
+While <b>expression</b><br>
+	<b>Statements...</b><br>
+End While
+<p>
+<h2>Description</h2>
+<p>
+A While loop repeatedly executes the statements within as long as the expression to be tested is True. If the expression is not True, the code within will not be executed and program flow will exit the loop. (Note that this contrasts with a <a href="Programming_Keywords_Repeat.html">Repeat</a> loop, in that the expression is tested at the <b>end</b> of a Repeat loop, meaning the code within is always executed once.)
+<p>
+The Wend keyword, short for <b>While [loop] End</b>, marks the end of a While loop, but Monkey allows the alternative closing keywords End or End While, depending on preference.
+<p>
+The Exit keyword can be used to 'jump out' of a While loop, continuing execution after the closing Wend.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Wend.html">Wend</a> | <a href="Programming_Keywords_Repeat.html">Repeat</a> | <a href="Programming_Keywords_Exit.html">Exit</a><br>
+<a href="Programming_Language reference.html#statements">Language reference</a>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<code class=r>' Count to ten:</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><br>
+<br>
+<code class=k>While</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;&lt;&nbsp;</code><code class=l>10</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>a</code><code class=d>&nbsp;=&nbsp;</code><code class=i>a</code><code class=d>&nbsp;+&nbsp;</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>a</code><br>
+<code class=k>Wend</code><br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

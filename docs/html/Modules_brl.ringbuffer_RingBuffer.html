@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.ringbuffer.html'>brl.ringbuffer</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  RingBuffer </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">RingBuffer</span></h1>
+
+
+	<p>A ringbuffer is a circular FIFO buffer that wraps a <a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( capacity:int, dynamic:bool )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#CanGet'>CanGet</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#CanPut'>CanPut</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#Capacity'>Capacity</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#Clear'>Clear</a> : Void ()</li>
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#Get'>Get</a> : Int ( data:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#IsEmpty'>IsEmpty</a> : Bool ()</li>
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#IsFull'>IsFull</a> : Bool ()</li>
+					
+						<li><a href='Modules_brl.ringbuffer_RingBuffer.html#Put'>Put</a> : Int ( data:DataBuffer, offset:Int, count:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A ringbuffer is a circular FIFO buffer that wraps a <a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>.
+<p>
+Data can be added to the end of the buffer using <a href="Modules_brl.ringbuffer_RingBuffer.html#Put">Put</a>, and removed from the start of the buffer using <a href="Modules_brl.ringbuffer_RingBuffer.html#Get">Get</a>.
+<p>
+A ringbuffer can also dynamically resize itself as necessary so that <a href="Modules_brl.ringbuffer_RingBuffer.html#Put">Put</a> always succeeds.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( capacity:int, dynamic:bool )</b></div>
+				<div class="description">
+					<p>Creates a new ringbuffer with the given capacity. This is the number of bytes the buffer can store.
+<p>
+If <b>dynamic</b> is true, the ringbuffer will grow as necessary so that <a href="Modules_brl.ringbuffer_RingBuffer.html#Put">Put</a> always succeeds.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CanGet'></a>
+				<div class="well well-small name"><b>Method CanGet : Int ()</b></div>
+				<div class="description">
+					<p>Returns the number of bytes that can be read from the buffer using <a href="Modules_brl.ringbuffer_RingBuffer.html#Get">Get</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CanPut'></a>
+				<div class="well well-small name"><b>Method CanPut : Int ()</b></div>
+				<div class="description">
+					<p>Returns the number of bytes that can be written to the buffer using <a href="Modules_brl.ringbuffer_RingBuffer.html#Put">Put</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Capacity'></a>
+				<div class="well well-small name"><b>Method Capacity : Int ()</b></div>
+				<div class="description">
+					<p>Returns the size of the buffer in bytes, ie: <a href="Modules_brl.ringbuffer_RingBuffer.html#CanGet">CanGet</a>+<a href="Modules_brl.ringbuffer_RingBuffer.html#CanPut">CanPut</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Clear'></a>
+				<div class="well well-small name"><b>Method Clear : Void ()</b></div>
+				<div class="description">
+					<p>Empties the buffer.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Get'></a>
+				<div class="well well-small name"><b>Method Get : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Removes <b>count</b> bytes from the start of the ringbuffer and copies them to <b>data</b>/<b>offset</b>.
+<p>
+Returns the number of bytes actually transferred.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IsEmpty'></a>
+				<div class="well well-small name"><b>Method IsEmpty : Bool ()</b></div>
+				<div class="description">
+					<p>Returns true if the buffer is empty, ie: <a href="Modules_brl.ringbuffer_RingBuffer.html#CanGet">CanGet</a>=0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IsFull'></a>
+				<div class="well well-small name"><b>Method IsFull : Bool ()</b></div>
+				<div class="description">
+					<p>Return true if the buffer is full, ie: <a href="Modules_brl.ringbuffer_RingBuffer.html#CanPut">CanPut</a>=0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Put'></a>
+				<div class="well well-small name"><b>Method Put : Int ( data:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> bytes from <b>data</b>/<b>offset</b> and adds them to the end of the ringbuffer.
+<p>
+Returns the number of bytes actually transferred.
+<p>
+If the buffer is dynamic, this method will reallocate the internal databuffer as necessary so that all <b>count</b> bytes are always added.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

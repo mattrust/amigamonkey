@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Function </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Function</h1>
+<p>
+Declares the beginning of a function.
+<p>
+<h2>Syntax</h2>
+<p>
+Function <b>Identifier</b>: <b>ReturnType</b> ( <b>Parameters</b> )<br>
+	<b>Statements...</b><br>
+End [ Function ]
+<p>
+<h2>Description</h2>
+<p>
+The Function keyword begins the declaration of a function.
+<p>
+Please see the Functions section of the monkey language reference for more information on functions.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_End.html">End</a><br>
+<a href="Programming_Language reference.html#functions">Language reference (Functions)</a><br>
+<a href="Programming_Language reference.html#strict">Language reference (Strict mode)</a>
+<p>
+<h2>Examples</h2>
+<p>
+The Main function, required by all monkey programs.
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+The closing keyword End may be replaced with End Function if preferred:
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello"</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>Function</code><br>
+</div>
+<p>
+The Main function in Strict mode; requires Int return type and Return statement.
+<p>
+<div class=pretty>
+<code class=k>Strict</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Hello"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=l>0</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+A function that returns the result of adding two floating-point values.
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>AddFloats</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;(</code><code class=i>value1</code><code class=d>:</code><code class=k>Float</code><code class=d>,&nbsp;</code><code class=i>value2</code><code class=d>:</code><code class=k>Float</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=i>value1</code><code class=d>&nbsp;+&nbsp;</code><code class=i>value2</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>AddFloats</code><code class=d>&nbsp;(</code><code class=l>1</code><code class=d>,&nbsp;</code><code class=l>2</code><code class=d>)</code><br>
+</div>
+<p>
+For functions that don't return a value in Strict mode, the Void return type must be specified in the function declaration.
+<p>
+<div class=pretty>
+<code class=k>Strict</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>PrintMessage</code><code class=d>:</code><code class=k>Void</code><code class=d>&nbsp;(</code><code class=i>message</code><code class=d>:</code><code class=k>String</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>message</code><br>
+<code class=k>End</code><br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

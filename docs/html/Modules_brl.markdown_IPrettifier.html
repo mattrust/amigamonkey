@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.markdown.html'>brl.markdown</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  IPrettifier </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Interface <span class="name">IPrettifier</span></h1>
+
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.markdown_IPrettifier.html#BeginPrettyBlock'>BeginPrettyBlock</a> : String ()</li>
+					
+						<li><a href='Modules_brl.markdown_IPrettifier.html#EndPrettyBlock'>EndPrettyBlock</a> : String ()</li>
+					
+						<li><a href='Modules_brl.markdown_IPrettifier.html#PrettifyLine'>PrettifyLine</a> : String ( text:String )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='BeginPrettyBlock'></a>
+				<div class="well well-small name"><b>Method BeginPrettyBlock : String ()</b></div>
+				<div class="description">
+					<p>This method is called when a <a href="Modules_brl.markdown_Markdown.html">Markdown</a> objects encounters a &lt;pre&gt; tag, and should return an appropriate html block start tag, eg: &lt;div&gt;.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='EndPrettyBlock'></a>
+				<div class="well well-small name"><b>Method EndPrettyBlock : String ()</b></div>
+				<div class="description">
+					<p>This method is called when a <a href="Modules_brl.markdown_Markdown.html">Markdown</a> object encounters a &lt;/pre&gt; tag, and should return an appropriate html block end tag, eg: &lt;/div&gt;.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PrettifyLine'></a>
+				<div class="well well-small name"><b>Method PrettifyLine : String ( text:String )</b></div>
+				<div class="description">
+					<p>This method is called by a <a href="Modules_brl.markdown_Markdown.html">Markdown</a> object for every line inside a &lt;pre&gt; block, and should returned an html 'prettified' version of <b>text</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

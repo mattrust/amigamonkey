@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Method </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Method</h1>
+<p>
+Declares the beginning of a class method.
+<p>
+<h2>Syntax</h2>
+<p>
+Method <b>Identifier</b>: <b>ReturnType</b> ( <b>Parameters</b> ) [ Property ] [ Abstract ] [ Final ]~n 
+	<b>Statements...</b><br>
+End [ Method ]
+<p>
+<h2>Description</h2>
+<p>
+The Method keyword begins the declaration of a class method.
+<p>
+Please see the Methods section of the monkey language reference for more information on methods.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_End.html">End</a> | <a href="Programming_Keywords_Class.html">Class</a> | <a href="Programming_Keywords_Property.html">Property</a> | <a href="Programming_Keywords_Abstract.html">Abstract</a> | <a href="Programming_Keywords_Final.html">Final</a><br>
+<a href="Programming_Language reference.html#classes">Language reference (Classes)</a><br>
+<a href="Programming_Language reference.html#methods">Language reference (Methods)</a>
+<p>
+<h2>Examples</h2>
+<p>
+An example of methods as statements.
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>y</code><code class=d>:</code><code class=k>Float</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>PrintX</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>x</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>PrintY</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>g</code><code class=d>:</code><code class=i>GameObject</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<br>
+<code class=i>p.x</code><code class=d>&nbsp;=&nbsp;</code><code class=l>100</code><br>
+<code class=i>p.y</code><code class=d>&nbsp;=&nbsp;</code><code class=l>200</code><br>
+<br>
+<code class=r>' Accessing method...</code><br>
+<br>
+<code class=i>p.PrintX</code><br>
+<code class=i>p.PrintY</code><br>
+</div>
+<p>
+Strict mode version of above GameObject class. (Note use of Void return type.)
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>y</code><code class=d>:</code><code class=k>Float</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>PrintX</code><code class=d>:</code><code class=k>Void</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>x</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>PrintY</code><code class=d>:</code><code class=k>Void</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+</div>
+<p>
+Method returning value of Float type.
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>AddFloats</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;(</code><code class=i>value1</code><code class=d>:</code><code class=k>Float</code><code class=d>,&nbsp;</code><code class=i>value2</code><code class=d>:</code><code class=k>Float</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=i>value1</code><code class=d>&nbsp;+&nbsp;</code><code class=i>value2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>g</code><code class=d>:</code><code class=i>GameObject</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<br>
+<code class=r>' Accessing method...</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>g.AddFloats</code><code class=d>&nbsp;(</code><code class=l>1.5</code><code class=d>,&nbsp;</code><code class=l>2.0</code><code class=d>)</code><br>
+</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

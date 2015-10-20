@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Class </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Class</h1>
+<p>
+Declares the beginning of an object class.
+<p>
+<h2>Syntax</h2>
+<p>
+Class <b>Identifier</b> [ < <b>Parameters</b> > ] [ Extends <b>Class</b> ] [ Implements <b>Interfaces</b> ] [ Final ]  
+	' Declarations...  
+End [ Class ]
+<p>
+<h2>Description</h2>
+<p>
+The Class keyword begins the declaration of a custom class. Classes can contain fields, methods, constants, globals and functions.
+<p>
+To access an object's fields, methods, constants, globals and functions, use the syntax <b>object.identifier</b>. (See example.)
+<p>
+Please see the Classes section of the monkey language reference for more information on classes.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_End.html">End</a> | <a href="Programming_Keywords_Extends.html">Extends</a> | <a href="Programming_Keywords_Final.html">Final</a> | <a href="Programming_Keywords_Method.html">Method</a> | <a href="Programming_Keywords_Field.html">Field</a> | <a href="Programming_Keywords_Function.html">Function</a> | <a href="Programming_Keywords_Interface.html">Interface</a><br>
+<a href="Programming_Language reference.html#classes">Language reference</a>
+<p>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<code class=r>' Declaring class and fields...</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>y</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=r>' Creating object "g" of type "GameObject"...</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>g</code><code class=d>:</code><code class=i>GameObject</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<br>
+<code class=r>' Accessing fields...</code><br>
+<br>
+<code class=i>g.x</code><code class=d>&nbsp;=&nbsp;</code><code class=l>100</code><br>
+<code class=i>g.y</code><code class=d>&nbsp;=&nbsp;</code><code class=l>200</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>g.x</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>g.y</code><br>
+</div>
+<p>
+<p>
+<h2>Example 2</h2>
+<p>
+<b>Simple Extends example.</b>
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>y</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Player</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=i>GameObject</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>name</code><code class=d>:</code><code class=k>String</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>points</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>PrintName</code><code class=d>&nbsp;()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>name</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>p</code><code class=d>:</code><code class=i>Player</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Player</code><br>
+<br>
+<code class=r>' Accessing fields, including those defined by</code><br>
+<code class=r>' the class being extended...</code><br>
+<br>
+<code class=i>p.x</code><code class=d>&nbsp;=&nbsp;</code><code class=l>100</code><br>
+<code class=i>p.y</code><code class=d>&nbsp;=&nbsp;</code><code class=l>200</code><br>
+<br>
+<code class=i>p.name</code><code class=d>&nbsp;=&nbsp;</code><code class=l>"Mary"</code><br>
+<code class=i>p.points</code><code class=d>&nbsp;=&nbsp;</code><code class=l>100</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>p.x</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>p.y</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>p.points</code><br>
+<br>
+<code class=r>' Accessing method...</code><br>
+<br>
+<code class=i>p.PrintName</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Target SDKs.html'>Target SDKs</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  The iOS target </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>The iOS target</h1>
+<p>
+iOS is Apple's OS for iTouch, iPhone and iPad devices.
+<p>
+<h2>You will need</h2>
+<p>
+<ul><li>Apple Mac computer runnning OS X 10.9 or better.</li>
+<p>
+<li><a href="http://developer.apple.com/xcode">XCode</a> developer tools with iOS SDK. XCode is also available via the Mac 'App Store' app.</li>
+<p>
+</ul><h2>Notes</h2>
+<p>
+You can develop programs on the iPhone simulator free of charge.
+<p>
+To be able to download iOS programs to actual iOS devices, you will need to join Apple's developer program which currently costs about $100USD per year.
+<p>
+To actually run a Monkey app on a real iDevice, you will need to manually open the output xcode project (.buid/ios/MonkeyGame.xcodeproj) in xcode, select 'device' as the target and build and run.
+<p>
+<h2>Adding in-app purchases</h2>
+<p>
+In-app purchases can be added to your app using the <a href="Modules_brl.monkeystore_MonkeyStore.html">MonkeyStore</a> class.
+<p>
+Testing IAP is a bit tricky. The general idea on both Android/iOS is that you create 'test' accounts to test with, and add these test accounts to GooglePlay Dev Console and/or iTunes Connect. Test are accounts are generally just email address/password combos, although on Android you'll have to provide more details the first time you use the test account.
+<p>
+<ul><li>On IOS, your app's 'BundleId' must match the BundleId in iTunes Connect. Currently, the only way to change BundleId is in xcode.</li>
+<p>
+<li>On iOS, DO NOT TO LOGIN TO THE APP STORE VIA SETTINGS USING YOUR TEST ACCOUNT! Instead, login when making a test purchase. Otherwise, you'll end up in a strange [sanbox environment] loop when trying to test IAP.</li>
+<p>
+</ul>There's a bananas/mak/iaptest demo in the release, but it wont work 'as-is' - you'll need to add a keystore file for android and change the BundleID for ios, and change the CONSUMABLES and NON_CONSUMABLES arrays to match your product ids.
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

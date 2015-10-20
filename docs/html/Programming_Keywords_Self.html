@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Self </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Self</h1>
+<p>
+Object's own reference.
+<p>
+<h2>Syntax</h2>
+<p>
+Self
+<p>
+<h2>Description</h2>
+<p>
+The Self keyword provides a way for a method to access the object it belongs to.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Super.html">Super</a> | <a href="Programming_Keywords_Method.html">Method</a><br>
+<a href="Programming_Language reference.html#methods">Language reference</a>
+<p>
+<h2>Example</h2>
+<p>
+<b>An object which passes a reference to itself to an outside function. In this case, the Speak method passes Self as the first parameter of the DrawSpeechBubble function.</b>
+<p>
+<div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Person</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Int</code><code class=d>,&nbsp;</code><code class=i>y</code><code class=d>:</code><code class=k>Int</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Speak</code><code class=d>&nbsp;(</code><code class=i>text</code><code class=d>:</code><code class=k>String</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawSpeechBubble</code><code class=d>&nbsp;(</code><code class=k>Self</code><code class=d>,&nbsp;</code><code class=i>text</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>DrawSpeechBubble</code><code class=d>&nbsp;(</code><code class=i>p</code><code class=d>:</code><code class=i>Person</code><code class=d>,&nbsp;</code><code class=i>say</code><code class=d>:</code><code class=k>String</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>DrawText</code><code class=d>&nbsp;</code><code class=i>say</code><code class=d>,&nbsp;</code><code class=i>p.x</code><code class=d>,&nbsp;</code><code class=i>p.y</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  mojo.graphics </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">mojo.graphics</span></h1>
+
+
+	<p>The graphics module contains various functions that allow you to draw 2D graphics on all supported monkey target platforms.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Classes:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.graphics_Image.html'>Image</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constants:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li>AdditiveBlend : Int</li>
+					
+						<li>AlphaBlend : Int</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Cls'>Cls</a> : Int ( r:Float=0, g:Float=0, b:Float=0 )</li>
+					
+						<li><a href='#CreateImage'>CreateImage</a> : Image ( width:Int, height:Int, frameCount:Int=1, flags:Int=image.defaultflags )</li>
+					
+						<li><a href='#DeviceHeight'>DeviceHeight</a> : Int ()</li>
+					
+						<li><a href='#DeviceWidth'>DeviceWidth</a> : Int ()</li>
+					
+						<li><a href='#DrawCircle'>DrawCircle</a> : Int ( x:Float, y:Float, r:Float )</li>
+					
+						<li><a href='#DrawEllipse'>DrawEllipse</a> : Int ( x:Float, y:Float, xr:Float, yr:Float )</li>
+					
+						<li><a href='#DrawImage'>DrawImage</a> : Int ( image:Image, x:Float, y:Float, frame:Int=0 )</li>
+					
+						<li><a href='#DrawImage(2)'>DrawImage</a> : Int ( image:Image, x:Float, y:Float, rotation:Float, scaleX:Float, scaleY:Float, frame:Int=0 )</li>
+					
+						<li><a href='#DrawImageRect'>DrawImageRect</a> : Int ( image:Image, x:Float, y:Float, srcX:Int, srcY:Int, srcWidth:Int, srcHeight:Int, frame:Int=0 )</li>
+					
+						<li><a href='#DrawImageRect(2)'>DrawImageRect</a> : Int ( image:Image, x:Float, y:Float, srcX:Int, srcY:Int, srcWidth:Int, srcHeight:Int, rotation:Float, scaleX:Float, scaleY:Float, frame:Int=0 )</li>
+					
+						<li><a href='#DrawLine'>DrawLine</a> : Int ( x1:Float, y1:Float, x2:Float, y2:Float )</li>
+					
+						<li><a href='#DrawOval'>DrawOval</a> : Int ( x:Float, y:Float, w:Float, h:Float )</li>
+					
+						<li><a href='#DrawPoint'>DrawPoint</a> : Int ( x:Float, y:Float )</li>
+					
+						<li><a href='#DrawPoly'>DrawPoly</a> : Int ( verts:Float[] )</li>
+					
+						<li><a href='#DrawRect'>DrawRect</a> : Int ( x:Float, y:Float, w:Float, h:Float )</li>
+					
+						<li><a href='#DrawText'>DrawText</a> : Int ( text:String, x:Float, y:Float, xalign:Float=0, yalign:Float=0 )</li>
+					
+						<li><a href='#FontHeight'>FontHeight</a> : Float ()</li>
+					
+						<li><a href='#GetAlpha'>GetAlpha</a> : Float ()</li>
+					
+						<li><a href='#GetBlend'>GetBlend</a> : Int ()</li>
+					
+						<li><a href='#GetColor'>GetColor</a> : Float[] ()</li>
+					
+						<li><a href='#GetColor(2)'>GetColor</a> : Int ( color:Float[] )</li>
+					
+						<li><a href='#GetFont'>GetFont</a> : Image ()</li>
+					
+						<li><a href='#GetMatrix'>GetMatrix</a> : Float[] ()</li>
+					
+						<li><a href='#GetMatrix(2)'>GetMatrix</a> : Int ( matrix:Float[] )</li>
+					
+						<li><a href='#GetScissor'>GetScissor</a> : Float[] ()</li>
+					
+						<li><a href='#GetScissor(2)'>GetScissor</a> : Int ( scissor:Float[] )</li>
+					
+						<li><a href='#LoadImage'>LoadImage</a> : Image ( path:String, frameCount:Int=1, flags:Int=image.defaultflags )</li>
+					
+						<li><a href='#LoadImage(2)'>LoadImage</a> : Image ( path:String, frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=image.defaultflags )</li>
+					
+						<li><a href='#PopMatrix'>PopMatrix</a> : Int ()</li>
+					
+						<li><a href='#PushMatrix'>PushMatrix</a> : Int ()</li>
+					
+						<li><a href='#ReadPixels'>ReadPixels</a> : Void ( pixels:Int[], x:Int, y:Int, width:Int, height:Int, arrayOffset:Int=0, arrayPitch:Int=0 )</li>
+					
+						<li><a href='#Rotate'>Rotate</a> : Int ( angle:Float )</li>
+					
+						<li><a href='#Scale'>Scale</a> : Int ( x:Float, y:Float )</li>
+					
+						<li><a href='#SetAlpha'>SetAlpha</a> : Int ( alpha:Float )</li>
+					
+						<li><a href='#SetBlend'>SetBlend</a> : Int ( blend:Int )</li>
+					
+						<li><a href='#SetColor'>SetColor</a> : Int ( r:Float, g:Float, b:Float )</li>
+					
+						<li><a href='#SetFont'>SetFont</a> : Int ( font:Image, firstChar:Int=32 )</li>
+					
+						<li><a href='#SetMatrix'>SetMatrix</a> : Int ( m:Float[] )</li>
+					
+						<li><a href='#SetMatrix(2)'>SetMatrix</a> : Int ( ix:Float, iy:Float, jx:Float, jy:Float, tx:Float, ty:Float )</li>
+					
+						<li><a href='#SetScissor'>SetScissor</a> : Int ( x:Float, y:Float, width:Float, height:Float )</li>
+					
+						<li><a href='#TextWidth'>TextWidth</a> : Float ( text:String )</li>
+					
+						<li><a href='#Transform'>Transform</a> : Int ( m:Float[] )</li>
+					
+						<li><a href='#Transform(2)'>Transform</a> : Int ( ix:Float, iy:Float, jx:Float, jy:Float, tx:Float, ty:Float )</li>
+					
+						<li><a href='#Translate'>Translate</a> : Int ( x:Float, y:Float )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The graphics module contains various functions that allow you to draw 2D graphics on all supported monkey target platforms.
+<p>
+The module supports rendering of file based images, and a small set of simple primitives.
+<p>
+Transparency effects can be achieved using SetAlpha to set the global alpha level, and fullscreen rotation and scaling effects can be achieved using the various matrix commands such as Translate, Rotate and Scale.
+<p>
+The graphics module is state based, and commands that 'set' various states will remain in effect until a subsequent 'set' modifies the state.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Cls'></a>
+				<div class="well well-small name"><b>Function Cls : Int ( r:Float=0, g:Float=0, b:Float=0 )</b></div>
+				<div class="description">
+					<p>Clears the graphics device to the specified color.
+<p>
+The current color, alpha and blend mode are ignored by Cls. However, the scissor rect is still used so only the area inside the scissor rect is cleared.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CreateImage'></a>
+				<div class="well well-small name"><b>Function CreateImage : <a href="Modules_mojo.graphics_Image.html">Image</a> ( width:Int, height:Int, frameCount:Int=1, flags:Int=image.defaultflags )</b></div>
+				<div class="description">
+					<p>Creates an empty image for use with <a href="Modules_mojo.graphics_Image.html#WritePixels">WritePixels</a>.
+<p>
+The contents of the image are initially undefined.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#LoadImage">LoadImage</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DeviceHeight'></a>
+				<div class="well well-small name"><b>Function DeviceHeight : Int ()</b></div>
+				<div class="description">
+					<p>***** Moved to <a href="Modules_mojo.app.html#DeviceHeight">mojo.app.DeviceHeight</a> *****</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DeviceWidth'></a>
+				<div class="well well-small name"><b>Function DeviceWidth : Int ()</b></div>
+				<div class="description">
+					<p>***** Moved to <a href="Modules_mojo.app.html#DeviceWidth">mojo.app.DeviceWidth</a> *****</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawCircle'></a>
+				<div class="well well-small name"><b>Function DrawCircle : Int ( x:Float, y:Float, r:Float )</b></div>
+				<div class="description">
+					<p>Draws a circle of the given radius at coordinates x, y.
+<p>
+The circle is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawEllipse'></a>
+				<div class="well well-small name"><b>Function DrawEllipse : Int ( x:Float, y:Float, xr:Float, yr:Float )</b></div>
+				<div class="description">
+					<p>Draws an ellipse of radii xRadius, yRadius at coordinates x, y.
+<p>
+The ellipse is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#DrawOval">DrawOval</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawImage'></a>
+				<div class="well well-small name"><b>Function DrawImage : Int ( image:<a href="Modules_mojo.graphics_Image.html">Image</a>, x:Float, y:Float, frame:Int=0 )</b></div>
+				<div class="description">
+					<p>Draws an image at coordinates x, y, offset by the image's handle.
+<p>
+The image is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#LoadImage">LoadImage</a>, <a href="Modules_mojo.graphics.html#DrawImageRect">DrawImageRect</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawImage(2)'></a>
+				<div class="well well-small name"><b>Function DrawImage : Int ( image:<a href="Modules_mojo.graphics_Image.html">Image</a>, x:Float, y:Float, rotation:Float, scaleX:Float, scaleY:Float, frame:Int=0 )</b></div>
+				<div class="description">
+					<p>Draws an image at coordinates x, y, offset by the image's handle.
+<p>
+The image is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.
+<p>
+The rotation and scaleX, scaleY parameters provide a convenient way for you to 'locally' rotate and scale the image.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#LoadImage">LoadImage</a>, <a href="Modules_mojo.graphics.html#DrawImageRect">DrawImageRect</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawImageRect'></a>
+				<div class="well well-small name"><b>Function DrawImageRect : Int ( image:<a href="Modules_mojo.graphics_Image.html">Image</a>, x:Float, y:Float, srcX:Int, srcY:Int, srcWidth:Int, srcHeight:Int, frame:Int=0 )</b></div>
+				<div class="description">
+					<p>Draws a sub-rectangle of an image at coordinates x, y, offset by the image's handle.
+<p>
+The image is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#LoadImage">LoadImage</a>, <a href="Modules_mojo.graphics.html#DrawImage">DrawImage</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawImageRect(2)'></a>
+				<div class="well well-small name"><b>Function DrawImageRect : Int ( image:<a href="Modules_mojo.graphics_Image.html">Image</a>, x:Float, y:Float, srcX:Int, srcY:Int, srcWidth:Int, srcHeight:Int, rotation:Float, scaleX:Float, scaleY:Float, frame:Int=0 )</b></div>
+				<div class="description">
+					<p>Draws a sub-rectangle of an image at coordinates x, y, offset by the image's handle.
+<p>
+The image is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.
+<p>
+The rotation and scaleX, scaleY parameters provide a convenient way for you to 'locally' rotate and scale the image.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#LoadImage">LoadImage</a>, <a href="Modules_mojo.graphics.html#DrawImage">DrawImage</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawLine'></a>
+				<div class="well well-small name"><b>Function DrawLine : Int ( x1:Float, y1:Float, x2:Float, y2:Float )</b></div>
+				<div class="description">
+					<p>Draws a line from x1, y1 to x2, y2.
+<p>
+The line is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawOval'></a>
+				<div class="well well-small name"><b>Function DrawOval : Int ( x:Float, y:Float, w:Float, h:Float )</b></div>
+				<div class="description">
+					<p>Draws an oval of size width, height at coordinates x, y.
+<p>
+The oval is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#DrawEllipse">DrawEllipse</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawPoint'></a>
+				<div class="well well-small name"><b>Function DrawPoint : Int ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Draws a point at the coordinates x, y.
+<p>
+The point is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawPoly'></a>
+				<div class="well well-small name"><b>Function DrawPoly : Int ( verts:Float[] )</b></div>
+				<div class="description">
+					<p>Draw a convex polygon using the provided vertices.
+<p>
+The polygon is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.
+<p>
+If the polygon described by vertices is not convex, the results are undefined.
+<p>
+The vertices array must contain at least 3 x,y pairs.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawRect'></a>
+				<div class="well well-small name"><b>Function DrawRect : Int ( x:Float, y:Float, w:Float, h:Float )</b></div>
+				<div class="description">
+					<p>Draws a rectangle of size width, height at the coordinates x, y.
+<p>
+The rectangle is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawText'></a>
+				<div class="well well-small name"><b>Function DrawText : Int ( text:String, x:Float, y:Float, xalign:Float=0, yalign:Float=0 )</b></div>
+				<div class="description">
+					<p>Draws text at coordinates x, y in the current font.
+<p>
+The current font may be modified using SetFont. By default, an internal 7 x 13 white-on-black font is used.
+<p>
+xalign and yalign allow you to control the alignment of the text and should be in the range 0 for left/top alignment to 1 for right/bottom alignment. A value of .5 can be used for centering text horizontally or vertically.
+<p>
+The text is drawn using the current color, alpha, blend mode and matrix, and is clipped to the current scissor rectangle.
+<p>
+Note: The font functionality in mojo is very limited and intended mainly for debugging purposes.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FontHeight'></a>
+				<div class="well well-small name"><b>Function FontHeight : Float ()</b></div>
+				<div class="description">
+					<p>Returns the height of the current font.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetAlpha'></a>
+				<div class="well well-small name"><b>Function GetAlpha : Float ()</b></div>
+				<div class="description">
+					<p>Returns the current alpha level in the range 0 to 1 inclusive.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetAlpha">SetAlpha</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetBlend'></a>
+				<div class="well well-small name"><b>Function GetBlend : Int ()</b></div>
+				<div class="description">
+					<p>Returns the current blend mode. See <a href="Modules_mojo.graphics.html#SetBlend">SetBlend</a> for possible return values.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetBlend">SetBlend</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetColor'></a>
+				<div class="well well-small name"><b>Function GetColor : Float[] ()</b></div>
+				<div class="description">
+					<p>Returns the current color as a 3 component float array containg the current color's red, green and blue components respectively.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetColor">SetColor</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetColor(2)'></a>
+				<div class="well well-small name"><b>Function GetColor : Int ( color:Float[] )</b></div>
+				<div class="description">
+					<p>Copies the current color to <b>color</b>.
+<p>
+The length of <b>color</b> must be at least 3.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetColor">SetColor</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetFont'></a>
+				<div class="well well-small name"><b>Function GetFont : <a href="Modules_mojo.graphics_Image.html">Image</a> ()</b></div>
+				<div class="description">
+					<p>Returns the current font.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetFont">SetFont</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetMatrix'></a>
+				<div class="well well-small name"><b>Function GetMatrix : Float[] ()</b></div>
+				<div class="description">
+					<p>Returns the current transformation matrix as an array of 6 floats.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetMatrix">SetMatrix</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetMatrix(2)'></a>
+				<div class="well well-small name"><b>Function GetMatrix : Int ( matrix:Float[] )</b></div>
+				<div class="description">
+					<p>Copies the current transformation matrix to <b>matrix</b>.
+<p>
+The length of <b>matrix</b> must be at least 6.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetMatrix">SetMatrix</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetScissor'></a>
+				<div class="well well-small name"><b>Function GetScissor : Float[] ()</b></div>
+				<div class="description">
+					<p>Returns the current scissor rectangle as a 4 component float array containg the scissor rectangle's x,y, width and height coordinates respectively.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetScissor">SetScissor</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetScissor(2)'></a>
+				<div class="well well-small name"><b>Function GetScissor : Int ( scissor:Float[] )</b></div>
+				<div class="description">
+					<p>Copies the current scissor rectangle to <b>scissor</b>.
+<p>
+The length of <b>scissor</b> must be at least 4.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#SetScissor">SetScissor</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadImage'></a>
+				<div class="well well-small name"><b>Function LoadImage : <a href="Modules_mojo.graphics_Image.html">Image</a> ( path:String, frameCount:Int=1, flags:Int=image.defaultflags )</b></div>
+				<div class="description">
+					<p>Loads an image from path.
+<p>
+The frames of a multi-frame image must be laid out in a single horizontal strip, in which case the width of the image is the width of image file divided by the number of frames, and the height of the image is the height of the image file.
+<p>
+The image must be a PNG or JPEG image format, and must have the three-letter file extension .png or .jpg (not .jpeg). PNGs with alpha transparency channels are supported.
+<p>
+Like all game data, the image file must be saved in your project's .data folder or one of its sub-folders.
+<p>
+If your images contain edge padding, you will need to use one of the padding flags such as XYPadding.
+<p>
+See DefaultFlags for a list of valid image flags.</p>
+					
+						<p><b>See also</b> <a href="Programming_Resource paths.html">Resource paths</a>, <a href="Programming_File formats.html">File formats</a>, <a href="Modules_mojo.graphics.html#CreateImage">CreateImage</a>, <a href="Modules_mojo.graphics_Image.html#DefaultFlags">DefaultFlags</a>, <a href="Modules_mojo.graphics_Image.html#GrabImage">GrabImage</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadImage(2)'></a>
+				<div class="well well-small name"><b>Function LoadImage : <a href="Modules_mojo.graphics_Image.html">Image</a> ( path:String, frameWidth:Int, frameHeight:Int, frameCount:Int, flags:Int=image.defaultflags )</b></div>
+				<div class="description">
+					<p>Loads an image from path.
+<p>
+The frames of a multi-frame image may occupy more than 1 row. In this case, frames should be laid out left-to-right, top-to-bottom.
+<p>
+The image must be a PNG or JPEG image format, and must have the three-letter file extension .png or .jpg (not .jpeg). PNGs with alpha transparency channels are supported.
+<p>
+Like all game data, the image file must be saved in your project's .data folder or one of its sub-folders.
+<p>
+If your images contain edge padding, you will need to use one of the padding flags such as XYPadding.
+<p>
+See DefaultFlags for a list of valid image flags.</p>
+					
+						<p><b>See also</b> <a href="Programming_Resource paths.html">Resource paths</a>, <a href="Programming_File formats.html">File formats</a>, <a href="Modules_mojo.graphics.html#CreateImage">CreateImage</a>, <a href="Modules_mojo.graphics_Image.html#DefaultFlags">DefaultFlags</a>, <a href="Modules_mojo.graphics_Image.html#GrabImage">GrabImage</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PopMatrix'></a>
+				<div class="well well-small name"><b>Function PopMatrix : Int ()</b></div>
+				<div class="description">
+					<p>Pops a matrix from the internal matrix stack and makes it the current matrix.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#PushMatrix">PushMatrix</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PushMatrix'></a>
+				<div class="well well-small name"><b>Function PushMatrix : Int ()</b></div>
+				<div class="description">
+					<p>Pushes the current matrix onto the internal matrix stack.
+<p>
+The matrix can be restored at a later time using PopMatrix.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#PopMatrix">PopMatrix</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadPixels'></a>
+				<div class="well well-small name"><b>Function ReadPixels : Void ( pixels:Int[], x:Int, y:Int, width:Int, height:Int, arrayOffset:Int=0, arrayPitch:Int=0 )</b></div>
+				<div class="description">
+					<p>Copies a rectangular section of pixels from the current render buffer into an int array.
+<p>
+The pixel data is stored in int-per-pixel ARGB format, with the alpha component stored in bits 24-31, the red component in bits 16-23, the green component in bits 8-15 and the blue component in bits 0-7.
+<p>
+The optional <b>arrayOffset</b> parameter allows you to specify an index into the array at which to start writing pixel values.
+<p>
+The optional <b>arrayPitch</b> parameter allows you to specify a 'pitch'. This is the number of array elements between successive rows in the array. If this is 0, then <b>width</b> is used as pitch, meaning pixel data is assumed to be 'tightly packed'.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Rotate'></a>
+				<div class="well well-small name"><b>Function Rotate : Int ( angle:Float )</b></div>
+				<div class="description">
+					<p>Multiplies the current matrix by a matrix representing the specified rotation.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Scale'></a>
+				<div class="well well-small name"><b>Function Scale : Int ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Multiplies the current matrix by a matrix representing the specified scale.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetAlpha'></a>
+				<div class="well well-small name"><b>Function SetAlpha : Int ( alpha:Float )</b></div>
+				<div class="description">
+					<p>Sets the current global alpha level.
+<p>
+Alpha controls the 'mixing' that occurs when rendering. An alpha value of 1 results in completely opaque rendering, while 0 results in completely transparent rendering.
+<p>
+In the case of images which contain alpha, the alpha used for rendering is the product of each image pixel's alpha and the current global alpha.
+<p>
+Global alpha affects all drawing operations except for Cls.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#GetAlpha">GetAlpha</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetBlend'></a>
+				<div class="well well-small name"><b>Function SetBlend : Int ( blend:Int )</b></div>
+				<div class="description">
+					<p>Sets the current blending mode.
+<p>
+The current blending mode affects all drawing commands except for Cls.
+<p>
+The <b>blend</b> parameter can be one of the following:
+<p>
+<table><tr><th>Blend</th><th>Description</th></tr>
+<tr><td>AlphaBlend</td><td>Rendering operations are alpha blended with existing graphics</td></tr>
+<tr><td>AdditiveBlend</td><td>Rendering operations are additively blended with existing graphics</td></tr></table></p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#GetBlend">GetBlend</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetColor'></a>
+				<div class="well well-small name"><b>Function SetColor : Int ( r:Float, g:Float, b:Float )</b></div>
+				<div class="description">
+					<p>Sets the current color.
+<p>
+The current color is used by all drawing operations except Cls.
+<p>
+Note: Drawing images in any color other than 255,255,255 on the HTML5 target will incur a major runtime overhead. For best results on the HTML5 target, either use colored images sparingly, or consider using 'pre-colored' images stored in multiple image files.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#GetColor">GetColor</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetFont'></a>
+				<div class="well well-small name"><b>Function SetFont : Int ( font:<a href="Modules_mojo.graphics_Image.html">Image</a>, firstChar:Int=32 )</b></div>
+				<div class="description">
+					<p>Sets the font for use with DrawText.
+<p>
+The font parameter may be Null, in which case an internal 7x11 white-on-black font is used and the firstChar parameter is ignored.
+<p>
+Note: The font functionality in mojo is very limited and intended mainly for debugging purposes</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#GetFont">GetFont</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetMatrix'></a>
+				<div class="well well-small name"><b>Function SetMatrix : Int ( m:Float[] )</b></div>
+				<div class="description">
+					<p>Sets the current matrix.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#GetMatrix">GetMatrix</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetMatrix(2)'></a>
+				<div class="well well-small name"><b>Function SetMatrix : Int ( ix:Float, iy:Float, jx:Float, jy:Float, tx:Float, ty:Float )</b></div>
+				<div class="description">
+					<p>Sets the current matrix.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#GetMatrix">GetMatrix</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetScissor'></a>
+				<div class="well well-small name"><b>Function SetScissor : Int ( x:Float, y:Float, width:Float, height:Float )</b></div>
+				<div class="description">
+					<p>Sets the current scissor rectangle to the rectangle specified by x, y, width and height.
+<p>
+All drawing commands are 'clipped' to the current scissor rectangle. To disable clipping, set the scissor rectangle to 0,0,DeviceWidth,DeviceHeight.
+<p>
+The rectangle coordinates used with SetScissor are device coordinates, and are not affected by the current matrix.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.graphics.html#GetScissor">GetScissor</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='TextWidth'></a>
+				<div class="well well-small name"><b>Function TextWidth : Float ( text:String )</b></div>
+				<div class="description">
+					<p>Returns the width of the given text.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Transform'></a>
+				<div class="well well-small name"><b>Function Transform : Int ( m:Float[] )</b></div>
+				<div class="description">
+					<p>Multiplies the current matrix by the specified matrix.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Transform(2)'></a>
+				<div class="well well-small name"><b>Function Transform : Int ( ix:Float, iy:Float, jx:Float, jy:Float, tx:Float, ty:Float )</b></div>
+				<div class="description">
+					<p>Multiplies the current matrix by the specified matrix.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Translate'></a>
+				<div class="well well-small name"><b>Function Translate : Int ( x:Float, y:Float )</b></div>
+				<div class="description">
+					<p>Multiplies the current matrix by a matrix representing the specified translation.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_monkey.boxes.html'>monkey.boxes</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  IntObject </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">IntObject</span></h1>
+
+
+	<p>The IntObject box class can be used to encapsulate an int value inside an object.
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Fields:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#value'>value</a> : Int</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+						<li><a href='#New(2)'>New</a> ( value:Int )</li>
+					
+						<li><a href='#New(3)'>New</a> ( value:Float )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_monkey.boxes_IntObject.html#Compare'>Compare</a> : Int ( box:IntObject )</li>
+					
+						<li><a href='Modules_monkey.boxes_IntObject.html#Equals'>Equals</a> : Bool ( box:IntObject )</li>
+					
+						<li><a href='Modules_monkey.boxes_IntObject.html#ToFloat'>ToFloat</a> : Float ()</li>
+					
+						<li><a href='Modules_monkey.boxes_IntObject.html#ToInt'>ToInt</a> : Int ()</li>
+					
+						<li><a href='Modules_monkey.boxes_IntObject.html#ToString'>ToString</a> : String ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+	<h2>Field Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='value'></a>
+				<div class="well well-small name"><b>Field value : Int</b></div>
+				<div class="description">
+					<p>The value contained in the IntObject.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>Creates a new IntObject with the value 0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( value:Int )</b></div>
+				<div class="description">
+					<p>Creates a new IntObject with the given value.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(3)'></a>
+				<div class="well well-small name"><b>Method New ( value:Float )</b></div>
+				<div class="description">
+					<p>Creates a new IntObject with the given float value converted to an int.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Compare'></a>
+				<div class="well well-small name"><b>Method Compare : Int ( box:<a href="Modules_monkey.boxes_IntObject.html">IntObject</a> )</b></div>
+				<div class="description">
+					<p>Compares IntObjects. Returns a value &lt;0 if this int value is less than <b>box</b>, a value &gt;0 if this int value is greater than <b>box</b>, or 0 if both int values are equal.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Equals'></a>
+				<div class="well well-small name"><b>Method Equals : Bool ( box:<a href="Modules_monkey.boxes_IntObject.html">IntObject</a> )</b></div>
+				<div class="description">
+					<p>Tests IntObjects for equality. Returns true if the values are equal, else false.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ToFloat'></a>
+				<div class="well well-small name"><b>Method ToFloat : Float ()</b></div>
+				<div class="description">
+					<p>Returns the int value contained in the IntObject converted to a float.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ToInt'></a>
+				<div class="well well-small name"><b>Method ToInt : Int ()</b></div>
+				<div class="description">
+					<p>Returns the int value contained in the IntObject.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ToString'></a>
+				<div class="well well-small name"><b>Method ToString : String ()</b></div>
+				<div class="description">
+					<p>Returns the int value contained in the IntObject converted to a string.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  brl.markdown </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">brl.markdown</span></h1>
+
+
+	<p>The markdown module converts easy to read/write plain text (known as markdown) to html, using a simple text formatting syntax.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Classes:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.markdown_Markdown.html'>Markdown</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Interfaces:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.markdown_ILinkResolver.html'>ILinkResolver</a></li>
+					
+						<li><a href='Modules_brl.markdown_IPrettifier.html'>IPrettifier</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The markdown module converts easy to read/write plain text (known as markdown) to html, using a simple text formatting syntax.
+<p>
+Markdown may also include html. Note that the special html characters &lt;, &gt; and &amp; must therefore be 'escaped' using
+a backslash, the markdown escape character. For example, to insert a literal &lt; into your markdown, you should use \<.
+<p>
+To convert markdown text to html, you must create a <a href="Modules_brl.markdown_Markdown.html">Markdown</a> object and call its <a href="Modules_brl.markdown_Markdown.html#ToHtml">ToHtml</a> method.
+<p>
+<h2>Markdown syntax</h2>
+<p>
+<h3>Paragraph separators</h3>
+<p>
+A blank line inserts a paragraph separator into the output.
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=i>This</code><br>
+<code class=i>is</code><br>
+<code class=i>on</code><br>
+<code class=i>one</code><br>
+<code class=i>line...</code><br>
+<br>
+<code class=i>This</code><code class=d>&nbsp;</code><code class=i>is</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;</code><code class=k>new</code><code class=d>&nbsp;</code><code class=i>paragraph</code><code class=d>!</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+This
+is
+on
+one
+line...
+<p>
+This is a new paragraph!
+<p>
+<hr>
+<p>
+<h3>Line breaks</h3>
+<p>
+Appending ~n to the end of a line will cause a line break to be inserted.
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=i>Tightly</code><code class=d>~</code><code class=i>n</code><br>
+<code class=i>Packed</code><code class=d>~</code><code class=i>n</code><br>
+<code class=i>Lines</code><code class=d>~</code><code class=i>n</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+Tightly<br>
+Packed<br>
+Lines<br>
+<p>
+<hr>
+<p>
+<h3>Text style</h3>
+<p>
+Text may be enclosed in the following style tags to control text style. Style tags may not span multiple lines.
+<p>
+*bold*<br>
+%italic%<br>
+`code`
+<p>
+<i>Example</i>
+<p>
+<div class=pretty>
+<code class=d>*</code><code class=i>This</code><code class=d>&nbsp;</code><code class=i>is</code><code class=d>&nbsp;</code><code class=i>in</code><code class=d>&nbsp;</code><code class=i>bold</code><code class=d>*,&nbsp;</code><code class=k>while</code><code class=d>&nbsp;%</code><code class=i>this</code><code class=d>&nbsp;</code><code class=i>is</code><code class=d>&nbsp;</code><code class=i>in</code><code class=d>&nbsp;</code><code class=i>italics</code><code class=d>%.&nbsp;</code><code class=k>And</code><code class=d>&nbsp;`</code><code class=i>this</code><code class=d>&nbsp;</code><code class=i>is</code><code class=d>&nbsp;</code><code class=i>some</code><code class=d>&nbsp;</code><code class=i>code</code><code class=d>`.</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+<b>This is in bold</b>, while <i>this is in italics</i>. And <code>this is some code</code>.
+<p>
+<hr>
+<p>
+<h3>Lists</h3>
+<p>
+* Unordered list
+<p>
++ Ordered list
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=d>*&nbsp;</code><code class=i>Item</code><br>
+<code class=d>*&nbsp;</code><code class=i>Another</code><code class=d>&nbsp;</code><code class=i>item</code><br>
+<code class=d>*&nbsp;</code><code class=i>Yet</code><code class=d>&nbsp;</code><code class=i>another</code><code class=d>&nbsp;</code><code class=i>item</code><br>
+<br>
+<code class=d>+&nbsp;</code><code class=i>Item</code><code class=d>&nbsp;</code><code class=l>1</code><br>
+<code class=d>+&nbsp;</code><code class=i>Item</code><code class=d>&nbsp;</code><code class=l>2</code><br>
+<code class=d>+&nbsp;</code><code class=i>Item</code><code class=d>&nbsp;</code><code class=l>3</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+<ul><li>Item</li>
+<li>Another item</li>
+<li>Yet another item</li>
+<p>
+</ul><ol><li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<p>
+</ol>Lists may contain paragraph separators.
+<p>
+<hr>
+<p>
+<h3>Tables</h3>
+<p>
+| Header 1 | Header 2<br>
+| Cell 1   | Cell 2<br>
+| Cell 3   | Cell 4
+<p>
+Tables may not contain paragraph separators - a blank line ends the table.
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=d>|&nbsp;</code><code class=i>Flags</code><code class=d>&nbsp;&nbsp;&nbsp;|&nbsp;</code><code class=i>Meaning</code><br>
+<code class=d>|&nbsp;</code><code class=l>1</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</code><code class=i>Enable</code><br>
+<code class=d>|&nbsp;</code><code class=l>2</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;</code><code class=i>MidHandle</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+<table><tr><th>Flags</th><th>Meaning</th></tr>
+<tr><td>1</td><td>Enable</td></tr>
+<tr><td>2</td><td>MidHandle</td></tr>
+</table><p>
+<hr>
+<p>
+<h3>Headers</h3>
+<p>
+&gt; Top level header<br>
+&gt;> Second level header<br>
+&gt;>> Third level header<br>
+&gt;>>> Fourth level header<br>
+&gt;>>>> Fifth level header<br>
+&gt;>>>>> Sixth level header
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=d>&gt;&nbsp;</code><code class=i>Title</code><br>
+<code class=d>&gt;&gt;&nbsp;</code><code class=i>Chapter</code><code class=d>&nbsp;</code><code class=l>1</code><br>
+<code class=d>&gt;&gt;&nbsp;</code><code class=i>Chapter</code><code class=d>&nbsp;</code><code class=l>2</code><br>
+<code class=d>&gt;&gt;&gt;&nbsp;</code><code class=i>Figure</code><code class=d>&nbsp;</code><code class=l>1</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+<h1>Title</h1>
+<h2>Chapter 1</h2>
+<h2>Chapter 2</h2>
+<h3>Figure 1</h3>
+<p>
+<hr>
+<p>
+<h3>Links</h3>
+<p>
+Links may be created by enclosing the link target in [[ and ]]. In addition, alternate link text may be added using |.
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=d>*&nbsp;[[</code><code class=i>Home</code><code class=d>]]</code><br>
+<code class=d>*&nbsp;[[</code><code class=i>Home</code><code class=d>|</code><code class=i>Go</code><code class=d>&nbsp;</code><code class=i>Home</code><code class=d>]]</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+<ul><li><a href="Home.html">Home</a></li>
+<li><a href="Home.html">Go Home</a></li>
+<p>
+</ul><hr>
+<p>
+<h3>Horizontal dividers</h3>
+<p>
+A horizontal divider may be inserted by using one to three dash characters alone on a line.
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=i>Above</code><br>
+<code class=d>---</code><br>
+<code class=i>Below</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+Above
+<hr>
+Below
+<p>
+<hr>
+<p>
+<p>
+<h3>Escaping markdown characters</h3>
+<p>
+The backslash character may be used to escape any special markdown characters. To insert a literal backslash, use \\.
+<p>
+<i>Example</i>
+<div class=pretty>
+<code class=d>*</code><code class=i>This</code><code class=d>&nbsp;</code><code class=i>is</code><code class=d>&nbsp;</code><code class=i>bold</code><code class=d>*,&nbsp;</code><code class=i>but</code><code class=d>&nbsp;\*</code><code class=i>this</code><code class=d>&nbsp;</code><code class=i>isn</code><code class=r>'t\*.</code><br>
+</div>
+<p>
+<i>Output</i>
+<p>
+<b>This is bold</b>, but *this isn't*.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

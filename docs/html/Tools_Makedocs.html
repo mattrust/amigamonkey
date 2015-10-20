@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Tools.html'>Tools</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Makedocs </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<p>
+<h1>Makedocs</h1>
+<p>
+The Makedocs tool converts Monkey documentation to html.
+<p>
+All documentation may use <a href="Modules_brl.markdown.html">markdown</a> formatting.
+<p>
+<h2>General documentation</h2>
+<p>
+General documentation files should have a '.monkeydoc' extension, and should be placed in the docs/monkeydoc directory.
+<p>
+<h3>Markdown links in general documentation</h3>
+<p>
+Documentation pages may be linked to using the relative filepath as a link target. For example, if you have added a Tools/MakeImages.monkeydoc file, any file in the Tools directory can link to it using [[MakeImages]].
+<p>
+Files outside the Tools directory can also link to MakeTools using using [[Tools/MakeImages]]. The link text will have the directory stripped so will appear simply as 'MakeImages'. 
+<p>
+A plain [[MakeImages]] is also likely to work even outside the Tools directory, as the link resolver will eventually find MakeTools in the main Index, but it may clash with other definitions of MakeImages so a fully qualified link is preferred.
+<p>
+<p>
+<h2>Module documentation</h2>
+<p>
+There are two ways to document a module - either by placing documentation 'in source' within the actual module source code
+by way of 'monkeydoc comments', or in a separate monkeydoc file.
+<p>
+<h3>Documenting modules in monkey source code</h3>
+<p>
+To document a module declaration, you should precede the declaration with a monkeydoc comment. A monkeydoc comment is a block comment starting with the line <code>#Rem monkeydoc</code>
+<p>
+For example.
+<p>
+<div class=pretty>
+<code class=r>#Rem monkeydoc</code><br>
+<code class=r>Documentation for MyFunction goes here.</code><br>
+<code class=r>#End</code><br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>MyFunction</code><code class=d>:</code><code class=k>Void</code><code class=d>()</code><br>
+<code class=d>...</code><code class=i>etc...</code><br>
+</div>
+<p>
+In addition, the first monkeydoc comment in the file must be of the form...
+<p>
+<div class=pretty>
+<code class=r>#Rem monkeydoc Module my.module</code><br>
+<code class=r>Documentation for my.module goes here...</code><br>
+<code class=r>#End</code><br>
+</div>
+<p>
+...where my.module is the full module path of your module.
+<p>
+<p>
+<h3>Documenting modules using an external monkeydoc file</h3>
+<p>
+You may also document a module using an external monkeydoc file. This file should either be in the same directory as the module monkey source file, or in a monkeydoc subdirectory, and must have the same name as the module source file but with a '.monkeydoc' extension instead of '.monkey'.
+<p>
+For example, given the module source file:
+<p>
+<code>modules/flixel/flixel.monkey</code>
+<p>
+The corresponding monkeydoc file may be located either here...
+<p>
+<code>modules/flixel/flixel.monkeydoc</code>
+<p>
+...or here...
+<p>
+<code>modules/flixel/monkeydoc/flixel.monkeydoc</code>
+<p>
+Declarations in a monkeydoc file are normal monkey declarations, but must be preceded by a '# '. Declarations must appear BEFORE the actual documentation.
+<p>
+In addition, a monkeydoc file must start with a '# Module my.module' declaration.
+<p>
+For example:
+<p>
+<div class=pretty>
+<code class=d>#&nbsp;</code><code class=k>Module</code><code class=d>&nbsp;</code><code class=i>my.module</code><br>
+<br>
+<code class=d>#&nbsp;</code><code class=k>Import</code><code class=d>&nbsp;</code><code class=i>brl.stream</code><br>
+<code class=d>#&nbsp;</code><code class=k>Import</code><code class=d>&nbsp;</code><code class=i>brl.markdown</code><br>
+<br>
+<code class=i>Documentation</code><code class=d>&nbsp;</code><code class=k>for</code><code class=d>&nbsp;</code><code class=i>my.module</code><code class=d>&nbsp;</code><code class=i>goes</code><code class=d>&nbsp;</code><code class=i>here.</code><br>
+<br>
+<code class=d>#&nbsp;</code><code class=k>Function</code><code class=d>&nbsp;</code><code class=i>MyFunction</code><code class=d>:</code><code class=k>Void</code><code class=d>()</code><br>
+<br>
+<code class=i>Documentation</code><code class=d>&nbsp;</code><code class=k>for</code><code class=d>&nbsp;</code><code class=i>MyFunction</code><code class=d>&nbsp;</code><code class=i>goes</code><code class=d>&nbsp;</code><code class=i>here.</code><br>
+</div>
+<p>
+<p>
+<h3>Markdown links in module documentation</h3>
+<p>
+Links to declarations may be created simply by specifying the declaration identifier. The link resolver will attempt to find the correct declaration given the scope of the source documentation.
+<p>
+Links to declarations may also be absolute, in which case a full declaration path should be provided. For example, [[mojo.graphics]] will link to the mojo.graphics module. Absolute links to non-scope declarations should use #identifier to specify the 'leaf' declaration, for example [[mojo.graphics#DrawImage]] will link to the DrawImage function in the mojo.graphics module.
+<p>
+Links may also be created to general documentation, using the same rules as given in the above section 'Markdown links in general documentation'.
+<p>
+<p>
+<h3>Adding examples to module documentation</h3>
+<p>
+You may add examples using an 'Example:' section, eg:
+<p>
+<div class=pretty>
+<code class=r>#Rem monkeydoc</code><br>
+<code class=r></code><br>
+<code class=r>Frobozz the whirligig</code><br>
+<code class=r></code><br>
+<code class=r>Example:</code><br>
+<code class=r>&lt;pre&gt;</code><br>
+<code class=r>Function Main()</code><br>
+<code class=r>	Print Frobozz( "Yes!" )</code><br>
+<code class=r>End</code><br>
+<code class=r>&lt;/pre&gt;</code><br>
+<code class=r>#End</code><br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Frobozz</code><code class=d>:</code><code class=k>Void</code><code class=d>(&nbsp;</code><code class=i>str</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;)</code><br>
+<code class=r>'...etc...</code><br>
+</div>
+<p>
+In addition, you can add example programs in monkey source code form to an 'examples' directory located in the same directory as the .monkey or .monkeydoc file the docs are located in.
+<p>
+Such example programs should have the same name as the declaration they are providing an example for, with an '_example' suffix. For example, example code for the above function would be named 'Frobozz_example.monkey'.
+<p>
+<p>
+<h3>Adding links to module documentation</h3>
+<p>
+Documentation may also in include a links section, eg:
+<p>
+Links: [[X]], [[Y]], [[Z]]
+<p>
+Links will be emitted in a 'links' or 'see also' section.
+<p>
+<p>
+<p>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

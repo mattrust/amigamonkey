@@ -1,0 +1,4 @@
+
+#TARGET_NAME="Amiga"
+#TARGET_SYSTEM="amiga"
+#TARGET_BUILDER="amiga"

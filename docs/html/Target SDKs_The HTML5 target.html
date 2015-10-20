@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Target SDKs.html'>Target SDKs</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  The HTML5 target </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>The HTML5 target</h1>
+<p>
+HTML5 is an emerging standard for writing web based apps.
+<p>
+<h2>You will need:</h2>
+<p>
+<ul><li>An HTML5 capable browser such as Chrome, Firefox, Opera, Safari or IE9.</li>
+<p>
+</ul><h2>Notes</h2>
+<p>
+HTML5 apps use a canvas element for graphics rendering. To change the size and layout of this canvas, you will need to modify the MonkeyGame.html and/or main.js files in the app's .build/html5 directory.
+<p>
+<h2>Cross domain http requests</h2>
+<p>
+In order for an html app to make cross domain http requests (for example, using the <a href="Modules_brl.httprequest_HttpRequest.html">HttpRequest</a> class), the request server must be correctly configured.
+<p>
+More information can be found here: <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">http://en.wikipedia.org/wiki/Cross-origin_resource_sharing</a>
+<p>
+For example, you could use php to configure the server to send the following HTTP headers:
+<p>
+<code>Access-Control-Allow-Headers: origin, content-type, access-control-allow-origin</code><br>
+<code>Access-Control-Allow-Origin: *</code><br>
+<code>Access-Control-Max-Age: 86400</code><br>
+<code>Allow: GET, POST, OPTIONS</code><br>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

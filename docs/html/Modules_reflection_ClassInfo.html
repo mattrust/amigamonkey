@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_reflection.html'>reflection</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  ClassInfo </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">ClassInfo</span></h1>
+
+
+	<p>ClassInfo objects describe classes declared by your program and in modules.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Attributes'>Attributes</a> : Int ()</li>
+					
+						<li><a href='#ElementType'>ElementType</a> : ClassInfo ()</li>
+					
+						<li><a href='#Interfaces'>Interfaces</a> : ClassInfo[] ()</li>
+					
+						<li><a href='#Name'>Name</a> : String ()</li>
+					
+						<li><a href='#SuperClass'>SuperClass</a> : ClassInfo ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_reflection_ClassInfo.html#ArrayLength'>ArrayLength</a> : Int ( inst:Object )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#ExtendsClass'>ExtendsClass</a> : Bool ( clas:ClassInfo )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetConst'>GetConst</a> : ConstInfo ( name:String, recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetConstructor'>GetConstructor</a> : FunctionInfo ( argTypes:ClassInfo[] )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetConstructors'>GetConstructors</a> : FunctionInfo[] ()</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetConsts'>GetConsts</a> : ConstInfo[] ( recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetElement'>GetElement</a> : Object ( inst:Object, index:Int )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetField'>GetField</a> : FieldInfo ( name:String, recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetFields'>GetFields</a> : FieldInfo[] ( recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetFunction'>GetFunction</a> : FunctionInfo ( name:String, argTypes:ClassInfo[], recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetFunctions'>GetFunctions</a> : FunctionInfo[] ( recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetGlobal'>GetGlobal</a> : GlobalInfo ( name:String, recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetGlobals'>GetGlobals</a> : GlobalInfo[] ( recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetMethod'>GetMethod</a> : MethodInfo ( name:String, argTypes:ClassInfo[], recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#GetMethods'>GetMethods</a> : MethodInfo[] ( recursive:Bool )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#NewArray'>NewArray</a> : Object ( length:Int )</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#NewInstance'>NewInstance</a> : Object ()</li>
+					
+						<li><a href='Modules_reflection_ClassInfo.html#SetElement'>SetElement</a> : Void ( inst:Object, index:Int, value:Object )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	ClassInfo objects describe classes declared by your program and in modules.
+<p>
+The ArrayLength, GetElement, SetElement and NewArray methods are only valid if the class represents an array box class. You can determine whether a class is an array box class with the ElementType method. If ElementType returns non-null, then the class is an array box class.
+<p>
+The recursive parameter of the GetConst, GetGlobal, GetField, GetMethod and GetFunction methods indicates whether or not the entire class hierarchy should be searched, or only the current class.
+<p>
+The recursive parameter of the GetConsts, GetGlobals, GetFields, GetMethods and GetFunctions methods indicates whether or not all declarations spanning the entire class hierarchy should be returned, or only those declared within the current class.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Attributes'></a>
+				<div class="well well-small name"><b>Method Attributes : Int () Property</b></div>
+				<div class="description">
+					<p>Get class attributes.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ElementType'></a>
+				<div class="well well-small name"><b>Method ElementType : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> () Property</b></div>
+				<div class="description">
+					<p>Get array element type.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Interfaces'></a>
+				<div class="well well-small name"><b>Method Interfaces : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a>[] () Property</b></div>
+				<div class="description">
+					<p>Get interfaces implemented by this class, or interfaces extended by this interface.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Name'></a>
+				<div class="well well-small name"><b>Method Name : String () Property</b></div>
+				<div class="description">
+					<p>Get name of class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SuperClass'></a>
+				<div class="well well-small name"><b>Method SuperClass : <a href="Modules_reflection_ClassInfo.html">ClassInfo</a> () Property</b></div>
+				<div class="description">
+					<p>Get super class of class.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='ArrayLength'></a>
+				<div class="well well-small name"><b>Method ArrayLength : Int ( inst:Object )</b></div>
+				<div class="description">
+					<p>Get length of an array.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ExtendsClass'></a>
+				<div class="well well-small name"><b>Method ExtendsClass : Bool ( clas:<a href="Modules_reflection_ClassInfo.html">ClassInfo</a> )</b></div>
+				<div class="description">
+					<p>Check if class extends another class, or implements an interface.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetConst'></a>
+				<div class="well well-small name"><b>Method GetConst : <a href="Modules_reflection_ConstInfo.html">ConstInfo</a> ( name:String, recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get a class const.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetConstructor'></a>
+				<div class="well well-small name"><b>Method GetConstructor : <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a> ( argTypes:<a href="Modules_reflection_ClassInfo.html">ClassInfo</a>[] )</b></div>
+				<div class="description">
+					<p>Get a class constructor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetConstructors'></a>
+				<div class="well well-small name"><b>Method GetConstructors : <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a>[] ()</b></div>
+				<div class="description">
+					<p>Get all constructors declared by class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetConsts'></a>
+				<div class="well well-small name"><b>Method GetConsts : <a href="Modules_reflection_ConstInfo.html">ConstInfo</a>[] ( recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get all consts declared by class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetElement'></a>
+				<div class="well well-small name"><b>Method GetElement : Object ( inst:Object, index:Int )</b></div>
+				<div class="description">
+					<p>Get an array element.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetField'></a>
+				<div class="well well-small name"><b>Method GetField : <a href="Modules_reflection_FieldInfo.html">FieldInfo</a> ( name:String, recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get a class field.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetFields'></a>
+				<div class="well well-small name"><b>Method GetFields : <a href="Modules_reflection_FieldInfo.html">FieldInfo</a>[] ( recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get all fields declared by class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetFunction'></a>
+				<div class="well well-small name"><b>Method GetFunction : <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a> ( name:String, argTypes:<a href="Modules_reflection_ClassInfo.html">ClassInfo</a>[], recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get a class function.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetFunctions'></a>
+				<div class="well well-small name"><b>Method GetFunctions : <a href="Modules_reflection_FunctionInfo.html">FunctionInfo</a>[] ( recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get all functions declared by class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetGlobal'></a>
+				<div class="well well-small name"><b>Method GetGlobal : <a href="Modules_reflection_GlobalInfo.html">GlobalInfo</a> ( name:String, recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get a class global.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetGlobals'></a>
+				<div class="well well-small name"><b>Method GetGlobals : <a href="Modules_reflection_GlobalInfo.html">GlobalInfo</a>[] ( recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get all globals declared by class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetMethod'></a>
+				<div class="well well-small name"><b>Method GetMethod : <a href="Modules_reflection_MethodInfo.html">MethodInfo</a> ( name:String, argTypes:<a href="Modules_reflection_ClassInfo.html">ClassInfo</a>[], recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get a class method.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetMethods'></a>
+				<div class="well well-small name"><b>Method GetMethods : <a href="Modules_reflection_MethodInfo.html">MethodInfo</a>[] ( recursive:Bool )</b></div>
+				<div class="description">
+					<p>Get all methods declared by class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='NewArray'></a>
+				<div class="well well-small name"><b>Method NewArray : Object ( length:Int )</b></div>
+				<div class="description">
+					<p>Create a new array box object of this class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='NewInstance'></a>
+				<div class="well well-small name"><b>Method NewInstance : Object ()</b></div>
+				<div class="description">
+					<p>Create a new object of this class.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetElement'></a>
+				<div class="well well-small name"><b>Method SetElement : Void ( inst:Object, index:Int, value:Object )</b></div>
+				<div class="description">
+					<p>Set an array element.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

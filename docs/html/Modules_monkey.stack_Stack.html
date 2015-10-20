@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_monkey.stack.html'>monkey.stack</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Stack </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Stack&lt;T&gt;</span></h1>
+
+
+	<p>Stacks provide 2 basic operations - push and pop.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+		<tr>
+			<td class="span1 name">Extended&nbsp;by:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_monkey.stack_FloatStack.html">FloatStack</a>, <a href="Modules_monkey.stack_IntStack.html">IntStack</a>, <a href="Modules_monkey.stack_StringStack.html">StringStack</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+						<li><a href='#New(2)'>New</a> ( data:T[] )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#IsEmpty'>IsEmpty</a> : Bool ()</li>
+					
+						<li><a href='#Length'>Length</a> : Void ( length:Int )</li>
+					
+						<li><a href='#Length(2)'>Length</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Backwards'>Backwards</a> : Object ()</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Clear'>Clear</a> : Void ()</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Compare'>Compare</a> : Int ( lhs:T, rhs:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Contains'>Contains</a> : Bool ( value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Data'>Data</a> : T[] ()</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Equals'>Equals</a> : Bool ( lhs:T, rhs:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Find'>Find</a> : Int ( value:T, start:Int=0 )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#FindLast'>FindLast</a> : Int ( value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#FindLast(2)'>FindLast</a> : Int ( value:T, start:Int )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Get'>Get</a> : T ( index:Int )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Insert'>Insert</a> : Void ( index:Int, value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#ObjectEnumerator'>ObjectEnumerator</a> : Object ()</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Pop'>Pop</a> : T ()</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Push'>Push</a> : Void ( value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Push(2)'>Push</a> : Void ( values:T[] )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Remove'>Remove</a> : Void ( index:Int )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#RemoveEach'>RemoveEach</a> : Void ( value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#RemoveFirst'>RemoveFirst</a> : Void ( value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#RemoveLast'>RemoveLast</a> : Void ( value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Set'>Set</a> : Void ( index:Int, value:T )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Sort'>Sort</a> : Int ( ascending:Int=true )</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#ToArray'>ToArray</a> : T[] ()</li>
+					
+						<li><a href='Modules_monkey.stack_Stack.html#Top'>Top</a> : T ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Stacks provide 2 basic operations - push and pop. Pushing an item on a stack adds the item to the top of the stack, while popping an item removes the item from the top of the stack and returns it.
+<p>
+Stacks may also be efficiently indexed using an integer index, and elements may be inserted and removed. This allows stacks to also be used as a dynamic array (an array where the length can change), much like a C++ vector.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>Creates a new empty Stack object.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( data:T[] )</b></div>
+				<div class="description">
+					<p>Creates a new Stack object initialized with an array of values.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='IsEmpty'></a>
+				<div class="well well-small name"><b>Method IsEmpty : Bool () Property</b></div>
+				<div class="description">
+					<p>Return True if the stack is empty, ie: it contains no items, else False.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Length'></a>
+				<div class="well well-small name"><b>Method Length : Void ( length:Int ) Property</b></div>
+				<div class="description">
+					<p>Sets the number of items in the stack.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Length(2)'></a>
+				<div class="well well-small name"><b>Method Length : Int () Property</b></div>
+				<div class="description">
+					<p>Returns the number of items in the stack.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Backwards'></a>
+				<div class="well well-small name"><b>Method Backwards : Object ()</b></div>
+				<div class="description">
+					<p>Returns an object that may be used to iterate backwards through the stack with a For EachIn loop.
+<p>
+Note that this does not actually reverse or modify the stack in any way.</p>
+					
+					
+						<p><b><a href="examples/monkey_stack_Stack_Backwards.monkey">Example</a></b> <div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>stk</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>StringStack</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stk.Push</code><code class=d>&nbsp;</code><code class=l>"Hello"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stk.Push</code><code class=d>&nbsp;</code><code class=l>"there"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stk.Push</code><code class=d>&nbsp;</code><code class=l>"this"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stk.Push</code><code class=d>&nbsp;</code><code class=l>"is"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stk.Push</code><code class=d>&nbsp;</code><code class=l>"a"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>stk.Push</code><code class=d>&nbsp;</code><code class=l>"test"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Fowards:"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>t</code><code class=d>$=</code><code class=k>EachIn</code><code class=d>&nbsp;</code><code class=i>stk</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>t</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>""</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Backwards:"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>t</code><code class=d>$=</code><code class=k>Eachin</code><code class=d>&nbsp;</code><code class=i>stk.Backwards</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=i>t</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<br>
+<code class=k>End</code><br>
+</div></p>
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Clear'></a>
+				<div class="well well-small name"><b>Method Clear : Void ()</b></div>
+				<div class="description">
+					<p>Removes all items from the stack.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Compare'></a>
+				<div class="well well-small name"><b>Method Compare : Int ( lhs:T, rhs:T )</b></div>
+				<div class="description">
+					<p>This method is used by the <a href="Modules_monkey.stack_Stack.html#Sort">Sort</a> method to compare elements.
+<p>
+By default, this methods simply generates a runtime error. Extending classes should implement this method if they want to support <a href="Modules_monkey.stack_Stack.html#Sort">Sort</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Contains'></a>
+				<div class="well well-small name"><b>Method Contains : Bool ( value:T )</b></div>
+				<div class="description">
+					<p>Returns true if <b>value</b> is contained in the stack.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Data'></a>
+				<div class="well well-small name"><b>Method Data : T[] ()</b></div>
+				<div class="description">
+					<p>Provides access to the underlying array used to store stack data.
+<p>
+Note: The length of this array may be greater than the actual length of the stack.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Equals'></a>
+				<div class="well well-small name"><b>Method Equals : Bool ( lhs:T, rhs:T )</b></div>
+				<div class="description">
+					<p>This method is used by the <a href="Modules_monkey.stack_Stack.html#Contains">Contains</a> and <a href="Modules_monkey.stack_Stack.html#RemoveEach">RemoveEach</a> methods to determine element equality.
+<p>
+By default, this method compares <b>lhs</b> and <b>rhs</b> using the '=' operator. Extending classes may override this method to provide their own equality test.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Find'></a>
+				<div class="well well-small name"><b>Method Find : Int ( value:T, start:Int=0 )</b></div>
+				<div class="description">
+					<p>Finds the index of the first element in the statch equal to <b>value</b>. The stack is searched starting at index <b>start</b>.
+<p>
+If not matching element is found, -1 is returned.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FindLast'></a>
+				<div class="well well-small name"><b>Method FindLast : Int ( value:T )</b></div>
+				<div class="description">
+					<p>Finds the index of the last element in the statch equal to <b>value</b>.
+<p>
+If not matching element is found, -1 is returned.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FindLast(2)'></a>
+				<div class="well well-small name"><b>Method FindLast : Int ( value:T, start:Int )</b></div>
+				<div class="description">
+					<p>Finds the index of the last element in the statch equal to <b>value</b>. The stack is searched starting at index <b>start</b>.
+<p>
+If not matching element is found, -1 is returned.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Get'></a>
+				<div class="well well-small name"><b>Method Get : T ( index:Int )</b></div>
+				<div class="description">
+					<p>Returns the element at the specified index.
+<p>
+An index of 0 represents the bottom of the stack, and an index of Length-1 represents the top.</p>
+					
+						<p><b>See also</b> <a href="Modules_monkey.stack_Stack.html#Set">Set</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Insert'></a>
+				<div class="well well-small name"><b>Method Insert : Void ( index:Int, value:T )</b></div>
+				<div class="description">
+					<p>Inserts value into the stack, shifting existing elements up if necessary.
+<p>
+This will increase the length of the stack by 1.
+<p>
+An index of 0 represents the bottom of the stack, and an index of length-1 represents the top.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ObjectEnumerator'></a>
+				<div class="well well-small name"><b>Method ObjectEnumerator : Object ()</b></div>
+				<div class="description">
+					<p>Returns an enumerator object suitable for use with For EachIn loops.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Pop'></a>
+				<div class="well well-small name"><b>Method Pop : T ()</b></div>
+				<div class="description">
+					<p>Removes the item at the top of the stack and returns it.
+<p>
+This will decrease the length of the stack by 1.
+<p>
+If the stack is empty, the behaviour of Pop is undefined.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Push'></a>
+				<div class="well well-small name"><b>Method Push : Void ( value:T )</b></div>
+				<div class="description">
+					<p>Pushes a value on the top of the stack.
+<p>
+This will increase the length of the stack by 1.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Push(2)'></a>
+				<div class="well well-small name"><b>Method Push : Void ( values:T[] )</b></div>
+				<div class="description">
+					<p>Pushes an array of values on the top of the stack starting with element 0.
+<p>
+This will increase the length of the stack by the length of the array.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Remove'></a>
+				<div class="well well-small name"><b>Method Remove : Void ( index:Int )</b></div>
+				<div class="description">
+					<p>Removes the value at the specified index from the stack, shifting existing elements down if necessary.
+<p>
+This will decrease the length of the stack by 1.
+<p>
+An index of 0 represents the bottom of the stack, and an index of length-1 represents the top.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveEach'></a>
+				<div class="well well-small name"><b>Method RemoveEach : Void ( value:T )</b></div>
+				<div class="description">
+					<p>Finds and removes all elements in the stack equal to value, shifting existing elements down if necessary.
+<p>
+This will decrease the length of the stack by the number of occurances of value in the stack.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveFirst'></a>
+				<div class="well well-small name"><b>Method RemoveFirst : Void ( value:T )</b></div>
+				<div class="description">
+					<p>Finds and removes the first element in the stack equal to <b>value</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveLast'></a>
+				<div class="well well-small name"><b>Method RemoveLast : Void ( value:T )</b></div>
+				<div class="description">
+					<p>Finds and removes the last element in the stack equal to <b>value</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Set'></a>
+				<div class="well well-small name"><b>Method Set : Void ( index:Int, value:T )</b></div>
+				<div class="description">
+					<p>Overwrites the existing value at index with value.
+<p>
+An index of 0 represents the bottom of the stack, and an index of stack length-1 represents the top.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Sort'></a>
+				<div class="well well-small name"><b>Method Sort : Int ( ascending:Int=true )</b></div>
+				<div class="description">
+					<p>Sorts the stack into ascending or descending order.
+<p>
+The stack must implement the Compare method.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ToArray'></a>
+				<div class="well well-small name"><b>Method ToArray : T[] ()</b></div>
+				<div class="description">
+					<p>Converts the stack to an array of values.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Top'></a>
+				<div class="well well-small name"><b>Method Top : T ()</b></div>
+				<div class="description">
+					<p>Returns the item at the top of the stack.
+<p>
+If the stack is empty, the behaviour of Top is undefined.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

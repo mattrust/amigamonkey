@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Target SDKs.html'>Target SDKs</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  The Android target </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>The Android target</h1>
+<p>
+Android is Google's hugely popular cellphone and tablet OS.
+<p>
+<h2>You will need</h2>
+<p>
+<ul><li>The <a href="http://developer.android.com/sdk/index.html">Android SDK</a>. You only need the "SDK Tools" version, not the "Eclipse+ADT Plugin" one.</li>
+<p>
+<li>The <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE JDK</a>. On Windows, make sure to grab the 32bit version even if you're running a 64bit OS.</li>
+<p>
+<li>On Windows and MacOS, you will also need <a href="http://ant.apache.org/bindownload.cgi">ANT</a>.</li>
+<p>
+</ul><h2>Getting started</h2>
+<p>
+The <code>ANDROID_PATH</code> (Windows/MacOS), <code>JDK_PATH</code> (Windows) and <code>ANT_PATH</code> (Windows/MacOS) vars in your <a href="Tools_Trans.html">Trans</a> config file must be correctly set to use the android target.
+<p>
+The Android download is just a 'setup' app - after installation you will prompted to run the SDK manager, which you will need to do to install the actual android SDKs. Make sure to install at least "Android SDK Platform-tools" and "Android 3.2 (API 13) SDK Platform".
+<p>
+To run apps on real hardware on MacOS, you should be able to just 'plug and play'. Make sure to enable 'USB debugging' on the device first though.
+<p>
+To run apps on real hardware on Windows, you will need to install USB drivers. USB drivers from device manufacturers are generally the preferred solution, although they often tend to come bundled with nasty bloated 'virtual desktop' apps. With a bit of googling, you may be able to track down a plain USB driver for your device.
+<p>
+<h2>Signing apps</h2>
+<p>
+Before you can publish apps or add in app purchases, apps must be 'signed'.
+<p>
+The first step in signing an app is to generate a key for it. The tools to do this are in the Java JDK, so this must be in your PATH. To generate a key, use something like:
+<p>
+<code>keytool -genkey -v -keystore release-key.keystore -alias release-key-alias -keyalg RSA -keysize 2048 -validity 10000</code>
+<p>
+If you execute this from a dos prompt, you will be prompted for various author information and passwords. Once complete, you will be left with a key file called 'release-key.keystore'. This is your app's key, and you should not lose it as you will need it every time you update your app.
+<p>
+If you selected the password 'password' when generating the key, then the key can be used 'as is' - simply copy it to your app's main source directory and set the #ANDROID_SIGN_APP app config setting to True to enable signing. Building your app will then produce a signed app.
+<p>
+If you used a different password, or different key file name/location, you will also need to modify some or all of the following app config settings (default shown):
+<p>
+<code>#ANDROID_KEY_STORE="../../release-key.keystore"</code><br>
+<code>#ANDROID_KEY_ALIAS="release-key-alias"</code><br>
+<code>#ANDROID_KEY_STORE_PASSWORD="password"</code><br>
+<code>#ANDROID_KEY_ALIAS_PASSWORD="password"</code><br>
+<p>
+<h2>Publishing on GooglePlay</h2>
+<p>
+To publish apps on GooglePlay, you will need to create developer account at https://play.google.com/apps/publish/
+<p>
+Once you have a developer account, you will be able to upload your app, add in app purchases and start publishing.
+<p>
+Your app will need to have a unique 'package name'. This can be done via the #ANDROID_APP_PACKAGE app config setting, which should be set to something like "com.mycompany.mygame".
+<p>
+<p>
+<h2>Testing in-app purchases</h2>
+<p>
+In-app purchases can be added to your app using the <a href="Modules_brl.monkeystore_MonkeyStore.html">MonkeyStore</a> class.
+<p>
+Testing IAP is a bit tricky. The general idea on both Android/iOS is that you create 'test' accounts to test with, and add these test accounts to the GooglePlay Dev Console and/or iTunes Connect. Test accounts are generally just email address/password combos, although on Android you'll have to provide more details the first time you use the test account.
+<p>
+<ul><li>On Android, your app must be signed and a version uploaded (but not necessarily 'published') to your Google Play developer account.</li>
+<p>
+<li>On Android devices, you can create a new user for your test account (and it doesn't have to be the 'primary' user) but you will need to 'always allow' USB debugging for the primary user before using the test user. Also, you may need to uninstall old versions of your app from the primary user before testing.</li>
+<p>
+<li>On Android, repeated use of a test account sometimes appears to trigger some kind of 'fraudulent transaction' logic, after which time you app will report 'cannot process transaction' when you attempt to buy something and you'll receive a 'transaction cancelled' email. Solution: wait until things return to normal, or create a new test account and use that instead.</li>
+<p>
+</ul>There's a bananas/mak/iaptest demo in the release, but it wont work 'as-is' - you'll need to add a keystore file for android and change the BundleID for ios, and change the CONSUMABLES and NON_CONSUMABLES arrays to match your product ids.
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

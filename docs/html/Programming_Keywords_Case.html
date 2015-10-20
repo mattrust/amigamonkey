@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Case </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Case</h1>
+<p>
+Case is part of the conditional Select block.  
+<p>
+Program flow goes to the Case statement whose expression matches that of the Select statement; most Select blocks contain multiple Case statements.  
+<p>
+<h2>Syntax</h2>
+<p>
+Case <b>expression</b><br>
+<p>
+<h2>Description</h2>
+<p>
+See Select for more information on Case usage.  
+<p>
+Note that a range of comma-separated values can be handled in a single Case statement to avoid duplication of code.  
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Select.html">Select</a> | <a href="Programming_Keywords_Default.html">Default</a><br>
+<a href="Programming_Language reference.html#statements">Language reference</a>  
+<p>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Counting&nbsp;apples..."</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>apples</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><br>
+<br>
+<code class=k>Select</code><code class=d>&nbsp;</code><code class=i>apples</code><code class=d>&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Case</code><code class=d>&nbsp;</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"You&nbsp;have&nbsp;one&nbsp;apple!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Case</code><code class=d>&nbsp;</code><code class=l>2</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"You&nbsp;have&nbsp;two&nbsp;apples!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Case</code><code class=d>&nbsp;</code><code class=l>3</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"You&nbsp;have&nbsp;three&nbsp;apples!"</code><br>
+<code class=k>End</code><code class=d>&nbsp;</code><code class=k>Select</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Done&nbsp;counting!"</code><br>
+<br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

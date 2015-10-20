@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.databuffer.html'>brl.databuffer</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  DataBuffer </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">DataBuffer</span></h1>
+
+
+	<p>Databuffer objects provide storage for arbitrary data.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( length:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Length'>Length</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#CopyBytes'>CopyBytes</a> : Void ( srcAddress:Int, dst:DataBuffer, dstAddress:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#Discard'>Discard</a> : Void ()</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekByte'>PeekByte</a> : Int ( address:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekBytes'>PeekBytes</a> : Void ( address:Int, bytes:Int[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekFloat'>PeekFloat</a> : Float ( address:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekFloats'>PeekFloats</a> : Void ( address:Int, floats:Float[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekInt'>PeekInt</a> : Int ( address:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekInts'>PeekInts</a> : Void ( address:Int, ints:Int[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekShort'>PeekShort</a> : Int ( address:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekShorts'>PeekShorts</a> : Void ( address:Int, shorts:Int[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekString'>PeekString</a> : String ( address:Int, encoding:String="utf8" )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PeekString(2)'>PeekString</a> : String ( address:Int, count:Int, encoding:String="utf8" )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeByte'>PokeByte</a> : Void ( address:Int, value:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeBytes'>PokeBytes</a> : Void ( address:Int, bytes:Int[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeFloat'>PokeFloat</a> : Void ( address:Int, value:Float )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeFloats'>PokeFloats</a> : Void ( address:Int, floats:Float[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeInt'>PokeInt</a> : Void ( address:Int, value:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeInts'>PokeInts</a> : Void ( address:Int, ints:Int[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeShort'>PokeShort</a> : Void ( address:Int, value:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeShorts'>PokeShorts</a> : Void ( address:Int, shorts:Int[], offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.databuffer_DataBuffer.html#PokeString'>PokeString</a> : Int ( address:Int, value:String, encoding:String="utf8" )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Load'>Load</a> : DataBuffer ( path:String )</li>
+					
+						<li><a href='#LoadAsync'>LoadAsync</a> : Void ( path:String, onComplete:IOnLoadDataComplete )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Databuffer objects provide storage for arbitrary data.
+<p>
+Data may be written to a databufffer using one of the 'poke' methods, and read from a databuffer using one of the 'peek' methods.
+<p>
+Parameters that specify buffer addresses or array indices for data transfers are not currently range checked. In general, you should always ensure that these are always valid, ie: >=0 And <=length of the buffer/array. Any transfer count parameters should always be >=0, but will always be clipped to make sure no overreads or overwrites occur.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( length:Int )</b></div>
+				<div class="description">
+					<p>Creates a new data buffer of the specified byte length.
+<p>
+Values can be written into the databuffer using the various 'poke' methods, or read using the 'peek' methods.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Length'></a>
+				<div class="well well-small name"><b>Method Length : Int () Property</b></div>
+				<div class="description">
+					<p>Returns the length, in bytes, of the data buffer.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CopyBytes'></a>
+				<div class="well well-small name"><b>Method CopyBytes : Void ( srcAddress:Int, dst:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, dstAddress:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> bytes starting at <b>srcAddress</b> from this buffer to <b>dst</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Discard'></a>
+				<div class="well well-small name"><b>Method Discard : Void ()</b></div>
+				<div class="description">
+					<p>Releases any resources used by the data buffer.
+<p>
+Once discarded, a data buffer should not be used again.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekByte'></a>
+				<div class="well well-small name"><b>Method PeekByte : Int ( address:Int )</b></div>
+				<div class="description">
+					<p>Returns the 8 bit byte contained in the databuffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekBytes'></a>
+				<div class="well well-small name"><b>Method PeekBytes : Void ( address:Int, bytes:Int[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> bytes starting at <b>address</b> from the databuffer to <b>bytes</b>.
+<p>
+Data is written to <b>bytes</b> starting at index <b>offset</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekFloat'></a>
+				<div class="well well-small name"><b>Method PeekFloat : Float ( address:Int )</b></div>
+				<div class="description">
+					<p>Returns the 32 bit float value stored in the data buffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekFloats'></a>
+				<div class="well well-small name"><b>Method PeekFloats : Void ( address:Int, floats:Float[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> 32 bit floats starting at <b>address</b> from the databuffer to <b>bytes</b>.
+<p>
+Data is written to <b>data</b> starting at index <b>offset</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekInt'></a>
+				<div class="well well-small name"><b>Method PeekInt : Int ( address:Int )</b></div>
+				<div class="description">
+					<p>Returns the 32 bit int value contained in the data buffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekInts'></a>
+				<div class="well well-small name"><b>Method PeekInts : Void ( address:Int, ints:Int[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> 32 bit ints starting at <b>address</b> from the databuffer to <b>bytes</b>.
+<p>
+Data is written to <b>ints</b> starting at index <b>offset</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekShort'></a>
+				<div class="well well-small name"><b>Method PeekShort : Int ( address:Int )</b></div>
+				<div class="description">
+					<p>Returns the 16 bit int value contained in the data buffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekShorts'></a>
+				<div class="well well-small name"><b>Method PeekShorts : Void ( address:Int, shorts:Int[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> 16 bit shorts starting at <b>address</b> from the databuffer to <b>bytes</b>.
+<p>
+Data is written to <b>shorts</b> starting at index <b>offset</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekString'></a>
+				<div class="well well-small name"><b>Method PeekString : String ( address:Int, encoding:String="utf8" )</b></div>
+				<div class="description">
+					<p>Peeks and returns a string from the data buffer.
+<p>
+Data is read from <b>address</b> up until the end of the data buffer.
+<p>
+The <b>encoding</b> parameter should be one of:
+<p>
+<table><tr><th>Encoding</th><th>Description</th></tr>
+<tr><td>"utf8"</td><td>Unicode</td></tr>
+<tr><td>"ascii"</td><td>8 bit ascii</td></tr></table></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PeekString(2)'></a>
+				<div class="well well-small name"><b>Method PeekString : String ( address:Int, count:Int, encoding:String="utf8" )</b></div>
+				<div class="description">
+					<p>Peeks and returns a string from the data buffer.
+<p>
+Up to <b>count</b> bytes are read from the data buffer starting from <b>address</b>.
+<p>
+The <b>encoding</b> parameter should be one of:
+<p>
+<table><tr><th>Encoding</th><th>Description</th></tr>
+<tr><td>"utf8"</td><td>Unicode</td></tr>
+<tr><td>"ascii"</td><td>8 bit ascii</td></tr></table></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeByte'></a>
+				<div class="well well-small name"><b>Method PokeByte : Void ( address:Int, value:Int )</b></div>
+				<div class="description">
+					<p>Writes an 8 bit byte into the data buffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeBytes'></a>
+				<div class="well well-small name"><b>Method PokeBytes : Void ( address:Int, bytes:Int[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> 8 bit bytes from the <b>bytes</b> array to the databuffer.
+<p>
+<b>offset</b> is the starting index within the source array, and <b>address</b> is the starting byte address within the databuffer.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeFloat'></a>
+				<div class="well well-small name"><b>Method PokeFloat : Void ( address:Int, value:Float )</b></div>
+				<div class="description">
+					<p>Writes a 32 bit float value into the data buffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeFloats'></a>
+				<div class="well well-small name"><b>Method PokeFloats : Void ( address:Int, floats:Float[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> 32 bit floats from the <b>floats</b> array to the databuffer.
+<p>
+<b>offset</b> is the starting index within the source array, and <b>address</b> is the starting byte address within the databuffer.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeInt'></a>
+				<div class="well well-small name"><b>Method PokeInt : Void ( address:Int, value:Int )</b></div>
+				<div class="description">
+					<p>Writes a 32 bit int value into the data buffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeInts'></a>
+				<div class="well well-small name"><b>Method PokeInts : Void ( address:Int, ints:Int[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> 32 bit ints from the <b>ints</b> array to the databuffer.
+<p>
+<b>offset</b> is the starting index within the source array, and <b>address</b> is the starting byte address within the databuffer.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeShort'></a>
+				<div class="well well-small name"><b>Method PokeShort : Void ( address:Int, value:Int )</b></div>
+				<div class="description">
+					<p>Writes a 16 bit int value into the data buffer at <b>address</b>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeShorts'></a>
+				<div class="well well-small name"><b>Method PokeShorts : Void ( address:Int, shorts:Int[], offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Copies <b>count</b> 16 bit shorts from the <b>shorts</b> array to the databuffer.
+<p>
+<b>offset</b> is the starting index within the source array, and <b>address</b> is the starting byte address within the databuffer.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PokeString'></a>
+				<div class="well well-small name"><b>Method PokeString : Int ( address:Int, value:String, encoding:String="utf8" )</b></div>
+				<div class="description">
+					<p>Pokes <b>value</b> into the data buffer at location <b>address</b>.
+<p>
+The <b>encoding</b> parameter should be one of:
+<p>
+<table><tr><th>Encoding</th><th>Description</th></tr>
+<tr><td>"utf8"</td><td>Unicode</td></tr>
+<tr><td>"ascii"</td><td>8 bit ascii</td></tr>
+</table><p>
+The returned value is the number of bytes poked into the databuffer.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Load'></a>
+				<div class="well well-small name"><b>Function Load : <a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a> ( path:String )</b></div>
+				<div class="description">
+					<p>Creates and returns a databuffer containing the binary contents of the specified file.
+<p>
+If the file does not exist or cannot be read, null is returned instead.</p>
+					
+						<p><b>See also</b> <a href="Programming_Resource paths.html">Resource paths</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadAsync'></a>
+				<div class="well well-small name"><b>Function LoadAsync : Void ( path:String, onComplete:<a href="Modules_brl.databuffer_IOnLoadDataComplete.html">IOnLoadDataComplete</a> )</b></div>
+				<div class="description">
+					<p>Loads a databuffer asynchronously.
+<p>
+When data has finished loading, the <a href="Modules_brl.databuffer_IOnLoadDataComplete.html#OnLoadDataComplete">OnLoadDataComplete</a> method of the <b>onComplete</b> object is called.</p>
+					
+						<p><b>See also</b> <a href="Programming_Resource paths.html">Resource paths</a></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

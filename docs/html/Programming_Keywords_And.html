@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  And </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword And</h1>
+<p>
+The logical <b>And</b> operator.  
+<p>
+<h2>Syntax</h2>
+<p>
+[If] <b>expression</b> And <b>expression</b> [... ]<br>
+<p>
+<h2>Description</h2>
+<p>
+And is a logical operator which compares two expressions, or operands, and evaluates as True only if both expressions are True.  
+<p>
+Multiple And comparisons may be performed on a single line to compare more than two expressions.  
+<p>
+Evaluation is performed from left to right and the operation immediately returns False (a behaviour known as 'early out') on encountering a False comparison; this means that no further comparisons on the line will be evaluated.  
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Or.html">Or</a> | <a href="Programming_Keywords_Not.html">Not</a><br>
+<a href="Programming_Language reference.html#expressions">Language reference</a>  
+<p>
+<h2>Example</h2>
+<p>
+The example below demonstrates a simple comparison of two values. Because b is 0, the expression a And b evaluates as False, so the Else statement is executed. If b were non-zero, the comparison would evaluate as True.
+<p>
+<div class=pretty>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>1</code><br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>b</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><br>
+<br>
+<code class=k>If</code><code class=d>&nbsp;</code><code class=i>a</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>b</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Both&nbsp;operands&nbsp;evaluate&nbsp;as&nbsp;True"</code><br>
+<code class=k>Else</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"One&nbsp;operand&nbsp;evaluated&nbsp;as&nbsp;False"</code><br>
+<code class=k>Endif</code><br>
+</div>
+<p>
+The runnable example below demonstrates the early-out behaviour of And, showing how a complex operation -- represented here by the BakeCake function -- can be avoided if any previous expression on the line evaluates as False.  
+<p>
+Because <b>sugar</b> is zero, the evaluation will 'early out' on reaching that stage of the comparison and evaluate as False. This means that neither eggs, nor the result of executing the BakeCake function, are evaluated and the expression is effectively "If flour and sugar" as long as sugar is zero.
+<p>
+<div class=pretty>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>&nbsp;()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>flour</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0.5</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>sugar</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0.0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>eggs</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>2</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>' Check that ingredients are all non-zero, baking cake if true...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>flour</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>sugar</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>eggs</code><code class=d>&nbsp;</code><code class=k>And</code><code class=d>&nbsp;</code><code class=i>BakeCake</code><code class=d>&nbsp;(</code><code class=i>flour</code><code class=d>,&nbsp;</code><code class=i>sugar</code><code class=d>,&nbsp;</code><code class=i>eggs</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"We&nbsp;have&nbsp;flour,&nbsp;sugar&nbsp;and&nbsp;eggs,&nbsp;so&nbsp;we&nbsp;can&nbsp;bake&nbsp;a&nbsp;cake!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Else</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Missing&nbsp;sugar,&nbsp;so&nbsp;not&nbsp;checking&nbsp;eggs&nbsp;or&nbsp;attempting&nbsp;to&nbsp;bake&nbsp;cake;&nbsp;sugar&nbsp;must&nbsp;be&nbsp;greater&nbsp;than&nbsp;zero!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>BakeCake</code><code class=d>&nbsp;(</code><code class=i>flour_kg</code><code class=d>:</code><code class=k>Float</code><code class=d>,&nbsp;</code><code class=i>sugar_kg</code><code class=d>:</code><code class=k>Float</code><code class=d>,&nbsp;</code><code class=i>eggs</code><code class=d>:</code><code class=k>Int</code><code class=d>)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Mixing&nbsp;flour&nbsp;and&nbsp;sugar..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Adding&nbsp;eggs..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Not&nbsp;sure&nbsp;if&nbsp;this&nbsp;is&nbsp;actually&nbsp;how&nbsp;you&nbsp;make&nbsp;a&nbsp;cake..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Licking&nbsp;spoon..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Placing&nbsp;in&nbsp;oven..."</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Done!"</code><br>
+<code class=k>End</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

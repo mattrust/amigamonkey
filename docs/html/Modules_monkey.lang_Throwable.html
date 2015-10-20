@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_monkey.lang.html'>monkey.lang</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Throwable </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Throwable</span></h1>
+
+
+	<p>The Throwable class must be extended by all classes that are intended to be used with <a href="Programming_Keywords_Throw.html">Throw</a>.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+		<tr>
+			<td class="span1 name">Extended&nbsp;by:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_brl.json_JsonError.html">JsonError</a>, <a href="Modules_brl.stream_StreamError.html">StreamError</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The Throwable class must be extended by all classes that are intended to be used with <a href="Programming_Keywords_Throw.html">Throw</a>.
+<p>
+The Throwable class currently has no members.
+<p>
+Any attempt to throw an object that doesn't extend Throwable will result in a compile time error.
+	
+	
+		<p><b><a href="examples/monkey_lang_Throwable.monkey">Example</a></b> <div class=pretty>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>MyThrowable</code><code class=d>&nbsp;</code><code class=k>Extends</code><code class=d>&nbsp;</code><code class=k>Throwable</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>msg</code><code class=d>:</code><code class=k>String</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>(&nbsp;</code><code class=i>msg</code><code class=d>:</code><code class=k>String</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Self.msg</code><code class=d>=</code><code class=i>msg</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Test</code><code class=d>:</code><code class=k>Void</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Throw</code><code class=d>&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>MyThrowable</code><code class=d>(&nbsp;</code><code class=l>"Thrown!"</code><code class=d>&nbsp;)</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Try</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>Test</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Catch</code><code class=d>&nbsp;</code><code class=i>t</code><code class=d>:</code><code class=i>MyThrowable</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"MyThrowable&nbsp;thrown:&nbsp;msg="</code><code class=d>+</code><code class=i>t.msg</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=k>End</code><br>
+</div></p>
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

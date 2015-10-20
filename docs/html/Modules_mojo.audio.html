@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  mojo.audio </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">mojo.audio</span></h1>
+
+
+	<p>The audio module contains functions for playing sounds and music.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Classes:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.audio_Sound.html'>Sound</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#ChannelState'>ChannelState</a> : Int ( channel:Int )</li>
+					
+						<li><a href='#LoadSound'>LoadSound</a> : Sound ( path:String )</li>
+					
+						<li><a href='#MusicState'>MusicState</a> : Int ()</li>
+					
+						<li><a href='#PauseChannel'>PauseChannel</a> : Int ( channel:Int )</li>
+					
+						<li><a href='#PauseMusic'>PauseMusic</a> : Int ()</li>
+					
+						<li><a href='#PlayMusic'>PlayMusic</a> : Int ( path:String, flags:Int=1 )</li>
+					
+						<li><a href='#PlaySound'>PlaySound</a> : Int ( sound:Sound, channel:Int=0, flags:Int=0 )</li>
+					
+						<li><a href='#ResumeChannel'>ResumeChannel</a> : Int ( channel:Int )</li>
+					
+						<li><a href='#ResumeMusic'>ResumeMusic</a> : Int ()</li>
+					
+						<li><a href='#SetChannelPan'>SetChannelPan</a> : Int ( channel:Int, pan:Float )</li>
+					
+						<li><a href='#SetChannelRate'>SetChannelRate</a> : Int ( channel:Int, rate:Float )</li>
+					
+						<li><a href='#SetChannelVolume'>SetChannelVolume</a> : Int ( channel:Int, volume:Float )</li>
+					
+						<li><a href='#SetMusicVolume'>SetMusicVolume</a> : Int ( volume:Float )</li>
+					
+						<li><a href='#StopChannel'>StopChannel</a> : Int ( channel:Int )</li>
+					
+						<li><a href='#StopMusic'>StopMusic</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	The audio module contains functions for playing sounds and music.
+<p>
+It uses a simple 'fixed' 32 channel model which allows you to play sounds through any of 32 preset audio channels. Audio channels are identified by the use of integer ids in the range 0 to 31.
+<p>
+Commands that alter a channel's volume, pan and pitch can be used to either dynamically modify a playing sound, or used on a stopped changed to prepare playback properties.
+<p>
+In addition, a number of simple music commands are provided for streaming long samples from file.
+<p>
+The music commands use a single internal channel, so it is not currently possible to stream multiple sample files simultaneously.
+<p>
+Note that not all targets have equivalent audio capabilities. In particular:
+<p>
+HTML5 : ChannelPan and ChannelRate have no effect.
+<p>
+Flash : ChannelRate has no effect.
+<p>
+Android : ChannelState always returns -1, ie: 'unknown'. Sounds to be used with PlaySound must be less than 1MB in length. Longer sounds can be played using the music commands.
+<p>
+Also, not all audio formats are supported by all targets:
+<p>
+wav : glfw, android, ios, xna (sounds)
+<p>
+mp3 : flash, android, ios, xna (music)
+<p>
+m4a : flash, android (music), ios
+<p>
+wma : xna (music)
+<p>
+ogg : android
+<p>
+Finally, when designing for low performance hardware it's a good idea to try and minimize the number of channels used.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='ChannelState'></a>
+				<div class="well well-small name"><b>Function ChannelState : Int ( channel:Int )</b></div>
+				<div class="description">
+					<p>Returns the state of the specified audio channel: 0 if the channel is currently stopped, 1 if the channel is currently playing, 2 if the channel is currently paused or -1 if the channel state cannot be determined.
+<p>
+Note: This function currently returns -1 on the android target.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadSound'></a>
+				<div class="well well-small name"><b>Function LoadSound : <a href="Modules_mojo.audio_Sound.html">Sound</a> ( path:String )</b></div>
+				<div class="description">
+					<p>Loads a sound from the specified path and returns it.</p>
+					
+						<p><b>See also</b> <a href="Modules_mojo.audio_Sound.html">Sound</a>, <a href="Programming_Resource paths.html">Resource paths</a>, <a href="Programming_File formats.html">File formats</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='MusicState'></a>
+				<div class="well well-small name"><b>Function MusicState : Int ()</b></div>
+				<div class="description">
+					<p>Returns 1 if music is currently playing, 0 if music is currently not playing or -1 if music state cannot be determined.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PauseChannel'></a>
+				<div class="well well-small name"><b>Function PauseChannel : Int ( channel:Int )</b></div>
+				<div class="description">
+					<p>Pauses the specified audio channel. Has no effect if the audio channel is already paused or stopped.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PauseMusic'></a>
+				<div class="well well-small name"><b>Function PauseMusic : Int ()</b></div>
+				<div class="description">
+					<p>Pauses music playback. Has no effect if music is not currently playing.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PlayMusic'></a>
+				<div class="well well-small name"><b>Function PlayMusic : Int ( path:String, flags:Int=1 )</b></div>
+				<div class="description">
+					<p>Plays an audio file through the internal music channel, using audio streaming if possible.
+<p>
+Since there is only one music channel, any music currently play will first be stopped.
+<p>
+flags should be 1 to loop the music, 0 to play it just once.</p>
+					
+						<p><b>See also</b> <a href="Programming_Resource paths.html">Resource paths</a>, <a href="Programming_File formats.html">File formats</a></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PlaySound'></a>
+				<div class="well well-small name"><b>Function PlaySound : Int ( sound:<a href="Modules_mojo.audio_Sound.html">Sound</a>, channel:Int=0, flags:Int=0 )</b></div>
+				<div class="description">
+					<p>Plays a sound through the specified channel.
+<p>
+<b>flags</b> should be 1 to loop the sound, 0 to play it just once.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResumeChannel'></a>
+				<div class="well well-small name"><b>Function ResumeChannel : Int ( channel:Int )</b></div>
+				<div class="description">
+					<p>Resumes the specified audio channel. Has no effect if the audio channel is not currently paused.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResumeMusic'></a>
+				<div class="well well-small name"><b>Function ResumeMusic : Int ()</b></div>
+				<div class="description">
+					<p>Resumes music playback. Has no effect if music is not currently paused.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetChannelPan'></a>
+				<div class="well well-small name"><b>Function SetChannelPan : Int ( channel:Int, pan:Float )</b></div>
+				<div class="description">
+					<p>Sets the pan of the specified audio channel.
+<p>
+<b>pan</b> should be in the range -1 (full left) to +1 (full right).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetChannelRate'></a>
+				<div class="well well-small name"><b>Function SetChannelRate : Int ( channel:Int, rate:Float )</b></div>
+				<div class="description">
+					<p>Sets the playback rate of the specified audio channel. 
+<p>
+This will affect the pitch of the sound being played.
+<p>
+<b>rate</b> should be in the 0.5 (an octave lower) to 2 (an octave higher).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetChannelVolume'></a>
+				<div class="well well-small name"><b>Function SetChannelVolume : Int ( channel:Int, volume:Float )</b></div>
+				<div class="description">
+					<p>Sets the volume of the specified audio channel.
+<p>
+<b>volume</b> should be in the range 0 (silence) to 1 (full volume).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetMusicVolume'></a>
+				<div class="well well-small name"><b>Function SetMusicVolume : Int ( volume:Float )</b></div>
+				<div class="description">
+					<p>Sets the music volume.
+<p>
+If music is currently playing, this will set the music volume immediately.
+<p>
+Whether or not music is playing, this will set the volume to be used the next time PlayMusic is called.
+<p>
+<b>volume</b> should be in the range 0 (silence) to 1 (full volume).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StopChannel'></a>
+				<div class="well well-small name"><b>Function StopChannel : Int ( channel:Int )</b></div>
+				<div class="description">
+					<p>Stops the specified audio channel.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StopMusic'></a>
+				<div class="well well-small name"><b>Function StopMusic : Int ()</b></div>
+				<div class="description">
+					<p>Stops any music currently playing.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

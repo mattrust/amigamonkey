@@ -1,0 +1,162 @@
+
+# Module mojo.audio
+
+The audio module contains functions for playing sounds and music.
+
+It uses a simple 'fixed' 32 channel model which allows you to play sounds through any of 32 preset audio channels. Audio channels are identified by the use of integer ids in the range 0 to 31.
+
+Commands that alter a channel's volume, pan and pitch can be used to either dynamically modify a playing sound, or used on a stopped changed to prepare playback properties.
+
+In addition, a number of simple music commands are provided for streaming long samples from file.
+
+The music commands use a single internal channel, so it is not currently possible to stream multiple sample files simultaneously.
+
+Note that not all targets have equivalent audio capabilities. In particular:
+
+HTML5 : ChannelPan and ChannelRate have no effect.
+
+Flash : ChannelRate has no effect.
+
+Android : ChannelState always returns -1, ie: 'unknown'. Sounds to be used with PlaySound must be less than 1MB in length. Longer sounds can be played using the music commands.
+
+Also, not all audio formats are supported by all targets:
+
+wav : glfw, android, ios, xna (sounds)
+
+mp3 : flash, android, ios, xna (music)
+
+m4a : flash, android (music), ios
+
+wma : xna (music)
+
+ogg : android
+
+Finally, when designing for low performance hardware it's a good idea to try and minimize the number of channels used.
+
+
+'# Function SetAudioDevice:Int(dev:AudioDevice)
+
+
+# Function LoadSound:Sound(path:String)
+
+Loads a sound from the specified path and returns it.
+
+Params: 
+
+path - file path of the sound to load.
+
+Links: 
+
+[[Sound]], [[Resource paths]], [[File formats]]
+
+
+# Function PlaySound:Int(sound:Sound,channel:Int=0,flags:Int=0)
+
+Plays a sound through the specified channel.
+
+@flags should be 1 to loop the sound, 0 to play it just once.
+
+
+# Function StopChannel:Int(channel:Int)
+
+Stops the specified audio channel.
+
+
+# Function PauseChannel:Int(channel:Int)
+
+Pauses the specified audio channel. Has no effect if the audio channel is already paused or stopped.
+
+
+# Function ResumeChannel:Int(channel:Int)
+
+Resumes the specified audio channel. Has no effect if the audio channel is not currently paused.
+
+
+# Function ChannelState:Int(channel:Int)
+
+Returns the state of the specified audio channel: 0 if the channel is currently stopped, 1 if the channel is currently playing, 2 if the channel is currently paused or -1 if the channel state cannot be determined.
+
+Note: This function currently returns -1 on the android target.
+
+
+# Function SetChannelVolume:Int(channel:Int,volume:Float)
+
+Sets the volume of the specified audio channel.
+
+@volume should be in the range 0 (silence) to 1 (full volume).
+
+
+# Function SetChannelPan:Int(channel:Int,pan:Float)
+
+Sets the pan of the specified audio channel.
+
+@pan should be in the range -1 (full left) to +1 (full right).
+
+
+# Function SetChannelRate:Int(channel:Int,rate:Float)
+
+Sets the playback rate of the specified audio channel. 
+
+This will affect the pitch of the sound being played.
+
+@rate should be in the 0.5 (an octave lower) to 2 (an octave higher).
+
+
+
+# Function PlayMusic:Int(path:String,flags:Int=1)
+
+Plays an audio file through the internal music channel, using audio streaming if possible.
+
+Since there is only one music channel, any music currently play will first be stopped.
+
+flags should be 1 to loop the music, 0 to play it just once.
+
+Links: [[Resource paths]], [[File formats]]
+
+
+# Function StopMusic:Int()
+
+Stops any music currently playing.
+
+
+# Function PauseMusic:Int()
+
+Pauses music playback. Has no effect if music is not currently playing.
+
+
+# Function ResumeMusic:Int()
+
+Resumes music playback. Has no effect if music is not currently paused.
+
+
+# Function MusicState:Int()
+
+Returns 1 if music is currently playing, 0 if music is currently not playing or -1 if music state cannot be determined.
+
+
+# Function SetMusicVolume:Int(volume:Float)
+
+Sets the music volume.
+
+If music is currently playing, this will set the music volume immediately.
+
+Whether or not music is playing, this will set the volume to be used the next time PlayMusic is called.
+
+@volume should be in the range 0 (silence) to 1 (full volume).
+
+
+# Class mojo.audio.Sound
+
+Sound objects contain audio data preloaded from files.
+
+Sound objects can be created using the [[LoadSound]] function - please refer to the [[mojo.audio]] module for more details.
+
+
+# Method Discard:Int()
+
+The Discard method frees up any low level resources being used by the sound.
+
+All sounds will eventually be discarded by memory management anyway, so you don't usually need to worry about using this method. However, if you are using lots of large sounds and memory is tight, you may prefer to manually discard sounds yourself.
+
+Once discarded, a sound should be consider invalid and not used again.
+

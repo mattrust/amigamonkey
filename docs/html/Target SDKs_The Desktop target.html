@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Target SDKs.html'>Target SDKs</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  The Desktop target </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>The Desktop target</h1>
+<p>
+The desktop target (formerly the Glfw target) allows you to create apps for Windows, MacOS and Linux desktop environments.
+<p>
+Desktop apps use the OpenGL API for graphics rendering and the OpenAL API for audio.
+<p>
+<h2>Windows Requirements</h2>
+<p>
+<ul><li><a href="http://www.monkeycoder.co.nz/downloads/tdm-gcc-4.9.2.exe">MinGW 4.9.2</a> or <a href="http://www.microsoft.com/visualstudio/eng/downloads">Visual Studio Express 2013 with Update 4 for Windows Desktop</a>.</li>
+<p>
+<li><a href="http://www.monkeycoder.co.nz/downloads/oalinst.exe">OpenAL Windows Drivers</a>.</li>
+<p>
+</ul><h2>MacOS Requirements</h2>
+<p>
+<ul><li><a href="http://developer.apple.com/xcode">XCode</a> developer tools. XCode is also available via the Mac 'App Store' app.</li>
+<p>
+</ul><h2>Notes</h2>
+<p>
+On Windows, either MinGW or MSVC may be used to build desktop apps. If you are using MinGW, the <code>MINGW_PATH</code> var in your <a href="Tools_Trans.html">Trans</a> config file must be set correctly. If you are using MSVC, the <code>MSBUILD_PATH</code> var in your <a href="Tools_Trans.html">Trans</a> config file must be set correctly.
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

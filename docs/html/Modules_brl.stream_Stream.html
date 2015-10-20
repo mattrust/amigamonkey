@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.stream.html'>brl.stream</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Stream </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Stream</span></h1>
+
+
+	<p>Streams are used to read or write data in a sequential manner.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+		<tr>
+			<td class="span1 name">Extended&nbsp;by:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_brl.datastream_DataStream.html">DataStream</a>, <a href="Modules_brl.filestream_FileStream.html">FileStream</a>, <a href="Modules_brl.tcpstream_TcpStream.html">TcpStream</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Eof'>Eof</a> : Int ()</li>
+					
+						<li><a href='#Length'>Length</a> : Int ()</li>
+					
+						<li><a href='#Position'>Position</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.stream_Stream.html#Close'>Close</a> : Void ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Read'>Read</a> : Int ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadAll'>ReadAll</a> : Void ( buffer:DataBuffer, offset:int, count:int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadAll(2)'>ReadAll</a> : DataBuffer ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadByte'>ReadByte</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadFloat'>ReadFloat</a> : Float ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadInt'>ReadInt</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadShort'>ReadShort</a> : Int ()</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadString'>ReadString</a> : String ( count:Int, encoding:String="utf8" )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#ReadString(2)'>ReadString</a> : String ( encoding:String="utf8" )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Seek'>Seek</a> : Int ( position:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#Write'>Write</a> : Int ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteAll'>WriteAll</a> : Void ( buffer:DataBuffer, offset:Int, count:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteByte'>WriteByte</a> : Void ( value:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteFloat'>WriteFloat</a> : Void ( value:Float )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteInt'>WriteInt</a> : Void ( value:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteShort'>WriteShort</a> : Void ( value:Int )</li>
+					
+						<li><a href='Modules_brl.stream_Stream.html#WriteString'>WriteString</a> : Void ( value:String, encoding:String="utf8" )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Streams are used to read or write data in a sequential manner. 
+<p>
+The low level <a href="Modules_brl.stream_Stream.html#Read">Read</a> and <a href="Modules_brl.stream_Stream.html#Write">Write</a> methods can be used to transfer data directly to/from databuffer objects. These methods return the number of bytes actually transferred, which may be less than requested if an IO error occurs or end-of-file is reached.
+<p>
+The higher level read and write methods will throw a <a href="Modules_brl.stream_StreamReadError.html">StreamReadError</a> or <a href="Modules_brl.stream_StreamWriteError.html">StreamWriteError</a> exception if an IO error occurs or end-file-file is reached during processing.
+<p>
+The <a href="Modules_brl.stream_Stream.html#Eof">Eof</a> method can be used detect end-of-file status when reading a stream. If this method returns a non-0 value, there is no data left to be read.
+<p>
+Some types of streams are also seekable, meaning they support an internal 'position' variable that controls where data is read/written and may be manually modified.
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Eof'></a>
+				<div class="well well-small name"><b>Method Eof : Int () Property</b></div>
+				<div class="description">
+					<p>Returns 1 if end-of-file has been reached, -1 if an IO error has occurred or 0 if the stream can be read.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Length'></a>
+				<div class="well well-small name"><b>Method Length : Int () Property</b></div>
+				<div class="description">
+					<p>Returns the stream length if the stream is seekable, else 0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Position'></a>
+				<div class="well well-small name"><b>Method Position : Int () Property</b></div>
+				<div class="description">
+					<p>Returns the read/write position within the stream if the stream is seekable, else 0.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Close'></a>
+				<div class="well well-small name"><b>Method Close : Void ()</b></div>
+				<div class="description">
+					<p>Closes the stream and released any OS resources in use.
+<p>
+This method should always be used when you are finished with a stream.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Read'></a>
+				<div class="well well-small name"><b>Method Read : Int ( buffer:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Reads <b>count</b> bytes from the stream into <b>databuffer</b>, starting at address <b>offset</b> within the databuffer.
+<p>
+Returns the number of bytes actually read. This may be less than <b>count</b> if an IO error occurs or end-of-file has been reached.
+<p>
+If <b>count</b> is non-zero, this method will block until either at least 1 byte is available to be read, an IO error occurs or end-of-file has been reached.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadAll'></a>
+				<div class="well well-small name"><b>Method ReadAll : Void ( buffer:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:int, count:int )</b></div>
+				<div class="description">
+					<p>Reads <b>count</b> bytes from the stream into <b>databuffer</b>, starting at address <b>offset</b> within the databuffer.
+<p>
+If <b>count</b> is non-zero, this method will block until all bytes have been read.
+<p>
+A <a href="Modules_brl.stream_StreamReadError.html">StreamReadError</a> is thrown if not all bytes could be read.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadAll(2)'></a>
+				<div class="well well-small name"><b>Method ReadAll : <a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a> ()</b></div>
+				<div class="description">
+					<p>Reads all remaining bytes from the stream into a databuffer.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadByte'></a>
+				<div class="well well-small name"><b>Method ReadByte : Int ()</b></div>
+				<div class="description">
+					<p>Reads an 8 bit byte from the stream.
+<p>
+A <a href="Modules_brl.stream_StreamReadError.html">StreamReadError</a> will be thrown if a value could not be read.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadFloat'></a>
+				<div class="well well-small name"><b>Method ReadFloat : Float ()</b></div>
+				<div class="description">
+					<p>Reads a 32 bit float value from the stream.
+<p>
+A <a href="Modules_brl.stream_StreamReadError.html">StreamReadError</a> will be thrown if a value could not be read.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadInt'></a>
+				<div class="well well-small name"><b>Method ReadInt : Int ()</b></div>
+				<div class="description">
+					<p>Reads a 32 bit int value from the stream.
+<p>
+A <a href="Modules_brl.stream_StreamReadError.html">StreamReadError</a> will be thrown if a value could not be read.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadShort'></a>
+				<div class="well well-small name"><b>Method ReadShort : Int ()</b></div>
+				<div class="description">
+					<p>Reads a 16 bit int value from the stream.
+<p>
+A <a href="Modules_brl.stream_StreamReadError.html">StreamReadError</a> will be thrown if a value could not be read.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadString'></a>
+				<div class="well well-small name"><b>Method ReadString : String ( count:Int, encoding:String="utf8" )</b></div>
+				<div class="description">
+					<p>Reads <b>count</b> bytes from the stream and converts them to a string using the given <b>encoding</b>.
+<p>
+<b>encoding</b> should be <code>utf8</code> or <code>ascii</code>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReadString(2)'></a>
+				<div class="well well-small name"><b>Method ReadString : String ( encoding:String="utf8" )</b></div>
+				<div class="description">
+					<p>Reads all bytes from the stream until end-of-file and converts them to a string using the given <b>encoding</b>.
+<p>
+<b>encoding</b> should be <code>utf8</code> or <code>ascii</code>.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Seek'></a>
+				<div class="well well-small name"><b>Method Seek : Int ( position:Int )</b></div>
+				<div class="description">
+					<p>If the stream is seekable, adjusts the read/write position within the stream and returns the new read/write position.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Write'></a>
+				<div class="well well-small name"><b>Method Write : Int ( buffer:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Writes <b>count</b> bytes from <b>databuffer</b> to the stream, starting at address <b>offset</b> within the databuffer.
+<p>
+Returns the number of bytes actually written. This will be the same as <b>count</b> unless an IO error has occured.
+<p>
+This method may block if the underlying stream is full.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='WriteAll'></a>
+				<div class="well well-small name"><b>Method WriteAll : Void ( buffer:<a href="Modules_brl.databuffer_DataBuffer.html">DataBuffer</a>, offset:Int, count:Int )</b></div>
+				<div class="description">
+					<p>Writes <b>count</b> bytes from <b>databuffer</b> to the stream, starting at address <b>offset</b> within the databuffer.
+<p>
+A <a href="Modules_brl.stream_StreamWriteError.html">StreamWriteError</a> is thrown if not all bytes could be written.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='WriteByte'></a>
+				<div class="well well-small name"><b>Method WriteByte : Void ( value:Int )</b></div>
+				<div class="description">
+					<p>Writes an 8 bit byte to the stream.
+<p>
+A <a href="Modules_brl.stream_StreamWriteError.html">StreamWriteError</a> will be thrown if <b>value</b> could not be written.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='WriteFloat'></a>
+				<div class="well well-small name"><b>Method WriteFloat : Void ( value:Float )</b></div>
+				<div class="description">
+					<p>Writes a 32 bit float value to the stream.
+<p>
+A <a href="Modules_brl.stream_StreamWriteError.html">StreamWriteError</a> will be thrown if <b>value</b> could not be written.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='WriteInt'></a>
+				<div class="well well-small name"><b>Method WriteInt : Void ( value:Int )</b></div>
+				<div class="description">
+					<p>Writes a 32 bit int value to the stream.
+<p>
+A <a href="Modules_brl.stream_StreamWriteError.html">StreamWriteError</a> will be thrown if <b>value</b> could not be written.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='WriteShort'></a>
+				<div class="well well-small name"><b>Method WriteShort : Void ( value:Int )</b></div>
+				<div class="description">
+					<p>Write a 16 bit int value to the stream.
+<p>
+A <a href="Modules_brl.stream_StreamWriteError.html">StreamWriteError</a> will be thrown if <b>value</b> could not be written.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='WriteString'></a>
+				<div class="well well-small name"><b>Method WriteString : Void ( value:String, encoding:String="utf8" )</b></div>
+				<div class="description">
+					<p>Writes a string to the stream using the given <b>encoding</b>.
+<p>
+<b>encoding</b> should be <code>utf8</code> or <code>ascii</code>.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

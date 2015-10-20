@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Programming.html'>Programming</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Programming_Keywords.html'>Keywords</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Field </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				<h1>Keyword Field</h1>
+<p>
+Declares a class field variable.
+<p>
+<h2>Syntax</h2>
+<p>
+Field <b>Identifier:Type</b> [ = <b>Expression</b> ]<br>
+<p>
+Field <b>Identifier:</b>= <b>Expression</b>
+<p>
+<h2>Description</h2>
+<p>
+The Field keyword declares an instance variable within a custom class. The field is valid for the lifetime of the object it belongs to.
+<p>
+A field's default value upon object creation can be set in the field's declaration.
+<p>
+To access an object's fields, use the syntax <b>object.field</b>. (See example.)
+<p>
+The alternative syntax provided allows the variable's type to be deduced from the expression.
+<p>
+<h2>See also</h2>
+<p>
+<a href="Programming_Keywords_Const.html">Const</a> | <a href="Programming_Keywords_Local.html">Local</a> | <a href="Programming_Keywords_Global.html">Global</a><br>
+<a href="Programming_Language reference.html#variables">Language reference</a>
+<p>
+<h2>Example</h2>
+<p>
+<div class=pretty>
+<code class=r>' Declaring class and fields</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Player</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>name</code><code class=d>:</code><code class=k>String</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>points</code><code class=d>:</code><code class=k>Int</code><code class=d>&nbsp;=&nbsp;</code><code class=l>0</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=r>' Creating object "p" of type "Player"</code><br>
+<br>
+<code class=k>Local</code><code class=d>&nbsp;</code><code class=i>p</code><code class=d>:</code><code class=i>Player</code><code class=d>&nbsp;=&nbsp;</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Player</code><br>
+<br>
+<code class=r>' Accessing fields</code><br>
+<br>
+<code class=i>p.name</code><code class=d>&nbsp;=&nbsp;</code><code class=l>"Mary"</code><br>
+<code class=i>p.points</code><code class=d>&nbsp;=&nbsp;</code><code class=l>100</code><br>
+<br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>p.name</code><br>
+<code class=k>Print</code><code class=d>&nbsp;</code><code class=i>p.points</code><br>
+</div>
+<p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

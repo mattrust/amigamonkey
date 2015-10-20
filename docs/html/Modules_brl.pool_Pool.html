@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Monkey Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+
+				<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2"><tbody>
+
+				    <tr>
+				    
+				      <td><a href="Home.html"><img src="data/monkey.png"/></a>Monkey Documentation</td>
+				      
+				      
+				    </tr>
+				
+				</table>
+
+			</div>
+			
+			<ul class="breadcrumb">
+				<li><a href='Home.html'>Home</a> <span class="divider">/</span></li>
+				
+				
+					
+						<li ><a href='Modules.html'>Modules</a> <span class="divider">/</span> </li>
+					
+						<li ><a href='Modules_brl.pool.html'>brl.pool</a> <span class="divider">/</span> </li>
+					
+						<li  class="active" >  Pool </li>
+					
+				
+			</ul>
+		</header>
+
+		<nav class="main">
+			<ul class="nav nav-pills">
+				<li><a href="API Reference.html">APIs</a></li>
+				<li><a href="Modules.html">Modules</a></li>
+				<li><a href="Classes.html">Classes</a></li>
+				<li><a href="Interfaces.html">Interfaces</a></li>
+				<li><a href="Functions.html">Functions</a></li>
+				<li><a href="Programming_Language reference.html">Language</a></li>
+				<li><a href="Index.html">Index</a></li>
+			</ul>
+		</nav>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Pool&lt;T&gt;</span></h1>
+
+
+	<p>A pool object allows you to manually allocate and free objects from a memory pool.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( initialCapacity:Int=10 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_brl.pool_Pool.html#Allocate'>Allocate</a> : T ()</li>
+					
+						<li><a href='Modules_brl.pool_Pool.html#Free'>Free</a> : Void ( t:T )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A pool object allows you to manually allocate and free objects from a memory pool.
+<p>
+A pool can be used instead of <a href="Programming_Keywords_New.html">New</a> in situations where you want to minimize garbage collection.
+	
+	
+		<p><b><a href="examples/brl_pool_Pool.monkey">Example</a></b> <div class=pretty>
+<code class=k>Import</code><code class=d>&nbsp;</code><code class=i>brl.pool</code><br>
+<br>
+<code class=k>Class</code><code class=d>&nbsp;</code><code class=i>Actor</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Create</code><code class=d>:</code><code class=i>Actor</code><code class=d>(&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Float</code><code class=d>,</code><code class=i>y</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=i>_pool.Allocate</code><code class=d>().</code><code class=i>Init</code><code class=d>(&nbsp;</code><code class=i>x</code><code class=d>,</code><code class=i>y</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Destroy</code><code class=d>:</code><code class=k>Void</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>_pool.Free</code><code class=d>(&nbsp;</code><code class=k>Self</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>IsDead</code><code class=d>:</code><code class=k>Bool</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=i>_t</code><code class=d>=</code><code class=l>0</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'timeout?</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Update</code><code class=d>:</code><code class=k>Void</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>_t</code><code class=d>&gt;</code><code class=l>0</code><code class=d>&nbsp;</code><code class=i>_t</code><code class=d>-=</code><code class=l>1</code><code class=d>&nbsp;&nbsp;&nbsp;</code><code class=r>'update timeout</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Private</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>_x</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>_y</code><code class=d>:</code><code class=k>Float</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Field</code><code class=d>&nbsp;</code><code class=i>_t</code><code class=d>:</code><code class=k>Int</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Global</code><code class=d>&nbsp;</code><code class=i>_pool</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Pool</code><code class=d>&lt;</code><code class=i>Actor</code><code class=d>&gt;(&nbsp;</code><code class=l>1000</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Method</code><code class=d>&nbsp;</code><code class=i>Init</code><code class=d>:</code><code class=i>Actor</code><code class=d>(&nbsp;</code><code class=i>x</code><code class=d>:</code><code class=k>Float</code><code class=d>,</code><code class=i>y</code><code class=d>:</code><code class=k>Float</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>_x</code><code class=d>=</code><code class=i>x</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>_y</code><code class=d>=</code><code class=i>y</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>_t</code><code class=d>=</code><code class=i>Rnd</code><code class=d>(</code><code class=l>20</code><code class=d>,</code><code class=l>100</code><code class=d>)&nbsp;&nbsp;</code><code class=r>'random timeout</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Return</code><code class=d>&nbsp;</code><code class=k>Self</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>UpdateActors</code><code class=d>:</code><code class=k>Void</code><code class=d>(&nbsp;</code><code class=i>actors</code><code class=d>:</code><code class=i>Stack</code><code class=d>&lt;</code><code class=i>Actor</code><code class=d>&gt;&nbsp;)</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Update all actors</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>:=</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Until</code><code class=d>&nbsp;</code><code class=i>actors.Length</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>actors.Get</code><code class=d>(</code><code class=i>i</code><code class=d>).</code><code class=i>Update</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Next</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'Flush dead actors, compacting stack as we go...</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>alive</code><code class=d>:=</code><code class=l>0</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>:=</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Until</code><code class=d>&nbsp;</code><code class=i>actors.Length</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>actor</code><code class=d>:=</code><code class=i>actors.Get</code><code class=d>(&nbsp;</code><code class=i>i</code><code class=d>&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>If</code><code class=d>&nbsp;</code><code class=i>actor.IsDead</code><code class=d>()&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Dead!"</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>actor.Destroy</code><code class=d>()</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Continue</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Endif</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>actors.Set</code><code class=d>&nbsp;</code><code class=i>alive</code><code class=d>,</code><code class=i>actor</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>alive</code><code class=d>+=</code><code class=l>1</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>actors.Length</code><code class=d>=</code><code class=i>alive</code><code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=r>'v70 only...</code><br>
+<br>
+<code class=k>End</code><br>
+<br>
+<code class=k>Function</code><code class=d>&nbsp;</code><code class=i>Main</code><code class=d>()</code><br>
+<br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>actors</code><code class=d>:=</code><code class=k>New</code><code class=d>&nbsp;</code><code class=i>Stack</code><code class=d>&lt;</code><code class=i>Actor</code><code class=d>&gt;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>For</code><code class=d>&nbsp;</code><code class=k>Local</code><code class=d>&nbsp;</code><code class=i>i</code><code class=d>:=</code><code class=l>0</code><code class=d>&nbsp;</code><code class=k>Until</code><code class=d>&nbsp;</code><code class=l>100</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>actors.Push</code><code class=d>&nbsp;</code><code class=i>Actor.Create</code><code class=d>(&nbsp;</code><code class=i>Rnd</code><code class=d>(</code><code class=l>100</code><code class=d>),</code><code class=i>Rnd</code><code class=d>(</code><code class=l>100</code><code class=d>)&nbsp;)</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>End</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>While</code><code class=d>&nbsp;</code><code class=i>actors.Length</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=i>UpdateActors</code><code class=d>&nbsp;</code><code class=i>actors</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Wend</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<code class=d>&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=k>Print</code><code class=d>&nbsp;</code><code class=l>"Done!"</code><br>
+<br>
+<code class=k>End</code><br>
+</div></p>
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( initialCapacity:Int=10 )</b></div>
+				<div class="description">
+					<p>Creates a pool containing <b>initialCapacity</b> objects.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Allocate'></a>
+				<div class="well well-small name"><b>Method Allocate : T ()</b></div>
+				<div class="description">
+					<p>Allocates an object from the pool.
+<p>
+If the pool is empty, an object created using <a href="Programming_Keywords_New.html">New</a> is returned instead.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Free'></a>
+				<div class="well well-small name"><b>Method Free : Void ( t:T )</b></div>
+				<div class="description">
+					<p>Adds an object to the pool. This object is then available for future use by <a href="Modules_brl.pool_Pool.html#Allocate">Allocate</a>.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
