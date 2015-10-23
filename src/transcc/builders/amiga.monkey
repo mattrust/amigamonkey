@@ -46,8 +46,15 @@ Class AmigaBuilder Extends Builder
 		SaveString main,"main.cpp"
 		
 		If tcc.opt_build
-
-			Local out:="main_"+HostOS
+			If tcc.AMIGA_BUILD Print "Amiga Build"
+			Local out:String = ""
+			
+			If tcc.AMIGA_BUILD
+				out = StripAll(tcc.opt_srcpath) + "." + tcc.AMIGA_TARGET_POSTFIX + "." + ENV_CONFIG
+			Else
+				out = "main_" + HostOS
+			EndIf
+			
 			DeleteFile out
 			
 			Local OPTS:="",LIBS:=""
@@ -77,10 +84,28 @@ Class AmigaBuilder Extends Builder
 			Local cc_libs:=GetConfigVar( "CC_LIBS" )
 			If cc_libs LIBS+=" "+cc_libs.Replace( ";"," " )
 			
-			Execute "g++"+OPTS+" -o "+out+" main.cpp"+LIBS
+			Local gcc_opts:String = ""
+			Local adev:String = tcc.AMIDEV_PATH + "\usr\local\amiga\bin\"
+			If tcc.AMIGA_BUILD
+				If tcc.BUILD_AOS3
+					If ENV_CONFIG = "debug"
+						gcc_opts = tcc.AOS3_DEBUG_OPTIONS
+					Else
+						gcc_opts = tcc.AOS3_RELEASE_OPTIONS
+					EndIf
+					
+					Execute adev + "m68k-amigaos-g++.exe " + gcc_opts + " -o " + out + " main.cpp"
+				EndIf
+			Else
+				Execute "g++" + OPTS + " -o " + out + " main.cpp" + LIBS
+			EndIf
 			
 			If tcc.opt_run
-				Execute "~q"+RealPath( out )+"~q"
+				If tcc.AMIGA_BUILD
+					Print "you can't run a amiga executable on windows"
+				Else
+					Execute "~q" + RealPath(out) + "~q"
+				EndIf
 			Endif
 		Endif
 	End

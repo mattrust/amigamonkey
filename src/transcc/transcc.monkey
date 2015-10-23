@@ -162,23 +162,25 @@ Class TransCC
 	
 	'
 	'AMIGA config data
+	Field AMIGA_BUILD:Bool = False
+	Field AMIGA_TARGET_POSTFIX:String = ""
 	Field AMIDEV_PATH:String
-	Field BUILD_AOS3:Bool
+	Field BUILD_AOS3:Bool = False
 	Field AOS3_DEBUG_OPTIONS:String
 	Field AOS3_RELEASE_OPTIONS:String
-	Field BUILD_AOS4:Bool
+	Field BUILD_AOS4:Bool = False
 	Field AOS4_DEBUG_OPTIONS:String
 	Field AOS4_RELEASE_OPTIONS:String
-	Field BUILD_MOS:Bool
+	Field BUILD_MOS:Bool = False
 	Field MOS_DEBUG_OPTIONS:String
 	Field MOS_RELEASE_OPTIONS:String
-	Field BUILD_AROS32:Bool
+	Field BUILD_AROS32:Bool = False
 	Field AROS32_DEBUG_OPTIONS:String
 	Field AROS32_RELEASE_OPTIONS:String
-	Field BUILD_AROS64:Bool
+	Field BUILD_AROS64:Bool = False
 	Field AROS54_DEBUG_OPTIONS:String
 	Field AROS64_RELEASE_OPTIONS:String
-	Field BUILD_AROSPPC:Bool
+	Field BUILD_AROSPPC:Bool = False
 	Field AROSPPC_DEBUG_OPTIONS:String
 	Field AROSPPC_RELEASE_OPTIONS:String
 	
@@ -404,7 +406,53 @@ Class TransCC
 			Case "HTML_PLAYER" 
 				HTML_PLAYER=rhs
 			Case "FLASH_PLAYER" 
-				FLASH_PLAYER=rhs
+				FLASH_PLAYER = rhs
+				
+			'
+			' AMIGA
+			Case "AMIDEV_PATH"; AMIDEV_PATH = StripQuotes(rhs)
+			Case "BUILD_AOS3"
+				If rhs.ToLower() = "1" Or rhs.ToLower() = "true"
+					BUILD_AOS3 = True
+					AMIGA_BUILD = True
+					AMIGA_TARGET_POSTFIX = "aos3"
+				EndIf
+				
+			Case "BUILD_AOS4"
+				If rhs.ToLower() = "1" Or rhs.ToLower() = "true"
+					BUILD_AOS4 = True
+					AMIGA_BUILD = True
+					AMIGA_TARGET_POSTFIX = "aos4"
+				EndIf
+			Case "BUILD_MOS"
+				If rhs.ToLower() = "1" Or rhs.ToLower() = "true"
+					BUILD_MOS = True
+					AMIGA_BUILD = True
+					AMIGA_TARGET_POSTFIX = "mos"
+				EndIf
+			Case "BUILD_AROS32"
+				If rhs.ToLower() = "1" Or rhs.ToLower() = "true"
+					BUILD_AROS32 = True
+					AMIGA_BUILD = True
+					AMIGA_TARGET_POSTFIX = "aros32"
+				EndIf
+			Case "BUILD_AROS64"
+				If rhs.ToLower() = "1" Or rhs.ToLower() = "true"
+					BUILD_AROS64 = True
+					AMIGA_BUILD = True
+					AMIGA_TARGET_POSTFIX = "aros64"
+				EndIf
+			Case "BUILD_AROSPPC"
+				If rhs.ToLower() = "1" Or rhs.ToLower() = "true"
+					BUILD_AROSPPC = True
+					AMIGA_BUILD = True
+					AMIGA_TARGET_POSTFIX = "arosppc"
+				EndIf
+				
+			' debug & release options
+			Case "AOS3_DEBUG_OPTIONS"; AOS3_DEBUG_OPTIONS = StripQuotes(rhs)
+			Case "AOS3_RELEASE_OPTIONS"; AOS3_RELEASE_OPTIONS = StripQuotes(rhs)
+			
 			Default 
 				Print "Trans: ignoring unrecognized config var: "+lhs
 			End

@@ -132,3 +132,13 @@ PSM_PATH="${PROGRAMFILES}\SCE\PSM"
 MSBUILD_PATH="${PROGRAMFILES}\MSBuild\12.0\Bin\MSBuild.exe"
 MSBUILD_PATH="${WINDIR}\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 '--------------------
+
+
+'--------------------
+' AMIGA
+'
+AMIDEV_PATH = "C:\CrossCompiler\AmiDevCpp"
+
+BUILD_AOS3 = true
+AOS3_DEBUG_OPTIONS = "-noixemul -g -O6"
+AOS3_RELEASE_OPTIONS = "-noixemul -O6"
